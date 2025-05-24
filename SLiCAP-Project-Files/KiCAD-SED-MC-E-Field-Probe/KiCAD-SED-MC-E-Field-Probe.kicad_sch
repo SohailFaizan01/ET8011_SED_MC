@@ -252,16 +252,16 @@
 	)
 	(symbol
 		(lib_id "SLiCAP:N")
-		(at 95.25 72.39 0)
+		(at 119.38 77.47 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "c7fc0575-7430-4a4e-bb1c-403a29af5fed")
+		(uuid "f5900baa-8c1c-465e-89c1-aa4319d30efb")
 		(property "Reference" "N1"
-			(at 97.79 72.3898 0)
+			(at 121.92 77.4698 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -270,7 +270,7 @@
 			)
 		)
 		(property "Value" "~"
-			(at 101.6 73.025 0)
+			(at 125.73 78.105 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -280,7 +280,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 95.25 73.66 0)
+			(at 119.38 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -290,7 +290,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 95.25 73.66 0)
+			(at 119.38 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -300,7 +300,7 @@
 			)
 		)
 		(property "Description" "Nullor"
-			(at 100.33 76.454 0)
+			(at 124.46 81.534 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -309,7 +309,7 @@
 			)
 		)
 		(property "model" "N"
-			(at 97.155 74.295 0)
+			(at 121.285 79.375 0)
 			(show_name yes)
 			(effects
 				(font
@@ -319,17 +319,17 @@
 				(hide yes)
 			)
 		)
-		(pin "1"
-			(uuid "d6752c8d-540b-495e-a583-116a8ba0b6d8")
-		)
-		(pin "2"
-			(uuid "ca06a0d9-989c-45e6-96e1-86b15e8409a0")
-		)
 		(pin "4"
-			(uuid "4344dda9-31cb-4237-954d-55266ac9de67")
+			(uuid "cad0bcd5-bb5b-4196-95f2-319bfc17b9ba")
 		)
 		(pin "3"
-			(uuid "3f297f6b-230c-48d3-88d1-a8a020c3b0c5")
+			(uuid "eb02bbda-5237-470e-ab4f-95a49fe5c156")
+		)
+		(pin "1"
+			(uuid "d6bd0f2f-7d0e-4b31-a5c8-5ca0266711cc")
+		)
+		(pin "2"
+			(uuid "8aae51e1-fdb0-4e44-a0a7-ef94c606f231")
 		)
 		(instances
 			(project ""
