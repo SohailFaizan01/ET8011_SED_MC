@@ -249,7 +249,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "SED-MC-Active-E-Field-Probe.kicad_pro",
+    "filename": "KiCAD-SED-MC-E-Field-Probe.kicad_pro",
     "version": 3
   },
   "net_settings": {
@@ -407,6 +407,11 @@
     "subpart_first_id": 65,
     "subpart_id_separator": 0
   },
-  "sheets": [],
+  "sheets": [
+    [
+      "f13321b0-7d79-4897-867c-b43aeaa9fea6",
+      "Root"
+    ]
+  ],
   "text_variables": {}
 }

@@ -58,7 +58,7 @@
     "ssh_key": ""
   },
   "meta": {
-    "filename": "SED-MC-Active-E-Field-Probe.kicad_prl",
+    "filename": "KiCAD-SED-MC-E-Field-Probe.kicad_prl",
     "version": 5
   },
   "net_inspector_panel": {
