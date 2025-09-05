@@ -1,4 +1,0 @@
-(sym_lib_table
-  (version 7)
-  (lib (name "SLiCAP")(type "KiCad")(uri "C:/Users/Martijn/anaconda3/Lib/site-packages/SLiCAP/files/kicad/SLiCAP.kicad_sym")(options "")(descr ""))
-)
