@@ -1,0 +1,5 @@
+Active_E-Field_Probe
+C1 1 2 C value=50u vinit=0
+L1 3 1 L value=50u iinit=0
+V1 3 2 V value=5 noise=0 dc=0 dcvar=0
+.end
