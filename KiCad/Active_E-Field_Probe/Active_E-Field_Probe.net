@@ -1,7 +1,7 @@
 (export (version "E")
   (design
-    (source "C:\\DATA\\TU_Delft\\MSC_EE_Y2\\ET8011_SED_MC_Complete\\ET8011_SED_MC\\KiCad\\Active_E-Field_Probe\\Active_E-Field_Probe.kicad_sch")
-    (date "2025-09-13T17:57:59+0200")
+    (source "C:\\DATA\\TU Delft\\MSC EE Year 2\\ET8011_SED_MC_Complete\\ET8011_SED_MC\\KiCad\\Active_E-Field_Probe\\Active_E-Field_Probe.kicad_sch")
+    (date "2025-09-14T20:23:43+0200")
     (tool "Eeschema 9.0.4")
     (sheet (number "1") (name "/") (tstamps "/")
       (title_block
