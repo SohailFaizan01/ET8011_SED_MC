@@ -1,0 +1,18 @@
+symbol, description, value, units, type
+L_ant,Antenna length,1/4,m,System
+C_ant,Antenna capacitance,3/250000000000,F/m,System
+C_s,Source capacitance,3/1000000000000,F,System
+Z_in,Receiver input impedance,50,Ohm,System
+Cable_len,Max coax cable length,25,m,System
+T_op_min,Minimum Operating temperature,0,degC,System
+T_op_max,Maximum Operating temperature,70,degC,System
+P_cons,Max power consumption,1/20,W,System
+f_-3dB_min,Minimum -3 dB frequency range,9000,Hz,System
+f_-3dB_max,Maximum -3 dB frequency range,80000000,Hz,System
+P_1dB,1 dB compression point at receiver input (1 V/m),0,dBm,System
+VDD,Power Supply Voltage,9/5,V,System
+E_max,Maximum E-field input,1,V/m,System
+Z_in_amp,Amplifier input impedance,50,Ohm,Amplifier
+Z_out_amp,Amplifier output impedance,50,Ohm,Amplifier
+V_in,Amplifier input voltage,1/4,V,Amplifier
+A_cl,Amplifier closed-loop gain,6,NA,Amplifier

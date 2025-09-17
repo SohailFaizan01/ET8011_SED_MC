@@ -1,14 +1,18 @@
 Active_E-Field_Probe
-C1 3 4 C value=? vinit=0
-D1 0 2 D
+C1 8 3 C value={C_s} vinit=0
+C2 7 1 C value={C_s} vinit=0
+C3 3 6 C value=2/(s*{C_s}) vinit=0
+C4 5 4 C value=2/(s*{C_s}) vinit=0
+D1 0 1 D
 D2 0 3 D
-E1 2 0 1 0 EZ value=? zo=?
-N1 1 0 2 0 N
-N2 4 0 3 0 N
-R1 5 2 R value=? noisetemp=0 noiseflow=0 dcvar=0 dcvarlot=0
-R2 0 1 R value=? noisetemp=0 noiseflow=0 dcvar=0 dcvarlot=0
-R3 6 3 R value=? noisetemp=0 noiseflow=0 dcvar=0 dcvarlot=0
-R4 0 4 R value=? noisetemp=0 noiseflow=0 dcvar=0 dcvarlot=0
-V1 5 0 V value=? noise=0 dc=0 dcvar=0
-V2 6 0 V value=? noise=0 dc=0 dcvar=0
+F1 1 0 ? F value=2.5*s*{C_s}
+G1 1 0 2 0 G value=0.5*s*{C_s}
+M1 3 4 0 0 M
+M2 5 5 0 0 M
+N1 2 0 1 0 N
+N2 6 5 3 0 N
+R1 0 6 R value={Z_in_amp} noisetemp=0 noiseflow=0 dcvar=0 dcvarlot=0
+R2 0 2 R value=50 noisetemp=0 noiseflow=0 dcvar=0 dcvarlot=0
+V1 7 0 V value={V_in} noise=0 dc=0 dcvar=0
+V2 8 0 V value={V_in} noise=0 dc=0 dcvar=0
 .end
