@@ -157,12 +157,19 @@ text2html("- Intermodulation products must be below -50 dBm in the frequency ban
 text2html("- CMOS18 technology must be used.")
 text2html("- The antenna must be protected against electrostatic discharge.")
 text2html("- Input referred noise must be below:")
-# eqn2html(
-#     arg1='S_En',
-#     arg2='10**-15 * (1 + 10**12 / f**2) [V**2 / (m**2 Hz)]',
-#     label='eq_sen',
-#     labelText='Input-referred noise'
-# )
+
+from sympy import symbols
+
+# define symbol
+f = symbols('f')
+
+eqn2html(
+    arg1='S_En',
+    arg2=1e-15 * (1 + (1e12/f**2)),
+    units='V**2/m**2 Hz',
+    label='eq_sen',
+    labelText='Input-referred noise'
+)
 
 ################################################## Circuit Data ##################################################
 
@@ -173,3 +180,70 @@ fileName = 'KiCad/' + fileName + '/' + fileName + '.kicad_sch'
 cir = makeCircuit(fileName,imgWidth=400)
 
 specs2circuit(specs, cir)
+
+# ---------------------------
+# Symbols
+# ---------------------------
+A, B, C, D, Cs, Voc, Vout, f, s, Z0 = symbols('A B C D Cs Voc Vout f s Z0', real=True)
+j = I  # imaginary unit
+
+# ---------------------------
+# Text and Equations
+# ---------------------------
+text2html("## Two-Port Representation of the Active Antenna")
+
+text2html("We start with a general **ABCD two-port matrix** representation:")
+
+eqn2html(
+    arg1=Matrix([[A, B],[C, D]]),
+    arg2=Matrix([[symbols('V1')],[symbols('I1')]]),
+    label='eq_abcd',
+    labelText='Two-port ABCD definition'
+)
+
+
+
+# Constraint: no current into the input (open input port)
+text2html("Since no current flows into the input, we obtain the condition:")
+
+eqn2html('A/B', '0', label='eq_open')
+
+# Characteristic impedance relation
+text2html("For matching with 50 Ω system impedance:")
+
+eqn2html('D/C', 'Z0', label='eq_match')
+
+# C defined in terms of Cs
+eqn2html('C', '5*Cs/2', label='eq_c')
+
+# Substitution of s = jω
+eqn2html('s', 'j*2*pi*f', label='eq_s')
+
+# ---------------------------
+# Antenna Parameters
+# ---------------------------
+text2html("### Antenna Parameters")
+
+eqn2html('Cs', '0.25*12e-12', units='F', label='eq_cs')
+eqn2html('Voc', '0.25*1', units='V', label='eq_voc')
+
+# ---------------------------
+# Output Voltage
+# ---------------------------
+text2html("The output voltage is given by:")
+
+eqn2html('V_out', 'sqrt(P*R)*2', label='eq_vout')
+
+text2html("Numerical evaluation yields:")
+
+eqn2html('V_out', '0.2236*2', units='V', label='eq_vout_num')
+
+# RMS relation
+eqn2html('V_RMS', '0.316', units='V', label='eq_vrms')
+
+# ---------------------------
+# Input Current Relation
+# ---------------------------
+text2html("Finally, the input current into the 2-port is:")
+
+eqn2html('I_in', 'Voc*C + I0*D', label='eq_in')
