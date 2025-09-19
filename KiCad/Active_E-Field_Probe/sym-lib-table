@@ -1,4 +1,4 @@
 (sym_lib_table
   (version 7)
-  (lib (name "SLiCAP")(type "KiCad")(uri "C:/DATA/TU_Delft/MSC_EE_Y2/ET8011_SED_MC_Complete/.venv/Lib/site-packages/SLiCAP/files/kicad/SLiCAP.kicad_sym")(options "")(descr ""))
+  (lib (name "SLiCAP")(type "KiCad")(uri "C:/DATA/TU Delft/MSC EE Year 2/ET8011_SED_MC_Complete/.venv/Lib/site-packages/SLiCAP/files/kicad/SLiCAP.kicad_sym")(options "")(descr ""))
 )

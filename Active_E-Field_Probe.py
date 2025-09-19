@@ -181,11 +181,12 @@ cir = makeCircuit(fileName,imgWidth=400)
 
 specs2circuit(specs, cir)
 
+#################################################### Two Port ####################################################
+htmlPage("Two Port", index=False, label='Specifications')
 # ---------------------------
 # Symbols
 # ---------------------------
 A, B, C, D, Cs, Voc, Vout, f, s, Z0 = symbols('A B C D Cs Voc Vout f s Z0', real=True)
-j = I  # imaginary unit
 
 # ---------------------------
 # Text and Equations
@@ -194,14 +195,12 @@ text2html("## Two-Port Representation of the Active Antenna")
 
 text2html("We start with a general **ABCD two-port matrix** representation:")
 
-eqn2html(
-    arg1=Matrix([[A, B],[C, D]]),
-    arg2=Matrix([[symbols('V1')],[symbols('I1')]]),
-    label='eq_abcd',
-    labelText='Two-port ABCD definition'
-)
-
-
+# eqn2html(
+#     arg1=Matrix([[A, B],[C, D]]),
+#     arg2=Matrix([[symbols('V1')],[symbols('I1')]]),
+#     label='eq_abcd',
+#     labelText='Two-port ABCD definition'
+# )
 
 # Constraint: no current into the input (open input port)
 text2html("Since no current flows into the input, we obtain the condition:")
@@ -209,7 +208,7 @@ text2html("Since no current flows into the input, we obtain the condition:")
 eqn2html('A/B', '0', label='eq_open')
 
 # Characteristic impedance relation
-text2html("For matching with 50 Ω system impedance:")
+text2html("For matching with 50 Ohm system impedance:")
 
 eqn2html('D/C', 'Z0', label='eq_match')
 

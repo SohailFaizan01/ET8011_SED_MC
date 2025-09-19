@@ -1,28 +1,10 @@
 Active_E-Field_Probe
-C1 11 4 C value={C_s} vinit=0
-C2 10 1 C value={C_s} vinit=0
-C3 0 9 C value=2/(s*{C_s}) vinit=0
-C4 6 5 C value=2/(s*{C_s}) vinit=0
-C5 13 14 C value={C_s} vinit=0
-C6 11 0 C value=2/(s*{C_s}) vinit=0
-C7 8 7 C value=2/(s*{C_s}) vinit=0
-D1 0 1 D
-D2 0 4 D
-D3 12 14 D
-F1 1 0 ? F value=2.5*s*{C_s}
-G1 1 0 2 0 G value=0.5*s*{C_s}
-M1 4 5 3 3 M
-M2 6 6 3 3 M
-M3 0 7 3 3 M
-M4 8 8 3 3 M
-N1 2 0 1 0 N
-N2 9 6 4 0 N
-N3 0 8 0 0 N
-R1 0 9 R value={Z_in_amp} noisetemp=0 noiseflow=0 dcvar=0 dcvarlot=0
-R2 2 0 R value=50 noisetemp=0 noiseflow=0 dcvar=0 dcvarlot=0
-R3 16 15 R value=50 noisetemp=0 noiseflow=0 dcvar=0 dcvarlot=0
-V1 10 0 V value={V_in} noise=0 dc=0 dcvar=0
-V2 11 0 V value={V_in} noise=0 dc=0 dcvar=0
-V3 13 12 V value={V_in} noise=0 dc=0 dcvar=0
-X1 14 12 16 15 ?
+C2 4 2 C value={C_s} vinit=0
+D1 0 2 D
+G1 2 0 1 0 G value=0.5*{C_s}
+G2 2 0 3 0 G value=2.5*{C_s}
+H1 3 0 5 H value=5
+N1 1 3 2 0 N
+R2 1 0 R value=50 noisetemp=0 noiseflow=0 dcvar=0 dcvarlot=0
+V1 4 0 V value={V_in} noise=0 dc=0 dcvar=0
 .end
