@@ -1,7 +1,7 @@
 from SLiCAP import *
 
 # Project setup
-prj = initProject("Active_E-field_Probe")
+prj = initProject("Active_E_field_Probe")
 
 ################################################# Specifications #################################################
 
@@ -148,7 +148,7 @@ specs.append(specItem("A_cl",
 
 specs2csv(specs, "specs.csv")
 
-htmlPage("Specifications", index=False, label='Specifications')
+htmlPage("Specifications", index=False, label='Specifications2')
 
 specs2html(specs, types=[])
 
@@ -174,23 +174,39 @@ eqn2html(
 ################################################## Circuit Data ##################################################
 
 # Create a circuit object from a schematic file or a SLiCAP netlist:
-fileName = "Active_E-Field_Probe"
+fileName = "Active_E_Field_Probe"
 fileName = 'KiCad/' + fileName + '/' + fileName + '.kicad_sch'
 
 cir = makeCircuit(fileName,imgWidth=400)
 
 specs2circuit(specs, cir)
 
-#################################################### Two Port ####################################################
-htmlPage("Two Port", index=False, label='Specifications')
-# ---------------------------
-# Symbols
-# ---------------------------
-A, B, C, D, Cs, Voc, Vout, f, s, Z0 = symbols('A B C D Cs Voc Vout f s Z0', real=True)
+# result = doMatrix(cir)
 
-# ---------------------------
-# Text and Equations
-# ---------------------------
+# Iv     = result.Iv # Vector with independent variables 
+#                    # (independent sources)
+# M      = result.M  # MNA matrix
+# Dv     = result.Dv # Vector with dependent variables 
+#                    # (unknown nodal voltages and branch currents)
+
+# print(Iv)
+
+# print(M)
+
+# print(Dv)
+
+V_gain = doLaplace(cir, source='V1', detector='V_out').laplace
+print(V_gain)
+noise = doNoise(cir, source="V1", detector="V_out")
+inoise      = noise.inoise
+print(inoise)
+onoise      = noise.onoise
+print(onoise)
+
+#################################################### Two Port ####################################################
+htmlPage("Two Port", index=False, label='Two-Port')
+
+
 text2html("## Two-Port Representation of the Active Antenna")
 
 text2html("We start with a general **ABCD two-port matrix** representation:")

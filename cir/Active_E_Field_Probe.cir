@@ -1,0 +1,8 @@
+Active_E_Field_Probe
+C1 1 2 C value={0.5*C_s} vinit=0
+C2 3 1 C value={C_s} vinit=0
+N1 2 0 1 0 N
+R1 2 out R value=50 noisetemp=343 noiseflow=0 dcvar=0 dcvarlot=0
+R2 out 0 R value=50 noisetemp=343 noiseflow=0 dcvar=0 dcvarlot=0
+V1 3 0 V value={V_in} noise=0 dc=0 dcvar=0
+.end

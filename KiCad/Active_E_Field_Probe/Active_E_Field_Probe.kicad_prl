@@ -59,7 +59,7 @@
     "ssh_key": ""
   },
   "meta": {
-    "filename": "Active_E-Field_Probe.kicad_prl",
+    "filename": "Active_E_Field_Probe.kicad_prl",
     "version": 5
   },
   "net_inspector_panel": {

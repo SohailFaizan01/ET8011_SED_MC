@@ -7,25 +7,23 @@
 <script>MathJax = {tex:{tags: 'ams', inlineMath:[['$','$'],]}, svg:{fontCache:'global'}};</script>
 <script type="text/javascript" id="MathJax-script" async  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head><body><div id="top"><h1>Circuit data</h1></div>
-<h2>Schematic diagram of Active_E-Field_Probe.kicad_sch</h2>
-<figure><a id="fig_Active_E-Field_Probe.kicad_sch"></a><img src="img/Active_E-Field_Probe.svg" alt="Circuit diagram of Active_E-Field_Probe." style="width:400px">
-<figcaption>Figure: Active_E-Field_Probe.svg<br>Circuit diagram of Active_E-Field_Probe.</figcaption>
+<h2>Schematic diagram of Active_E_Field_Probe.kicad_sch</h2>
+<figure><a id="fig_Active_E_Field_Probe.kicad_sch"></a><img src="img/Active_E_Field_Probe.svg" alt="Circuit diagram of Active_E_Field_Probe." style="width:400px">
+<figcaption>Figure: Active_E_Field_Probe.svg<br>Circuit diagram of Active_E_Field_Probe.</figcaption>
 </figure>
-<h2><a id="netlist_Active_E-Field_Probe"></a>Netlist: Active_E-Field_Probe.cir</h2>
-<pre>Active_E-Field_Probe
-C2 4 2 C value={C_s} vinit=0
-D1 0 2 D
-G1 2 0 1 0 G value=0.5*{C_s}
-G2 2 0 3 0 G value=2.5*{C_s}
-H1 3 0 5 H value=5
-N1 1 3 2 0 N
-R2 1 0 R value=50 noisetemp=0 noiseflow=0 dcvar=0 dcvarlot=0
-V1 4 0 V value={V_in} noise=0 dc=0 dcvar=0
+<h2><a id="netlist_Active_E_Field_Probe"></a>Netlist: Active_E_Field_Probe.cir</h2>
+<pre>Active_E_Field_Probe
+C1 1 2 C value={0.5*C_s} vinit=0
+C2 3 1 C value={C_s} vinit=0
+N1 2 0 1 0 N
+R1 2 out R value=50 noisetemp=343 noiseflow=0 dcvar=0 dcvarlot=0
+R2 out 0 R value=50 noisetemp=343 noiseflow=0 dcvar=0 dcvarlot=0
+V1 3 0 V value={V_in} noise=0 dc=0 dcvar=0
 .end</pre>
 <!-- INSERT -->
 <div id="footnote">
-<p>Go to <a href="index.html">index</a></p>
+<p>Go to <a href="Active_E_Field_Probe_index.html">Active_E_Field_Probe_index</a></p>
 <p>SLiCAP: Symbolic Linear Circuit Analysis Program, Version 4.0.5 &copy 2009-2025 SLiCAP development team</p>
 <p>For documentation, examples, support, updates and courses please visit: <a href="https://analog-electronics.tudelft.nl">analog-electronics.tudelft.nl</a></p>
-<p>Last project update: 2025-09-19 10:14:18</p>
+<p>Last project update: 2025-09-21 11:35:22</p>
 </div></body></html>
