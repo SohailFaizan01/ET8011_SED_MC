@@ -1,7 +1,7 @@
 (export (version "E")
   (design
     (source "C:\\DATA\\TU Delft\\MSC EE Year 2\\ET8011_SED_MC_Complete\\ET8011_SED_MC\\KiCad\\Active_E_Field_Probe\\Active_E_Field_Probe.kicad_sch")
-    (date "2025-09-21T11:35:23+0200")
+    (date "2025-09-23T12:27:47+0200")
     (tool "Eeschema 9.0.4")
     (sheet (number "1") (name "/") (tstamps "/")
       (title_block
@@ -71,7 +71,7 @@
       (description "Resistor (cannot have zero resistance)")
       (fields
         (field (name "model") "R")
-        (field (name "noisetemp") "343")
+        (field (name "noisetemp") "{T_op_max}")
         (field (name "noiseflow") "0")
         (field (name "dcvar") "0")
         (field (name "dcvarlot") "0")
@@ -80,7 +80,7 @@
         (field (name "Description") "Resistor (cannot have zero resistance)"))
       (libsource (lib "SLiCAP") (part "R") (description "Resistor (cannot have zero resistance)"))
       (property (name "model") (value "R"))
-      (property (name "noisetemp") (value "343"))
+      (property (name "noisetemp") (value "{T_op_max}"))
       (property (name "noiseflow") (value "0"))
       (property (name "dcvar") (value "0"))
       (property (name "dcvarlot") (value "0"))
@@ -93,7 +93,7 @@
       (description "Resistor (cannot have zero resistance)")
       (fields
         (field (name "model") "R")
-        (field (name "noisetemp") "343")
+        (field (name "noisetemp") "{T_op_max}")
         (field (name "noiseflow") "0")
         (field (name "dcvar") "0")
         (field (name "dcvarlot") "0")
@@ -102,7 +102,7 @@
         (field (name "Description") "Resistor (cannot have zero resistance)"))
       (libsource (lib "SLiCAP") (part "R") (description "Resistor (cannot have zero resistance)"))
       (property (name "model") (value "R"))
-      (property (name "noisetemp") (value "343"))
+      (property (name "noisetemp") (value "{T_op_max}"))
       (property (name "noiseflow") (value "0"))
       (property (name "dcvar") (value "0"))
       (property (name "dcvarlot") (value "0"))

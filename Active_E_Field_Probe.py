@@ -1,7 +1,8 @@
 from SLiCAP import *
+from sympy import symbols
 
 # Project setup
-prj = initProject("Active_E_field_Probe")
+prj = initProject("Active_E_Field_Probe")
 
 ################################################# Specifications #################################################
 
@@ -11,14 +12,15 @@ C_ant    = 12e-12          # Capacitance per meter [F/m]
 Cs       = C_ant * L_ant   # Antenna capacitance [F]
 Z_in     = 50              # Receiver input impedance [Ω]
 L_Cable  = 25              # Max cable length [m]
-T_op_min = 0               # Operating temperature range [°C]
-T_op_max = 70              # Operating temperature range [°C]
+T_op_min = 273             # Operating temperature range [°K] 0 C
+T_op_max = 343             # Operating temperature range [°K] 70 C
 P_cons   = 5e-2            # Max power consumption [W]
 f_min    = 9e3             # Lower -3dB frequency [Hz]
 f_max    = 80e6            # Upper -3dB frequency [Hz]
 P_1dB    = 0               # 1dB compression point [dBm]
 VDD_max  = 1.8             # Supply voltage [V]
 E_max    = 1               # Max E-field [V/m]
+P_int    = 50              # Max intermodulation Products power [dBm]
 
 # --- Amplifier ---
 Z_in_amp  = 50             # Amplifier input impedance [Ω]
@@ -64,13 +66,13 @@ specs.append(specItem("Cable_len",
 specs.append(specItem("T_op_min",
                          description = "Minimum Operating temperature",
                          value       = T_op_min,
-                         units       = "degC",
+                         units       = "K",
                          specType    = "System"))
 
 specs.append(specItem("T_op_max",
                          description = "Maximum Operating temperature",
                          value       = T_op_max,
-                         units       = "degC",
+                         units       = "K",
                          specType    = "System"))
 
 specs.append(specItem("P_cons",
@@ -107,6 +109,12 @@ specs.append(specItem("E_max",
                          description = "Maximum E-field input",
                          value       = E_max,
                          units       = "V/m",
+                         specType    = "System"))
+
+specs.append(specItem("P_int",
+                         description = "Maximum intermodulation product power",
+                         value       = P_int,
+                         units       = "dBm",
                          specType    = "System"))
 
 # --- Amplifier ---
@@ -148,36 +156,16 @@ specs.append(specItem("A_cl",
 
 specs2csv(specs, "specs.csv")
 
-htmlPage("Specifications", index=False, label='Specifications2')
 
-specs2html(specs, types=[])
 
-head2html("Additional Specifications", label='Add_Specs')
-text2html("- Intermodulation products must be below -50 dBm in the frequency band of interest.")
-text2html("- CMOS18 technology must be used.")
-text2html("- The antenna must be protected against electrostatic discharge.")
-text2html("- Input referred noise must be below:")
 
-from sympy import symbols
 
-# define symbol
-f = symbols('f')
-
-eqn2html(
-    arg1='S_En',
-    arg2=1e-15 * (1 + (1e12/f**2)),
-    units='V**2/m**2 Hz',
-    label='eq_sen',
-    labelText='Input-referred noise'
-)
 
 ################################################## Circuit Data ##################################################
-
-# Create a circuit object from a schematic file or a SLiCAP netlist:
 fileName = "Active_E_Field_Probe"
 fileName = 'KiCad/' + fileName + '/' + fileName + '.kicad_sch'
 
-cir = makeCircuit(fileName,imgWidth=400)
+cir = makeCircuit(fileName,imgWidth=1000)
 
 specs2circuit(specs, cir)
 
@@ -203,9 +191,39 @@ print(inoise)
 onoise      = noise.onoise
 print(onoise)
 
-#################################################### Two Port ####################################################
-htmlPage("Two Port", index=False, label='Two-Port')
 
+
+
+
+
+
+############################################## Specifications HTML ##############################################
+htmlPage("Specifications", index=False, label='Specifications')
+
+specs2html(specs, types=[])
+
+head2html("Additional Specifications", label='Add_Specs')
+text2html("- Intermodulation products must be below -50 dBm in the frequency band of interest.")
+text2html("- CMOS18 technology must be used.")
+text2html("- The antenna must be protected against electrostatic discharge.")
+text2html("- Input referred noise must be below:")
+
+f = symbols('f')
+eqn2html(
+    arg1='S_En',
+    arg2=1e-15 * (1 + (1e12/f**2)),
+    units='V**2/m**2 Hz',
+    label='eq_sen',
+    labelText='Input-referred noise'
+)
+
+
+
+
+
+
+#################################################### Two Port ####################################################
+htmlPage("Two Port", index=False, label='Two_Port')
 
 text2html("## Two-Port Representation of the Active Antenna")
 
@@ -262,3 +280,39 @@ eqn2html('V_RMS', '0.316', units='V', label='eq_vrms')
 text2html("Finally, the input current into the 2-port is:")
 
 eqn2html('I_in', 'Voc*C + I0*D', label='eq_in')
+
+
+
+
+
+
+################################################# Design Choices #################################################
+htmlPage("Design Process", index=False, label='Design_Process')
+head2html("Initial choices")
+text2html("<ul>"
+"           <li>Protect against ESD => TVS Diode => Current input to avoid non linear impedance voltage division</li>"
+"           <li>Current input => 0 Ohm input impedance</li>"
+"           <li>50 Ohm matched circuit => 50 Ohm output impedance => D/C = 50</li>"
+"</ul>")
+
+text2html("Most simple solution:")
+#insert Link
+
+head3html("Does it meet the specifications?")
+
+Vout_Amp_req = (10**(-3)*10**P_1dB * Z_in)**0.5 * (Z_in/(Z_in+Z_out_amp))
+gain_req = Vout_Amp_req * ((Z_in+Z_out_amp)/Z_in)/V_in_max
+
+max_power_out = Vout_Amp_req**2/100
+
+text2html(f"""
+<table>
+<tr><td>Spec</td>                       <td>Required:</td>         <td>Obtained:</td></tr>
+<tr><td>Gain?</td>                      <td> > {gain_req:.2f}</td> <td> {V_gain}</td></tr>
+<tr><td>Output Impedance</td>           <td> {Z_out_amp} </td>     <td> 50</td></tr>
+<tr><td>Power Consumption</td>          <td> < {P_cons} W</td>     <td> {max_power_out}</td></tr>
+<tr><td>Noise</td>                      <td> ...</td>              <td> TBD</td></tr>
+<tr><td>ESD Protection</td>             <td> Yes </td>             <td> Yes</td></tr>
+<tr><td>Intermodulation products</td>   <td> < {P_int} dBm</td>    <td> TBD</td></tr>
+</table>
+""")

@@ -891,25 +891,25 @@
 		(uuid "06ec95cc-ca13-4213-b332-6d74ac8ed492")
 	)
 	(junction
-		(at 123.19 78.74)
+		(at 115.57 78.74)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "3a616346-265b-4c07-87c2-f92998009d32")
 	)
 	(junction
-		(at 129.54 78.74)
+		(at 121.92 78.74)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "44a0dc4f-4d17-4d67-ac9e-0629b2bac708")
 	)
 	(junction
-		(at 120.65 58.42)
+		(at 113.03 58.42)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "77563b7d-b86e-4cc4-be0b-0fe6d83ca7fa")
 	)
 	(junction
-		(at 130.81 58.42)
+		(at 123.19 58.42)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ccad3754-ce86-47ed-b082-120644016684")
@@ -928,7 +928,7 @@
 	)
 	(wire
 		(pts
-			(xy 129.54 73.66) (xy 129.54 78.74)
+			(xy 121.92 73.66) (xy 121.92 78.74)
 		)
 		(stroke
 			(width 0)
@@ -938,7 +938,7 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 58.42) (xy 123.19 58.42)
+			(xy 113.03 58.42) (xy 115.57 58.42)
 		)
 		(stroke
 			(width 0)
@@ -948,7 +948,7 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 53.34) (xy 120.65 58.42)
+			(xy 113.03 53.34) (xy 113.03 58.42)
 		)
 		(stroke
 			(width 0)
@@ -958,7 +958,7 @@
 	)
 	(wire
 		(pts
-			(xy 80.01 78.74) (xy 123.19 78.74)
+			(xy 80.01 78.74) (xy 115.57 78.74)
 		)
 		(stroke
 			(width 0)
@@ -978,7 +978,7 @@
 	)
 	(wire
 		(pts
-			(xy 123.19 78.74) (xy 123.19 81.28)
+			(xy 115.57 78.74) (xy 115.57 81.28)
 		)
 		(stroke
 			(width 0)
@@ -998,7 +998,7 @@
 	)
 	(wire
 		(pts
-			(xy 130.81 53.34) (xy 130.81 58.42)
+			(xy 123.19 53.34) (xy 123.19 58.42)
 		)
 		(stroke
 			(width 0)
@@ -1028,7 +1028,7 @@
 	)
 	(wire
 		(pts
-			(xy 130.81 58.42) (xy 134.62 58.42)
+			(xy 123.19 58.42) (xy 134.62 58.42)
 		)
 		(stroke
 			(width 0)
@@ -1038,7 +1038,7 @@
 	)
 	(wire
 		(pts
-			(xy 80.01 58.42) (xy 120.65 58.42)
+			(xy 80.01 58.42) (xy 113.03 58.42)
 		)
 		(stroke
 			(width 0)
@@ -1078,7 +1078,7 @@
 	)
 	(wire
 		(pts
-			(xy 129.54 58.42) (xy 130.81 58.42)
+			(xy 121.92 58.42) (xy 123.19 58.42)
 		)
 		(stroke
 			(width 0)
@@ -1098,7 +1098,7 @@
 	)
 	(wire
 		(pts
-			(xy 123.19 63.5) (xy 123.19 58.42)
+			(xy 115.57 63.5) (xy 115.57 58.42)
 		)
 		(stroke
 			(width 0)
@@ -1128,7 +1128,7 @@
 	)
 	(wire
 		(pts
-			(xy 123.19 73.66) (xy 123.19 78.74)
+			(xy 115.57 73.66) (xy 115.57 78.74)
 		)
 		(stroke
 			(width 0)
@@ -1148,7 +1148,7 @@
 	)
 	(wire
 		(pts
-			(xy 129.54 78.74) (xy 148.59 78.74)
+			(xy 121.92 78.74) (xy 148.59 78.74)
 		)
 		(stroke
 			(width 0)
@@ -1158,7 +1158,7 @@
 	)
 	(wire
 		(pts
-			(xy 123.19 78.74) (xy 129.54 78.74)
+			(xy 115.57 78.74) (xy 121.92 78.74)
 		)
 		(stroke
 			(width 0)
@@ -1168,7 +1168,7 @@
 	)
 	(wire
 		(pts
-			(xy 129.54 58.42) (xy 129.54 63.5)
+			(xy 121.92 58.42) (xy 121.92 63.5)
 		)
 		(stroke
 			(width 0)
@@ -1263,7 +1263,7 @@
 				(hide yes)
 			)
 		)
-		(property "noisetemp" "343"
+		(property "noisetemp" "{T_op_max}"
 			(at 139.7 46.99 90)
 			(show_name yes)
 			(effects
@@ -1381,7 +1381,7 @@
 				(hide yes)
 			)
 		)
-		(property "noisetemp" "343"
+		(property "noisetemp" "{T_op_max}"
 			(at 151.13 67.3099 0)
 			(show_name yes)
 			(effects
@@ -1552,7 +1552,7 @@
 	)
 	(symbol
 		(lib_id "SLiCAP:N")
-		(at 129.54 68.58 0)
+		(at 121.92 68.58 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1561,7 +1561,7 @@
 		(fields_autoplaced yes)
 		(uuid "a8934ebd-6084-4f94-8494-081c21999ec8")
 		(property "Reference" "N1"
-			(at 132.08 68.5798 0)
+			(at 124.46 68.5798 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1570,7 +1570,7 @@
 			)
 		)
 		(property "Value" "~"
-			(at 135.89 69.215 0)
+			(at 128.27 69.215 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1580,7 +1580,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 129.54 69.85 0)
+			(at 121.92 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1590,7 +1590,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 129.54 69.85 0)
+			(at 121.92 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1600,7 +1600,7 @@
 			)
 		)
 		(property "Description" "Nullor"
-			(at 134.62 72.644 0)
+			(at 127 72.644 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1609,7 +1609,7 @@
 			)
 		)
 		(property "model" "N"
-			(at 131.445 70.485 0)
+			(at 123.825 70.485 0)
 			(show_name yes)
 			(effects
 				(font
@@ -1642,7 +1642,7 @@
 	)
 	(symbol
 		(lib_id "SLiCAP:GND")
-		(at 123.19 81.28 0)
+		(at 115.57 81.28 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1651,7 +1651,7 @@
 		(fields_autoplaced yes)
 		(uuid "ae0be6dc-57dd-4e49-914f-95851914af63")
 		(property "Reference" "#01"
-			(at 123.19 86.36 0)
+			(at 115.57 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1660,7 +1660,7 @@
 			)
 		)
 		(property "Value" "0"
-			(at 123.19 83.82 0)
+			(at 115.57 83.82 0)
 			(do_not_autoplace yes)
 			(effects
 				(font
@@ -1669,7 +1669,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 123.19 81.28 0)
+			(at 115.57 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1678,7 +1678,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 123.19 91.44 0)
+			(at 115.57 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1687,7 +1687,7 @@
 			)
 		)
 		(property "Description" "0V reference potential"
-			(at 123.19 88.9 0)
+			(at 115.57 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1798,7 +1798,7 @@
 	)
 	(symbol
 		(lib_id "SLiCAP:C")
-		(at 125.73 53.34 90)
+		(at 118.11 53.34 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1807,7 +1807,7 @@
 		(fields_autoplaced yes)
 		(uuid "f994e80a-60eb-4cd8-aeb7-34e6ad5c9ed9")
 		(property "Reference" "C1"
-			(at 125.6637 44.45 90)
+			(at 118.0437 44.45 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1815,7 +1815,7 @@
 			)
 		)
 		(property "Value" "{0.5*C_s}"
-			(at 125.6637 46.99 90)
+			(at 118.0437 46.99 90)
 			(show_name yes)
 			(effects
 				(font
@@ -1824,7 +1824,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 127 50.8 0)
+			(at 119.38 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1833,7 +1833,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 127 50.8 0)
+			(at 119.38 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1842,7 +1842,7 @@
 			)
 		)
 		(property "Description" "Capacitor"
-			(at 131.826 46.228 0)
+			(at 124.206 46.228 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1851,7 +1851,7 @@
 			)
 		)
 		(property "model" "C"
-			(at 129.54 50.8 0)
+			(at 121.92 50.8 0)
 			(show_name yes)
 			(effects
 				(font
@@ -1862,7 +1862,7 @@
 			)
 		)
 		(property "vinit" "0"
-			(at 125.6637 49.53 90)
+			(at 118.0437 49.53 90)
 			(show_name yes)
 			(effects
 				(font
