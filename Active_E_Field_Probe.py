@@ -1,10 +1,14 @@
 from SLiCAP import *
 from sympy import symbols
+# import numpy as np
+# import matplotlib.pyplot as plt
 
 # Project setup
 prj = initProject("Active_E_Field_Probe")
 
 ################################################# Specifications #################################################
+# --- Constants ---
+k = 1.3806749e-23          #Boltzmann constant
 
 # --- Antenna / System ---
 L_ant    = 0.25            # Antenna length [m]
@@ -184,13 +188,11 @@ specs2circuit(specs, cir)
 # print(Dv)
 
 V_gain = doLaplace(cir, source='V1', detector='V_out').laplace
-print(V_gain)
-noise = doNoise(cir, source="V1", detector="V_out")
-inoise      = noise.inoise
-print(inoise)
-onoise      = noise.onoise
-print(onoise)
 
+noise = doNoise(cir, source="V1", detector="V_out")
+
+onoise = noise.onoise
+NT = noise.onoiseTerms
 
 
 
@@ -208,18 +210,46 @@ text2html("- CMOS18 technology must be used.")
 text2html("- The antenna must be protected against electrostatic discharge.")
 text2html("- Input referred noise must be below:")
 
+img2html("noise_function_plot.svg", width=700, label='nft', caption='')
+
+
 f = symbols('f')
 eqn2html(
     arg1='S_En',
     arg2=1e-15 * (1 + (1e12/f**2)),
-    units='V**2/m**2 Hz',
+    units='V**2/m**2 1/Hz',
     label='eq_sen',
     labelText='Input-referred noise'
 )
 
+img2html("noise_function_plot_HZ.svg", width=700, label='nft', caption='')
 
+eqn2html(
+    arg1='S_En',
+    arg2=1e-15 * (1 + (1e12/f**2)),
+    units='V**2/Hz',
+    label='eq_sen',
+    labelText='Input-referred noise'
+)
+# # Define the noise spectrum function
+# def S_En(f):
+#     return 1e-15 * (1 + 1e12 / f**2) * L_ant**2
 
+# # Frequency range (log scale)
+# f = np.logspace(3, 9, 1000)  # 1 kHz to 1 GHz
 
+# # Compute spectrum
+# S = S_En(f)
+
+# # Plot
+# plt.figure(figsize=(7,5))
+# plt.loglog(f, S, label=r"$S_{En}(f)$")
+# plt.xlabel("Frequency $f$ [Hz]")
+# plt.ylabel(r"$S_{En}(f)$ $\left[\frac{V^2}{Hz}\right]$")
+# plt.title("Noise Spectrum")
+# plt.grid(True, which="both", ls="--")
+# plt.legend()
+# plt.show()
 
 
 #################################################### Two Port ####################################################
@@ -295,7 +325,7 @@ text2html("<ul>"
 "           <li>50 Ohm matched circuit => 50 Ohm output impedance => D/C = 50</li>"
 "</ul>")
 
-text2html("Most simple solution:")
+head2html("Most simple solution:")
 #insert Link
 
 head3html("Does it meet the specifications?")
@@ -305,14 +335,17 @@ gain_req = Vout_Amp_req * ((Z_in+Z_out_amp)/Z_in)/V_in_max
 
 max_power_out = Vout_Amp_req**2/100
 
+noise_spec = 1e-15 * (1 + (1e12/(9e3)**2))
+noise_obt = 100*T_op_max*k
+
 text2html(f"""
 <table>
 <tr><td>Spec</td>                       <td>Required:</td>         <td>Obtained:</td></tr>
 <tr><td>Gain?</td>                      <td> > {gain_req:.2f}</td> <td> {V_gain}</td></tr>
 <tr><td>Output Impedance</td>           <td> {Z_out_amp} </td>     <td> 50</td></tr>
 <tr><td>Power Consumption</td>          <td> < {P_cons} W</td>     <td> {max_power_out}</td></tr>
-<tr><td>Noise</td>                      <td> ...</td>              <td> TBD</td></tr>
+<tr><td>Noise</td>                      <td> {noise_spec:.2e}</td>  <td> {noise_obt:.2e}</td></tr>
 <tr><td>ESD Protection</td>             <td> Yes </td>             <td> Yes</td></tr>
-<tr><td>Intermodulation products</td>   <td> < {P_int} dBm</td>    <td> TBD</td></tr>
+<tr><td>Intermodulation products</td>   <td> < {P_int} dBm</td>    <td> There is no attenuation currently</td></tr>
 </table>
 """)
