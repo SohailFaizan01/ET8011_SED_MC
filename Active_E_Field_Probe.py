@@ -188,6 +188,25 @@ specs2circuit(specs, cir)
 # print(Dv)
 
 V_gain = doLaplace(cir, source='V1', detector='V_out').laplace
+# L_gain = doLaplace(cir, )
+
+# Plot gain
+gain        = doLaplace(cir, source='V1', detector='V_out', numeric=True)
+asymptotic  = doLaplace(cir, source='V1', detector='V_out', numeric=True, transfer='asymptotic', lgref='M1')
+loopgain    = doLaplace(cir, source='V1', detector='V_out', numeric=True, transfer='loopgain', lgref='M1')
+servo       = doLaplace(cir, source='V1', detector='V_out', numeric=True, transfer="servo", lgref='M1')
+direct      = doLaplace(cir, source='V1', detector='V_out', numeric=True, transfer="direct", lgref='M1')
+
+eqn2html("gain", gain.laplace)
+eqn2html("asymptotic", asymptotic.laplace)
+eqn2html("loopgain", loopgain.laplace)
+eqn2html("servo", servo.laplace)
+eqn2html("direct", direct.laplace)
+
+# fb_model    = [gain, asymptotic, loopgain, servo, direct]
+# fbmodel_mag = plotSweep("fb_mag", "Magnitude plots feedback model parameters", fb_model, 10, 10e5, 200)
+# img2html("fb_mag.svg", width=600)
+
 
 noise = doNoise(cir, source="V1", detector="V_out")
 

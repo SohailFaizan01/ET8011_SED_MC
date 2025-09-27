@@ -13,17 +13,33 @@
 </figure>
 <h2><a id="netlist_Active_E_Field_Probe"></a>Netlist: Active_E_Field_Probe.cir</h2>
 <pre>Active_E_Field_Probe
-C1 1 2 C value={0.5*C_s} vinit=0
-C2 3 1 C value={C_s} vinit=0
-N1 2 0 1 0 N
-R1 2 out R value=50 noisetemp={T_op_max} noiseflow=0 dcvar=0 dcvarlot=0
-R2 out 0 R value=50 noisetemp={T_op_max} noiseflow=0 dcvar=0 dcvarlot=0
-V1 3 0 V value={V_in} noise=0 dc=0 dcvar=0
+C3 2 1 C value={C_s} vinit=0
+C4 1 LGref C value={0.5*C_s} vinit=0
+M1 LGref 1 0 0 M
+M2 LGref 1 0 0 M
+R3 LGref out R value=50 noisetemp={T_op_max} noiseflow=0 dcvar=0 dcvarlot=0
+R4 out 0 R value=50 noisetemp={T_op_max} noiseflow=0 dcvar=0 dcvarlot=0
+V1 2 0 V value={V_in} noise=0 dc=0 dcvar=0
 .end</pre>
+\begin{equation}
+gain=\frac{15.63 C_{s} s^{2} - 0.0625 s}{31.25 C_{s} s^{2} + s}
+\end{equation}
+\begin{equation}
+asymptotic=\left[ \right]
+\end{equation}
+\begin{equation}
+loopgain=\left[ \right]
+\end{equation}
+\begin{equation}
+servo=\left[ \right]
+\end{equation}
+\begin{equation}
+direct=\left[ \right]
+\end{equation}
 <!-- INSERT -->
 <div id="footnote">
 <p>Go to <a href="Active_E_Field_Probe_index.html">Active_E_Field_Probe_index</a></p>
 <p>SLiCAP: Symbolic Linear Circuit Analysis Program, Version 4.0.5 &copy 2009-2025 SLiCAP development team</p>
 <p>For documentation, examples, support, updates and courses please visit: <a href="https://analog-electronics.tudelft.nl">analog-electronics.tudelft.nl</a></p>
-<p>Last project update: 2025-09-24 11:58:50</p>
+<p>Last project update: 2025-09-27 12:07:55</p>
 </div></body></html>
