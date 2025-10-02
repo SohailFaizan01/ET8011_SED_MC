@@ -170,6 +170,8 @@ fileName = "Active_E_Field_Probe"
 fileName = 'KiCad/' + fileName + '/' + fileName + '.kicad_sch'
 
 cir = makeCircuit(fileName,imgWidth=1000)
+print("Available loop gain references:")
+print(cir.lgRef)
 
 specs2circuit(specs, cir)
 
@@ -187,21 +189,24 @@ specs2circuit(specs, cir)
 
 # print(Dv)
 
-V_gain = doLaplace(cir, source='V1', detector='V_out').laplace
+V_gain = doLaplace(cir, source='V1', detector='V_out', numeric=True).laplace
 # L_gain = doLaplace(cir, )
 
-# Plot gain
-gain        = doLaplace(cir, source='V1', detector='V_out', numeric=True)
-asymptotic  = doLaplace(cir, source='V1', detector='V_out', numeric=True, transfer='asymptotic', lgref='M1')
-loopgain    = doLaplace(cir, source='V1', detector='V_out', numeric=True, transfer='loopgain', lgref='M1')
-servo       = doLaplace(cir, source='V1', detector='V_out', numeric=True, transfer="servo", lgref='M1')
-direct      = doLaplace(cir, source='V1', detector='V_out', numeric=True, transfer="direct", lgref='M1')
+# asymptotic  = doLaplace(cir, transfer='asymptotic', pardefs='circuit')
+# eqn2html("asymptotic", asymptotic.laplace)
 
-eqn2html("gain", gain.laplace)
-eqn2html("asymptotic", asymptotic.laplace)
-eqn2html("loopgain", loopgain.laplace)
-eqn2html("servo", servo.laplace)
-eqn2html("direct", direct.laplace)
+# Plot gain
+# gain        = doLaplace(cir, source='V1', detector='V_out', numeric=True)
+# asymptotic  = doLaplace(cir, source='V1', detector='V_out', numeric=True, transfer='asymptotic', lgref='M1')
+# loopgain    = doLaplace(cir, source='V1', detector='V_out', numeric=True, transfer='loopgain', lgref='M1')
+# servo       = doLaplace(cir, source='V1', detector='V_out', numeric=True, transfer="servo", lgref='M1')
+# direct      = doLaplace(cir, source='V1', detector='V_out', numeric=True, transfer="direct", lgref='M1')
+
+# eqn2html("gain", gain.laplace)
+# eqn2html("asymptotic", asymptotic.laplace)
+# eqn2html("loopgain", loopgain.laplace)
+# eqn2html("servo", servo.laplace)
+# eqn2html("direct", direct.laplace)
 
 # fb_model    = [gain, asymptotic, loopgain, servo, direct]
 # fbmodel_mag = plotSweep("fb_mag", "Magnitude plots feedback model parameters", fb_model, 10, 10e5, 200)
@@ -368,3 +373,4 @@ text2html(f"""
 <tr><td>Intermodulation products</td>   <td> < {P_int} dBm</td>    <td> There is no attenuation currently</td></tr>
 </table>
 """)
+
