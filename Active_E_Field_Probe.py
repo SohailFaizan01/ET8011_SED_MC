@@ -1,5 +1,5 @@
 from SLiCAP import *
-from sympy import symbols
+from sympy import symbols, N
 # import numpy as np
 # import matplotlib.pyplot as plt
 
@@ -170,8 +170,8 @@ fileName = "Active_E_Field_Probe"
 fileName = 'KiCad/' + fileName + '/' + fileName + '.kicad_sch'
 
 cir = makeCircuit(fileName,imgWidth=1000)
-print("Available loop gain references:")
-print(cir.lgRef)
+# print("Available loop gain references:")
+# print(cir.lgRef)
 
 specs2circuit(specs, cir)
 
@@ -189,11 +189,11 @@ specs2circuit(specs, cir)
 
 # print(Dv)
 
-V_gain = doLaplace(cir, source='V1', detector='V_out', numeric=True).laplace
+V_gain = doLaplace(cir, source='V1', detector='V_out', numeric=True, pardefs='circuit').laplace
 # L_gain = doLaplace(cir, )
-
-# asymptotic  = doLaplace(cir, transfer='asymptotic', pardefs='circuit')
-# eqn2html("asymptotic", asymptotic.laplace)
+print(cir.controlled)
+asymptotic  = doLaplace(cir, transfer='asymptotic', pardefs='circuit')
+eqn2html("asymptotic", asymptotic.laplace)
 
 # Plot gain
 # gain        = doLaplace(cir, source='V1', detector='V_out', numeric=True)
@@ -365,7 +365,7 @@ noise_obt = 100*T_op_max*k
 text2html(f"""
 <table>
 <tr><td>Spec</td>                       <td>Required:</td>         <td>Obtained:</td></tr>
-<tr><td>Gain?</td>                      <td> > {gain_req:.2f}</td> <td> {V_gain}</td></tr>
+<tr><td>Gain?</td>                      <td> > {gain_req:.2f}</td> <td> {N(V_gain, 2)}</td></tr>
 <tr><td>Output Impedance</td>           <td> {Z_out_amp} </td>     <td> 50</td></tr>
 <tr><td>Power Consumption</td>          <td> < {P_cons} W</td>     <td> {max_power_out}</td></tr>
 <tr><td>Noise</td>                      <td> {noise_spec:.2e}</td>  <td> {noise_obt:.2e}</td></tr>
