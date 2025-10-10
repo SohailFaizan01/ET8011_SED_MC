@@ -1,5 +1,4 @@
 from SLiCAP import *
-from sympy import symbols, N
 
 # Project setup
 prj = initProject("Active_E_Field_Probe")
