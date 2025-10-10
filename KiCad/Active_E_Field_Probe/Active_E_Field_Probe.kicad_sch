@@ -1001,304 +1001,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "SLiCAP:XMV"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "X?"
-				(at 1.27 5.08 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" ""
-				(at 0.635 2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 -1.27 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 -1.27 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "MOSFET (small-signal N or P channel subcircuit with parameters W, L, and VG, VD, and VS, relative to bulk voltage)"
-				(at 58.928 -7.112 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "model" "?"
-				(at 1.27 3.175 0)
-				(show_name)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "W" "{W}"
-				(at 1.27 -1.905 0)
-				(show_name)
-				(do_not_autoplace)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "L" "{L}"
-				(at 1.27 -4.445 0)
-				(show_name)
-				(do_not_autoplace)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "VG" "{VG}"
-				(at 10.16 -1.905 0)
-				(show_name)
-				(do_not_autoplace)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "VD" "{VD}"
-				(at 10.16 0.635 0)
-				(show_name)
-				(do_not_autoplace)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "VS" "{VS}"
-				(at 10.16 -4.445 0)
-				(show_name)
-				(do_not_autoplace)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(symbol "XMV_0_1"
-				(polyline
-					(pts
-						(xy -3.81 -2.54) (xy -3.81 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.905 -2.54) (xy -1.27 -1.905) (xy -1.27 -3.175) (xy -1.905 -2.54)
-					)
-					(stroke
-						(width 0)
-						(type solid)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy -0.635 -2.54) (xy -1.27 -1.905) (xy -1.27 -3.175) (xy -0.635 -2.54)
-					)
-					(stroke
-						(width 0)
-						(type solid)
-					)
-					(fill
-						(type outline)
-					)
-				)
-			)
-			(symbol "XMV_1_0"
-				(pin unspecified line
-					(at -6.35 -2.54 0)
-					(length 2.54)
-					(name "G"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at 0 5.08 270)
-					(length 2.54)
-					(name "D"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at 0 0 180)
-					(length 2.54)
-					(name "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "B"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at 0 -5.08 90)
-					(length 2.54)
-					(name "S"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(symbol "XMV_1_1"
-				(polyline
-					(pts
-						(xy -2.54 1.27) (xy -2.54 2.54)
-					)
-					(stroke
-						(width 0.5)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -2.54 -0.635) (xy -2.54 0.635)
-					)
-					(stroke
-						(width 0.5)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -2.54 -2.54) (xy -2.54 -1.27)
-					)
-					(stroke
-						(width 0.5)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 2.54) (xy -2.54 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 -2.54) (xy -2.54 -2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 	)
 	(junction
 		(at 90.17 77.47)
@@ -1462,6 +1164,16 @@
 	)
 	(wire
 		(pts
+			(xy 90.17 52.07) (xy 90.17 57.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "90812493-eb1d-4f03-8bc0-ca1e716eaf56")
+	)
+	(wire
+		(pts
 			(xy 30.48 57.15) (xy 41.91 57.15)
 		)
 		(stroke
@@ -1479,6 +1191,16 @@
 			(type default)
 		)
 		(uuid "9681e468-a1e8-4688-a54b-fd73264c1e2b")
+	)
+	(wire
+		(pts
+			(xy 91.44 52.07) (xy 90.17 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9c56018a-8167-42cd-99a7-ea608cccea62")
 	)
 	(wire
 		(pts
@@ -1542,7 +1264,7 @@
 	)
 	(wire
 		(pts
-			(xy 123.19 57.15) (xy 129.54 57.15)
+			(xy 123.19 57.15) (xy 128.27 57.15)
 		)
 		(stroke
 			(width 0)
@@ -1570,9 +1292,31 @@
 		)
 		(uuid "d5f98a2d-bbca-4be4-9aab-a5860147a83c")
 	)
+	(global_label "Amp_out"
+		(shape output)
+		(at 91.44 52.07 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "2694bf04-8ab5-452c-b37d-00a054dc7319")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 102.3474 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "out"
 		(shape output)
-		(at 129.54 57.15 0)
+		(at 128.27 57.15 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1582,7 +1326,7 @@
 		)
 		(uuid "640263fe-8549-485c-9261-91f5c24df159")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 135.5489 57.15 0)
+			(at 134.2789 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1869,123 +1613,6 @@
 			(project "Active_E_Field_Probe"
 				(path "/8648b04b-5135-4efe-a9b1-6520ac7dc88b"
 					(reference "C13")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "SLiCAP:XM")
-		(at 107.95 104.14 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "7e426429-f815-4f4a-8602-5723b1fa0344")
-		(property "Reference" "X2"
-			(at 113.03 99.1868 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "~"
-			(at 108.585 102.235 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" ""
-			(at 107.95 105.41 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 107.95 105.41 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "MOSFET (small-signal N or P channel subcircuit with parameters W,  L, and ID)"
-			(at 143.002 111.252 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "model" "?"
-			(at 113.538 100.838 0)
-			(show_name yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "W" "{W}"
-			(at 109.22 106.045 0)
-			(show_name yes)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "L" "{L}"
-			(at 109.22 108.585 0)
-			(show_name yes)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "ID" "{ID}"
-			(at 109.22 103.632 0)
-			(show_name yes)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "4"
-			(uuid "8dc98216-ca8b-4214-86e8-e4288254b3ff")
-		)
-		(pin "2"
-			(uuid "43c1d98d-cc4b-49d0-8967-e7f4bf9017e6")
-		)
-		(pin "3"
-			(uuid "5407855b-9a22-45ed-932d-b859d2d5a94e")
-		)
-		(pin "1"
-			(uuid "ee8eb6f8-1f46-449d-880f-aceadc0effb0")
-		)
-		(instances
-			(project ""
-				(path "/8648b04b-5135-4efe-a9b1-6520ac7dc88b"
-					(reference "X2")
 					(unit 1)
 				)
 			)
@@ -2285,7 +1912,7 @@
 				(hide yes)
 			)
 		)
-		(property "command" ".param V_D=1.8 V_G=0.5 V_S=0 W=10u L=180n"
+		(property "command" ".param ID=1m  W=100u L=180n"
 			(at 30.48 95.885 0)
 			(do_not_autoplace yes)
 			(effects
@@ -2299,6 +1926,123 @@
 			(project "Active_E_Field_Probe"
 				(path "/8648b04b-5135-4efe-a9b1-6520ac7dc88b"
 					(reference "A1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "SLiCAP:XM")
+		(at 90.17 66.04 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a235543c-6a89-4f42-b384-ca120ed35a28")
+		(property "Reference" "X1"
+			(at 92.71 60.198 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "~"
+			(at 90.805 64.135 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 90.17 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 90.17 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "MOSFET (small-signal N or P channel subcircuit with parameters W,  L, and ID)"
+			(at 125.222 73.152 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "model" "CMOS18N"
+			(at 99.822 62.738 0)
+			(show_name yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "W" "{W}"
+			(at 91.44 67.945 0)
+			(show_name yes)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "L" "{L}"
+			(at 91.44 70.485 0)
+			(show_name yes)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "ID" "{ID}"
+			(at 91.44 65.532 0)
+			(show_name yes)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "4"
+			(uuid "6ad04934-5dee-4d87-b323-b7d61d5f7dc9")
+		)
+		(pin "2"
+			(uuid "6b086b26-a806-4759-b518-c4d9de7332f6")
+		)
+		(pin "3"
+			(uuid "5147d3a8-4849-4b3d-846f-ecdbb35582ed")
+		)
+		(pin "1"
+			(uuid "8f7dc1c3-6690-49d4-9633-121a87935835")
+		)
+		(instances
+			(project "Active_E_Field_Probe"
+				(path "/8648b04b-5135-4efe-a9b1-6520ac7dc88b"
+					(reference "X1")
 					(unit 1)
 				)
 			)
@@ -2366,146 +2110,6 @@
 			(project "Active_E_Field_Probe"
 				(path "/8648b04b-5135-4efe-a9b1-6520ac7dc88b"
 					(reference "#010")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "SLiCAP:XMV")
-		(at 90.17 66.04 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "b0b13cbf-78f2-4ebb-a538-9b1dac616518")
-		(property "Reference" "X1"
-			(at 95.25 61.0868 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "~"
-			(at 90.805 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" ""
-			(at 90.17 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 90.17 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "MOSFET (small-signal N or P channel subcircuit with parameters W, L, and VG, VD, and VS, relative to bulk voltage)"
-			(at 149.098 73.152 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "model" "CMOS18N_V"
-			(at 93.726 63.246 0)
-			(show_name yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "W" "{W}"
-			(at 95.758 68.834 0)
-			(show_name yes)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "L" "{L}"
-			(at 95.758 71.374 0)
-			(show_name yes)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "VG" "{V_G}"
-			(at 104.648 68.834 0)
-			(show_name yes)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "VD" "{V_D}"
-			(at 104.648 66.294 0)
-			(show_name yes)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "VS" "{V_S}"
-			(at 104.648 71.374 0)
-			(show_name yes)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "3"
-			(uuid "3b9b9a12-56e7-4cfa-a658-2cefb2ea3948")
-		)
-		(pin "2"
-			(uuid "451b8982-5616-422e-bedf-c6dc67792a2a")
-		)
-		(pin "1"
-			(uuid "9d131917-72b0-42e1-b2be-01261dcae85b")
-		)
-		(pin "B"
-			(uuid "2e203f11-b0e3-4aac-9762-2da133ee58de")
-		)
-		(instances
-			(project "Active_E_Field_Probe"
-				(path "/8648b04b-5135-4efe-a9b1-6520ac7dc88b"
-					(reference "X1")
 					(unit 1)
 				)
 			)
@@ -2735,7 +2339,7 @@
 				(hide yes)
 			)
 		)
-		(property "command" ".detector V_out"
+		(property "command" ".detector V_Amp_out"
 			(at 30.48 111.125 0)
 			(do_not_autoplace yes)
 			(effects
