@@ -17,23 +17,41 @@ head2html("Most simple solution:")
 #insert Link
 
 head3html("Does it meet the specifications?")
-
-Vout_Amp_req = (10**(-3)*10**P_1dB * Z_in)**0.5 * (Z_in/(Z_in+Z_out_amp))
-gain_req = Vout_Amp_req * ((Z_in+Z_out_amp)/Z_in)/V_in_max
-
-max_power_out = Vout_Amp_req**2/100
-
-noise_spec = 1e-15 * (1 + (1e12/(9e3)**2))
-noise_obt = 100*T_op_max*k
+Vout_Amp_req = (10**(-3)*10**P_1dB * Z_in)**0.5 * (Z_in/(Z_in+Z_out_amp))**(-1)
+gain_req = Vout_Amp_req/V_in_max
+max_power_out = Vout_Amp_req**2/50 + id_1*Vout_Amp_req
 
 text2html(f"""
 <table>
 <tr><td>Spec</td>                       <td>Required:</td>         <td>Obtained:</td></tr>
-<tr><td>Gain?</td>                      <td> > {gain_req:.2f}</td> <td> {N(V_gain, 2)}</td></tr>
-<tr><td>Output Impedance</td>           <td> {Z_out_amp} </td>     <td> 50</td></tr>
-<tr><td>Power Consumption</td>          <td> < {P_cons} W</td>     <td> {max_power_out}</td></tr>
-<tr><td>Noise</td>                      <td> {noise_spec:.2e}</td> <td> {noise_obt:.2e}</td></tr>
+<tr><td>Gain?</td>                      <td> > {N(gain_req,2)}</td> <td> {N(gain.laplace,2)}</td></tr>
+<tr><td>Output Impedance</td>           <td> {Z_out_amp} </td>     <td> See Graph</td></tr>
+<tr><td>Power Consumption</td>          <td> < {P_cons} W</td>     <td> {N(max_power_out,2)}</td></tr>
+<tr><td>Noise</td>                      <td> See Graph </td>       <td> See Graph</td></tr>
 <tr><td>ESD Protection</td>             <td> Yes </td>             <td> Yes</td></tr>
-<tr><td>Intermodulation products</td>   <td> < {P_int} dBm</td>    <td> There is no attenuation currently</td></tr>
+<tr><td>Intermodulation products</td>   <td> < {P_int} dBm</td>    <td> TBD</td></tr>
 </table>
 """)
+
+# Plot gain
+eqn2html("gain",        gain.laplace)
+eqn2html("asymptotic",  asymptotic.laplace)
+eqn2html("loopgain",    loopgain.laplace)
+eqn2html("servo",       servo.laplace)
+eqn2html("direct",      direct.laplace)
+
+img2html("fb_mag.svg",  width=600)
+
+# Output Impedance
+img2html("R_out.svg",   width=600)
+eqn2html("R_out",       Rout_result.laplace, units="Ohm")
+
+# Noise
+img2html("noise_function_plot_HZ.svg", width=700)
+img2html("inoise.svg",  width=600)
+eqn2html("S_IRnoise",   noise.inoise)
+img2html("onoise.svg",  width=600)
+eqn2html("S_ORnoise",   noise.onoise)
+
+
+

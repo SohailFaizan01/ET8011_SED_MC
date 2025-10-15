@@ -25,9 +25,13 @@ P_int    = 50              # Max intermodulation Products power [dBm]
 Z_in_amp  = 50             # Amplifier input impedance [Ω]
 Z_out_amp = 50             # Amplifier output impedance [Ω]
 V_in_max  = L_ant * E_max  # Max input voltage [V]
-# I_in_max  = 5e-3           # Max input current [A]
-# I_out_max = 15e-3          # Max output current [A]
+# I_in_max  = 5e-3         # Max input current [A]
+# I_out_max = 15e-3        # Max output current [A]
 A_cl      = 6              # Closed-loop gain
+# --- Transistor ---
+w_1       = 100e-6         # Transistor width [m]
+l_1       = 180e-9         # Transistor lenght [m]
+id_1      = 1e-4           # Transistor drain current [A]
 
 specs = []
 
@@ -152,5 +156,23 @@ specs.append(specItem("A_cl",
                          value       = A_cl,
                          units       = "NA",
                          specType    = "Amplifier"))
+
+specs.append(specItem("W_1",
+                      description = "Transistor width",
+                      value       = w_1,
+                      units       = "m",
+                      specType    = "Amplifier"))
+
+specs.append(specItem("L_1",
+                      description = "Transistor length",
+                      value       = l_1,
+                      units       = "m",
+                      specType    = "Amplifier"))
+
+specs.append(specItem("ID_1",
+                      description = "Transistor drain current",
+                      value       = id_1,
+                      units       = "A",
+                      specType    = "Amplifier"))
 
 specs2csv(specs, "specs.csv")

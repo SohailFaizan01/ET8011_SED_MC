@@ -17,3 +17,6 @@ Z_in_amp,Amplifier input impedance,50,Ohm,Amplifier
 Z_out_amp,Amplifier output impedance,50,Ohm,Amplifier
 V_in,Amplifier input voltage,40000000*pi/(s**2 + 25600000000000000*pi**2),V,Amplifier
 A_cl,Amplifier closed-loop gain,6,NA,Amplifier
+W_1,Transistor width,1/10000,m,Amplifier
+L_1,Transistor length,9/50000000,m,Amplifier
+ID_1,Transistor drain current,1/10000,A,Amplifier

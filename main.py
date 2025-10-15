@@ -32,3 +32,7 @@ from python_files import html_design_choices
 # plt.grid(True, which="both", ls="--")
 # plt.legend()
 # plt.show()
+
+###########      Loop Gain References      ###########
+# print("Available loop gain references:")
+# print(cir.controlled)

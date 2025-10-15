@@ -10,35 +10,27 @@ cir = makeCircuit(fileName,imgWidth=1000)
 
 specs2circuit(specs, cir)
 
-# print("Available loop gain references:")
-# print(cir.controlled)
+# --- Gains ---
+gain        = doLaplace(cir, numeric=True, source='V1', detector='V_Amp_out', pardefs='circuit', lgref='Gm_M1_X1', transfer='gain')
+asymptotic  = doLaplace(cir, numeric=True, source='V1', detector='V_Amp_out', pardefs='circuit', lgref='Gm_M1_X1', transfer='asymptotic')
+loopgain    = doLaplace(cir, numeric=True, source='V1', detector='V_Amp_out', pardefs='circuit', lgref='Gm_M1_X1', transfer='loopgain')
+servo       = doLaplace(cir, numeric=True, source='V1', detector='V_Amp_out', pardefs='circuit', lgref='Gm_M1_X1', transfer='servo')
+direct      = doLaplace(cir, numeric=True, source='V1', detector='V_Amp_out', pardefs='circuit', lgref='Gm_M1_X1', transfer='direct')
 
+# --- Noise ---
+noise       = doNoise(cir, source="V1", detector="V_Amp_out", numeric=True, pardefs='circuit')
 
-V_gain = doLaplace(cir, numeric=True, pardefs='circuit').laplace
+# --- Output Impedance (AC analysis to compute v(out)/i(test)) ---
+Rout_result = doLaplace(cir, numeric=True, source='I1', detector='V_Amp_out', pardefs='circuit', lgref='Gm_M1_X1', transfer='gain')
 
-
-# Plot gain
-gain        = doLaplace(cir, numeric=True, pardefs='circuit')
-asymptotic  = doLaplace(cir, numeric=True, transfer='asymptotic', pardefs='circuit')
-loopgain    = doLaplace(cir, numeric=True, transfer='loopgain', pardefs='circuit')
-servo       = doLaplace(cir, numeric=True, transfer="servo", pardefs='circuit')
-direct      = doLaplace(cir, numeric=True, transfer="direct", pardefs='circuit')
-
-eqn2html("gain", gain.laplace)
-eqn2html("asymptotic", asymptotic.laplace)
-eqn2html("loopgain", loopgain.laplace)
-eqn2html("servo", servo.laplace)
-eqn2html("direct", direct.laplace)
-
+# --- Plots ---
 fb_model    = [gain, asymptotic, loopgain, servo, direct]
 fbmodel_mag = plotSweep("fb_mag", "Magnitude plots feedback model parameters", fb_model, 10, 10e9, 200)
-img2html("fb_mag.svg", width=600)
+onoise_mag  = plotSweep("onoise", "Output noise spectral density", [noise], 0.01, 10e9, 200)
+inoise_mag  = plotSweep("inoise", "input noise spectral density", [noise], 0.01, 10e9, 200) #fix input referred
+R_out_mag   = plotSweep("R_out", "Magnitude plot output impedance", [Rout_result], 10, 10e9, 200)
 
 
-noise = doNoise(cir, source="V1", detector="V_out")
-
-onoise = noise.onoise
-NT = noise.onoiseTerms
 
 # transient = doTimeSolve(cir, pardefs='circuit', numeric=False)
 # eqn2html("transient_M", transient.M)
@@ -48,7 +40,9 @@ NT = noise.onoiseTerms
 
 # transienttime = doTime(cir, pardefs='circuit', numeric=False)
 # eqn2html("transient_M", transienttime.M)
+# eqn2html("transient_M", transienttime.M)
 # eqn2html("transient_Iv", transienttime.Iv)
 # eqn2html("transient_Dv", transienttime.Dv)
 # eqn2html("transient_TimeSolve", transienttime.time)
 # eqn2html("transient_Laplace", transienttime.laplace)
+

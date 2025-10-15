@@ -13,38 +13,17 @@
 </figure>
 <h2><a id="netlist_Active_E_Field_Probe"></a>Netlist: Active_E_Field_Probe.cir</h2>
 <pre>Active_E_Field_Probe
-.param ID=1m W=100u L=180n
-.source V1
-.detector V_Amp_out
-.lgref Gm_M1_X1
 C12 1 2 C value={C_s} vinit=0
 C13 2 Amp_out C value={0.5*C_s} vinit=0
-R6 Amp_out out R value=50 noisetemp={T_op_max} noiseflow=0 dcvar=0 dcvarlot=0
-R7 out 0 R value=50 noisetemp={T_op_max} noiseflow=0 dcvar=0 dcvarlot=0
+I1 0 Amp_out I value=0 noise=0 dc=0 dcvar=0
+R6 Amp_out 0 R value=50 noisetemp={T_op_max} noiseflow=0 dcvar=0 dcvarlot=0
 V1 1 0 V value={V_in} noise=0 dc=0 dcvar=0
-X1 Amp_out 2 0 0 CMOS18N W={W} L={L} ID={ID}
+X1 Amp_out 2 0 0 CMOS18N W={W_1} L={L_1} ID={ID_1}
 .end</pre>
-\begin{equation}
-gain=\frac{6.572 \cdot 10^{-11} s^{2} - 0.5967 s}{6.954 \cdot 10^{-11} s^{2} + s}
-\end{equation}
-\begin{equation}
-asymptotic=-1.957
-\end{equation}
-\begin{equation}
-loopgain=- \frac{4.268 \cdot 10^{23}}{9.733 \cdot 10^{13} s + 9.729 \cdot 10^{23}}
-\end{equation}
-\begin{equation}
-servo=\frac{4.268 \cdot 10^{23}}{9.733 \cdot 10^{13} s + 1.4 \cdot 10^{24}}
-\end{equation}
-\begin{equation}
-direct=\frac{4.791 \cdot 10^{20} s^{2}}{5.069 \cdot 10^{20} s^{2} + 5.067 \cdot 10^{30} s}
-\end{equation}
-<figure><img src="img/fb_mag.svg" alt="" style="width:600px">
-</figure>
 <!-- INSERT -->
 <div id="footnote">
 <p>Go to <a href="Active_E_Field_Probe_index.html">Active_E_Field_Probe_index</a></p>
 <p>SLiCAP: Symbolic Linear Circuit Analysis Program, Version 4.0.5 &copy 2009-2025 SLiCAP development team</p>
 <p>For documentation, examples, support, updates and courses please visit: <a href="https://analog-electronics.tudelft.nl">analog-electronics.tudelft.nl</a></p>
-<p>Last project update: 2025-10-10 15:59:42</p>
+<p>Last project update: 2025-10-15 16:55:17</p>
 </div></body></html>

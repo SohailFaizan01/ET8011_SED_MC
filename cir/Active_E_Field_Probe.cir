@@ -1,12 +1,8 @@
 Active_E_Field_Probe
-.param ID=1m W=100u L=180n
-.source V1
-.detector V_Amp_out
-.lgref Gm_M1_X1
 C12 1 2 C value={C_s} vinit=0
 C13 2 Amp_out C value={0.5*C_s} vinit=0
-R6 Amp_out out R value=50 noisetemp={T_op_max} noiseflow=0 dcvar=0 dcvarlot=0
-R7 out 0 R value=50 noisetemp={T_op_max} noiseflow=0 dcvar=0 dcvarlot=0
+I1 0 Amp_out I value=0 noise=0 dc=0 dcvar=0
+R6 Amp_out 0 R value=50 noisetemp={T_op_max} noiseflow=0 dcvar=0 dcvarlot=0
 V1 1 0 V value={V_in} noise=0 dc=0 dcvar=0
-X1 Amp_out 2 0 0 CMOS18N W={W} L={L} ID={ID}
+X1 Amp_out 2 0 0 CMOS18N W={W_1} L={L_1} ID={ID_1}
 .end
