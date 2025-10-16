@@ -14,52 +14,59 @@
 <p>
 <table>
 <tr><td>Spec</td>                       <td>Required:</td>         <td>Obtained:</td></tr>
-<tr><td>Gain?</td>                      <td> > 1.8</td> <td> (4.8e-11*s**2 - 0.072*s)/(5.0e-11*s**2 + s)</td></tr>
+<tr><td>Gain?</td>                      <td> > 1.8</td> <td> (5.2e-12*s**2 - 0.25*s)/(6.3e-11*s**2 + s)</td></tr>
 <tr><td>Output Impedance</td>           <td> 50 </td>     <td> See Graph</td></tr>
-<tr><td>Power Consumption</td>          <td> < 0.05 W</td>     <td> 0.0040</td></tr>
+<tr><td>Power Consumption</td>          <td> < 0.05 W</td>     <td> 0.0085</td></tr>
 <tr><td>Noise</td>                      <td> See Graph </td>       <td> See Graph</td></tr>
 <tr><td>ESD Protection</td>             <td> Yes </td>             <td> Yes</td></tr>
 <tr><td>Intermodulation products</td>   <td> < 50 dBm</td>    <td> TBD</td></tr>
 </table>
 </p>
 \begin{equation}
-gain=\frac{4.774 \cdot 10^{-11} s^{2} - 0.07202 s}{5.004 \cdot 10^{-11} s^{2} + s}
+gain=\frac{5.163 \cdot 10^{-12} s^{2} - 0.2487 s}{6.3 \cdot 10^{-11} s^{2} + s}
 \end{equation}
 \begin{equation}
-asymptotic=-1.957
+asymptotic=-0.3125
 \end{equation}
 \begin{equation}
-loopgain=- \frac{1.182 \cdot 10^{23}}{1.607 \cdot 10^{14} s + 3.093 \cdot 10^{24}}
+loopgain=- \frac{1.85 \cdot 10^{23}}{1.464 \cdot 10^{13} s + 4.744 \cdot 10^{22}}
 \end{equation}
 \begin{equation}
-servo=\frac{1.182 \cdot 10^{23}}{1.607 \cdot 10^{14} s + 3.211 \cdot 10^{24}}
+servo=\frac{1.85 \cdot 10^{23}}{1.464 \cdot 10^{13} s + 2.324 \cdot 10^{23}}
 \end{equation}
 \begin{equation}
-direct=\frac{3.833 \cdot 10^{19} s^{2}}{4.017 \cdot 10^{19} s^{2} + 7.732 \cdot 10^{29} s}
+direct=\frac{2.0 \cdot 10^{15} s^{2}}{2.441 \cdot 10^{16} s^{2} + 7.906 \cdot 10^{25} s}
 \end{equation}
 <figure><img src="img/fb_mag.svg" alt="" style="width:600px">
 </figure>
-<figure><img src="img/R_out.svg" alt="" style="width:600px">
-</figure>
-\begin{equation}
-R_{out}=\frac{3.853 \cdot 10^{31} s}{4.017 \cdot 10^{19} s^{2} + 8.027 \cdot 10^{29} s}\,\left[ \mathrm{\Omega}\right]
-\end{equation}
 <figure><img src="img/noise_function_plot_HZ.svg" alt="" style="width:700px">
 </figure>
 <figure><img src="img/inoise.svg" alt="" style="width:600px">
 </figure>
 \begin{equation}
-S_{IRnoise}=\frac{4.498 \cdot 10^{37}}{4.639 \cdot 10^{36} f^{2} + 2.674 \cdot 10^{53}}
+S_{IRnoise}=\frac{1.002 \cdot 10^{66} f^{2} + 4.948 \cdot 10^{84}}{2.842 \cdot 10^{82} f^{2} + 1.671 \cdot 10^{102}} + \frac{1.002 \cdot 10^{66} f^{2} + 8.031 \cdot 10^{84}}{2.842 \cdot 10^{82} f^{2} + 1.671 \cdot 10^{102}}
 \end{equation}
 <figure><img src="img/onoise.svg" alt="" style="width:600px">
 </figure>
 \begin{equation}
-S_{ORnoise}=\frac{8.997 \cdot 10^{62}}{1.019 \cdot 10^{62} f^{2} + 1.031 \cdot 10^{81}}
+S_{ORnoise}=\frac{1.002 \cdot 10^{66} f^{2} + 4.948 \cdot 10^{84}}{4.233 \cdot 10^{84} f^{2} + 2.701 \cdot 10^{103}} + \frac{1.002 \cdot 10^{66} f^{2} + 8.031 \cdot 10^{84}}{4.233 \cdot 10^{84} f^{2} + 2.701 \cdot 10^{103}}
+\end{equation}
+\begin{equation}
+MNA_{Matrix}=\left[\begin{matrix}0 & 1 & 0 & 0 & 0\\1 & 3.0 \cdot 10^{-12} s & 0 & - 3.0 \cdot 10^{-12} s & 0\\0 & 0 & 6.6 \cdot 10^{-12} s + 0.02694 & 0.2312 - 4.8 \cdot 10^{-12} s & -0.02\\0 & - 3.0 \cdot 10^{-12} s & - 4.8 \cdot 10^{-12} s & 1.68 \cdot 10^{-11} s & 0\\0 & 0 & -0.02 & 0 & 0.04\end{matrix}\right]
+\end{equation}
+\begin{equation}
+MNA_{Iv}=\left[\begin{matrix}0.25\\0\\0\\0\\0\end{matrix}\right]
+\end{equation}
+\begin{equation}
+MNA_{Dv}=\left[\begin{matrix}I_{V1}\\V_{1}\\V_{2}\\V_{3}\\V_{Amp out}\end{matrix}\right]
+\end{equation}
+\begin{equation}
+MNA_{something}=\left[\begin{matrix}\frac{- 1.702 \cdot 10^{17} s^{2} - 3.36 \cdot 10^{27} s}{7.322 \cdot 10^{28} s + 1.162 \cdot 10^{39}} & 1 & \frac{1.2 \cdot 10^{16} s}{7.322 \cdot 10^{16} s + 1.162 \cdot 10^{27}} & \frac{1.65 \cdot 10^{16} s + 4.235 \cdot 10^{25}}{7.322 \cdot 10^{16} s + 1.162 \cdot 10^{27}} & \frac{6.0 \cdot 10^{15} s}{7.322 \cdot 10^{16} s + 1.162 \cdot 10^{27}}\\1 & 0 & 0 & 0 & 0\\\frac{1.2 \cdot 10^{16} s - 5.781 \cdot 10^{26}}{7.322 \cdot 10^{16} s + 1.162 \cdot 10^{27}} & 0 & \frac{1.4 \cdot 10^{28}}{7.322 \cdot 10^{16} s + 1.162 \cdot 10^{27}} & \frac{1.2 \cdot 10^{28} s - 5.781 \cdot 10^{38}}{2.197 \cdot 10^{17} s^{2} + 3.487 \cdot 10^{27} s} & \frac{7.002 \cdot 10^{27}}{7.322 \cdot 10^{16} s + 1.162 \cdot 10^{27}}\\\frac{1.65 \cdot 10^{16} s + 4.235 \cdot 10^{25}}{7.322 \cdot 10^{16} s + 1.162 \cdot 10^{27}} & 0 & \frac{4.0 \cdot 10^{27}}{7.322 \cdot 10^{16} s + 1.162 \cdot 10^{27}} & \frac{5.5 \cdot 10^{27} s + 1.412 \cdot 10^{37}}{7.322 \cdot 10^{16} s^{2} + 1.162 \cdot 10^{27} s} & \frac{2.0 \cdot 10^{27}}{7.322 \cdot 10^{16} s + 1.162 \cdot 10^{27}}\\\frac{6.0 \cdot 10^{15} s - 2.891 \cdot 10^{26}}{7.322 \cdot 10^{16} s + 1.162 \cdot 10^{27}} & 0 & \frac{7.002 \cdot 10^{27}}{7.322 \cdot 10^{16} s + 1.162 \cdot 10^{27}} & \frac{6.0 \cdot 10^{27} s - 2.891 \cdot 10^{38}}{2.197 \cdot 10^{17} s^{2} + 3.487 \cdot 10^{27} s} & \frac{1.831 \cdot 10^{18} s + 3.256 \cdot 10^{28}}{7.322 \cdot 10^{16} s + 1.162 \cdot 10^{27}}\end{matrix}\right]
 \end{equation}
 <!-- INSERT -->
 <div id="footnote">
 <p>Go to <a href="Active_E_Field_Probe_index.html">Active_E_Field_Probe_index</a></p>
 <p>SLiCAP: Symbolic Linear Circuit Analysis Program, Version 4.0.5 &copy 2009-2025 SLiCAP development team</p>
 <p>For documentation, examples, support, updates and courses please visit: <a href="https://analog-electronics.tudelft.nl">analog-electronics.tudelft.nl</a></p>
-<p>Last project update: 2025-10-15 16:55:17</p>
+<p>Last project update: 2025-10-16 11:47:19</p>
 </div></body></html>

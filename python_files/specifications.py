@@ -29,9 +29,9 @@ V_in_max  = L_ant * E_max  # Max input voltage [V]
 # I_out_max = 15e-3        # Max output current [A]
 A_cl      = 6              # Closed-loop gain
 # --- Transistor ---
-w_1       = 100e-6         # Transistor width [m]
+w_1       = 100e-4         # Transistor width [m]
 l_1       = 180e-9         # Transistor lenght [m]
-id_1      = 1e-4           # Transistor drain current [A]
+id_1      = 1e-2           # Transistor drain current [A]
 
 specs = []
 
@@ -135,7 +135,8 @@ specs.append(specItem("Z_out_amp",
 
 specs.append(specItem("V_in",
                          description = "Amplifier input voltage",
-                         value       = '(0.25*2*pi*80e6)/(s^2 + (2*pi*80e6)^2)',
+                         #value       = '(0.25*2*pi*80e6)/(s^2 + (2*pi*80e6)^2)',
+                         value       = V_in_max,
                          units       = "V",
                          specType    = "Amplifier"))
 

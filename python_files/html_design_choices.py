@@ -43,8 +43,8 @@ eqn2html("direct",      direct.laplace)
 img2html("fb_mag.svg",  width=600)
 
 # Output Impedance
-img2html("R_out.svg",   width=600)
-eqn2html("R_out",       Rout_result.laplace, units="Ohm")
+#img2html("R_out.svg",   width=600)
+#eqn2html("R_out",       Rout_result.laplace, units="Ohm")
 
 # Noise
 img2html("noise_function_plot_HZ.svg", width=700)
@@ -53,5 +53,9 @@ eqn2html("S_IRnoise",   noise.inoise)
 img2html("onoise.svg",  width=600)
 eqn2html("S_ORnoise",   noise.onoise)
 
+eqn2html("MNA_Matrix",   twoport.M)
+eqn2html("MNA_Iv",   twoport.Iv)
+eqn2html("MNA_Dv",   twoport.Dv)
 
+eqn2html("MNA_something", twoport.M.inv())
 

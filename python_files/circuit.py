@@ -21,16 +21,27 @@ direct      = doLaplace(cir, numeric=True, source='V1', detector='V_Amp_out', pa
 noise       = doNoise(cir, source="V1", detector="V_Amp_out", numeric=True, pardefs='circuit')
 
 # --- Output Impedance (AC analysis to compute v(out)/i(test)) ---
-Rout_result = doLaplace(cir, numeric=True, source='I1', detector='V_Amp_out', pardefs='circuit', lgref='Gm_M1_X1', transfer='gain')
+#Rout_result = doLaplace(cir, numeric=True, source='I1', detector='V_Amp_out', pardefs='circuit', lgref='Gm_M1_X1', transfer='gain')
 
 # --- Plots ---
-fb_model    = [gain, asymptotic, loopgain, servo, direct]
-fbmodel_mag = plotSweep("fb_mag", "Magnitude plots feedback model parameters", fb_model, 10, 10e9, 200)
+fb_model    = [gain, asymptotic, loopgain, servo]
+fbmodel_mag = plotSweep("fb_mag", "Magnitude plots feedback model parameters", fb_model, 1, 10e9, 200)
 onoise_mag  = plotSweep("onoise", "Output noise spectral density", [noise], 0.01, 10e9, 200)
 inoise_mag  = plotSweep("inoise", "input noise spectral density", [noise], 0.01, 10e9, 200) #fix input referred
-R_out_mag   = plotSweep("R_out", "Magnitude plot output impedance", [Rout_result], 10, 10e9, 200)
+#R_out_mag   = plotSweep("R_out", "Magnitude plot output impedance", [Rout_result], 10, 10e9, 200)
 
+twoport = doMatrix(cir, numeric=True, source='V1', detector='V_Amp_out', pardefs='circuit', lgref='Gm_M1_X1')
 
+stepdict_Vin = {
+    "method": 'lin',        # Linear stepping
+    "params": 'V_in',       # Parameter to step (must exist in your circuit)
+    "start": 0.01,          # Starting value
+    "stop": 0.25,           # Ending value
+    "num": 10               # Number of steps
+}
+
+linearity = doLaplace(cir, numeric=True, source='V1', detector='V_Amp_out', pardefs='circuit', lgref='Gm_M1_X1', transfer='gain', stepdict=stepdict_Vin)
+eqn2html("Linearity", linearity.laplace)
 
 # transient = doTimeSolve(cir, pardefs='circuit', numeric=False)
 # eqn2html("transient_M", transient.M)
