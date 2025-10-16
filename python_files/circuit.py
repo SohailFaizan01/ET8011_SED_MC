@@ -77,8 +77,8 @@ fig, (ax1) = plt.subplots(1, figsize=(10, 8), sharex=True)
 
 
 ax1.plot(ip_V[0:(len(num_gain) - 1)], (dG_dVin_manual))
-ax1.set_title('Magnitude of G_transient_fourier')
-ax1.set_ylabel('Magnitude')
+ax1.set_title('diff_gain_magn')
+ax1.set_ylabel('V_in')
 ax1.grid(True)
 
 plt.tight_layout()
