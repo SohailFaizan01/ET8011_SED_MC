@@ -29,9 +29,9 @@ V_in_max  = L_ant * E_max  # Max input voltage [V]
 # I_out_max = 15e-3        # Max output current [A]
 A_cl      = 6              # Closed-loop gain
 # --- Transistor ---
-w_1       = 100e-4         # Transistor width [m]
+w_1       = 10e-6         # Transistor width [m]
 l_1       = 180e-9         # Transistor lenght [m]
-id_1      = 1e-2           # Transistor drain current [A]
+id_1      = 1e-3           # Transistor drain current [A]
 
 specs = []
 

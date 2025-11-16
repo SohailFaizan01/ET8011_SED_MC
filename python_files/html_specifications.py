@@ -25,11 +25,11 @@ eqn2html(
     labelText='Input-referred noise'
 )
 
-img2html("noise_function_plot_HZ.svg", width=700, label='nft', caption='')
+#img2html("noise_function_plot_HZ.svg", width=700, label='nft', caption='')
 
 eqn2html(
     arg1='S_En',
-    arg2=1e-15 * (1 + (1e12/f**2)),
+    arg2=1e-9 * (1 + (1e12/f**2)),
     units='V**2/Hz',
     label='eq_sen',
     labelText='Input-referred noise'
