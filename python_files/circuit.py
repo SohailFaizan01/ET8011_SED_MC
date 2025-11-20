@@ -39,10 +39,10 @@ twoport = doMatrix(cir, numeric=True, source='V1', detector='V_Amp_out', pardefs
 
 stepdict_Vin = {
     "method": 'lin',        # Linear stepping
-    "params": 'V_in',       # Parameter to step (must exist in your circuit)
-    "start": 0.01,          # Starting value
-    "stop": 0.25,           # Ending value
-    "num": 1000               # Number of steps
+    "params": 'ID_1',       # Parameter to step (must exist in your circuit)
+    "start": id_1-3.15e-3,          # Starting value
+    "stop": id_1+3.15e-3,           # Ending value
+    "num": 1000                # Number of steps
 }
 
 lin_gain = doLaplace(cir, numeric=True, source='V1', detector='V_Amp_out', pardefs='circuit', lgref='Gm_M1_X1', transfer='gain', stepdict=stepdict_Vin).laplace
@@ -86,6 +86,8 @@ plt.tight_layout()
 # 5. Export the plot to an SVG file
 plt.savefig("html/img/diff_gain.svg")
 img2html("diff_gain.svg", width=600)
+
+
 
 
 

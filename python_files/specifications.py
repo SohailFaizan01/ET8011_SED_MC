@@ -31,7 +31,7 @@ A_cl      = 6              # Closed-loop gain
 # --- Transistor ---
 w_1       = 10e-6         # Transistor width [m]
 l_1       = 180e-9         # Transistor lenght [m]
-id_1      = 1e-3           # Transistor drain current [A]
+id_1      = 7e-3           # Transistor drain current [A]
 
 specs = []
 
