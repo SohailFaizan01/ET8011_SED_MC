@@ -32,7 +32,7 @@ noise       = doNoise(cir, source="V1", detector="V_Amp_out", numeric=True, pard
 fb_model    = [gain, asymptotic, loopgain, servo]
 fbmodel_mag = plotSweep("fb_mag", "Magnitude plots feedback model parameters", fb_model, 1, 10e9, 200)
 onoise_mag  = plotSweep("onoise", "Output noise spectral density", [noise], 0.01, 10e9, 200)
-inoise_mag  = plotSweep("onoise", "input noise spectral density", [noise], 0.01, 10e9, 200, funcType='inoise') #fix input referred
+inoise_mag  = plotSweep("inoise", "input noise spectral density", [noise], 0.01, 10e9, 200, funcType='inoise') #fix input referred
 #R_out_mag   = plotSweep("R_out", "Magnitude plot output impedance", [Rout_result], 10, 10e9, 200)
 
 twoport = doMatrix(cir, numeric=True, source='V1', detector='V_Amp_out', pardefs='circuit', lgref='Gm_M1_X1')
