@@ -37,18 +37,18 @@ inoise_mag  = plotSweep("inoise", "input noise spectral density", [noise], 0.01,
 
 twoport = doMatrix(cir, numeric=True, source='V1', detector='V_Amp_out', pardefs='circuit', lgref='Gm_M1_X1')
 
-stepdict_Vin = {
+stepdict_ID_1 = {
     "method": 'lin',        # Linear stepping
     "params": 'ID_1',       # Parameter to step (must exist in your circuit)
-    "start": id_1-3.15e-3,          # Starting value
-    "stop": id_1+3.15e-3,           # Ending value
+    "start": 3.875e-3,          # Starting value
+    "stop": 10.125e-3,           # Ending value
     "num": 1000                # Number of steps
 }
 
-lin_gain = doLaplace(cir, numeric=True, source='V1', detector='V_Amp_out', pardefs='circuit', lgref='Gm_M1_X1', transfer='gain', stepdict=stepdict_Vin).laplace
+lin_gain = doLaplace(cir, numeric=True, source='V1', detector='V_Amp_out', pardefs='circuit', lgref='Gm_M1_X1', transfer='gain', stepdict=stepdict_ID_1).laplace
 ip_V = np.linspace(0.01, 0.25, 1000)
-# test = lin_gain[0].subs(s,2*sp.pi*80e6)
-# eqn2html("lin_gain_at_80MHz", lin_gain.laplace)
+# # test = lin_gain[0].subs(s,2*sp.pi*80e6)
+# # eqn2html("lin_gain_at_80MHz", lin_gain.laplace)
 
 num_gain = [expr.subs(s, 2 * sp.pi * 80e6).evalf() for expr in lin_gain]
 # diff_gain= [expr.subs(s, 2 * sp.pi * 80e6).evalf() for expr in lin_gain]
@@ -72,20 +72,20 @@ dG_dVin_manual = np.array(derivatives)
 
 
 
-# fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(10, 8), sharex=True)
-fig, (ax1) = plt.subplots(1, figsize=(10, 8), sharex=True)
+# # fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(10, 8), sharex=True)
+# fig, (ax1) = plt.subplots(1, figsize=(10, 8), sharex=True)
 
 
-ax1.plot(ip_V[0:(len(num_gain) - 1)], (dG_dVin_manual))
-ax1.set_title('diff_gain_magn')
-ax1.set_ylabel('V_in')
-ax1.grid(True)
+# ax1.plot(ip_V[0:(len(num_gain) - 1)], (dG_dVin_manual))
+# ax1.set_title('diff_gain_magn')
+# ax1.set_ylabel('V_in')
+# ax1.grid(True)
 
-plt.tight_layout()
+# plt.tight_layout()
 
-# 5. Export the plot to an SVG file
-plt.savefig("html/img/diff_gain.svg")
-img2html("diff_gain.svg", width=600)
+# # 5. Export the plot to an SVG file
+# plt.savefig("html/img/diff_gain.svg")
+# img2html("diff_gain.svg", width=600)
 
 
 

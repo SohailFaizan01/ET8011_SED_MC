@@ -1068,6 +1068,16 @@
 	)
 	(wire
 		(pts
+			(xy 116.84 106.68) (xy 116.84 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "85c4c249-42eb-411b-8175-00b63c9c6547")
+	)
+	(wire
+		(pts
 			(xy 120.65 127) (xy 138.43 127)
 		)
 		(stroke
@@ -1168,6 +1178,16 @@
 	)
 	(wire
 		(pts
+			(xy 106.68 93.98) (xy 116.84 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e2c1985e-feaf-4c1b-90da-5fbc62f2672d")
+	)
+	(wire
+		(pts
 			(xy 116.84 120.65) (xy 116.84 127)
 		)
 		(stroke
@@ -1176,7 +1196,7 @@
 		)
 		(uuid "ee1e2e4b-e129-4b5e-9bb4-6410c4a84e2f")
 	)
-	(global_label "Amp_out"
+	(global_label "vo"
 		(shape output)
 		(at 142.24 106.68 0)
 		(fields_autoplaced yes)
@@ -1188,12 +1208,34 @@
 		)
 		(uuid "1a76b34c-bd42-461f-b650-23f6c870c544")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 153.1474 106.68 0)
+			(at 147.3418 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "Amp_out"
+		(shape output)
+		(at 106.68 93.98 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "74755c94-1f15-4a87-9016-8be07a390eb8")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 95.7726 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 				(hide yes)
 			)
 		)
@@ -1333,7 +1375,7 @@
 				)
 			)
 		)
-		(property "Value" "{0.5*C_s}"
+		(property "Value" "{0.4*C_s}"
 			(at 104.0737 100.33 90)
 			(show_name yes)
 			(effects

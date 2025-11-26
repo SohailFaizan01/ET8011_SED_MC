@@ -1,8 +1,8 @@
 Active_E_Field_Probe
-C14 1 3 C value={C_s} vinit=0
-C15 3 2 C value={0.5*C_s} vinit=0
-R1 2 Amp_out R value=50 noisetemp={T_op_max} noiseflow=0 dcvar=0 dcvarlot=0
-R9 Amp_out 0 R value=50 noisetemp={T_op_max} noiseflow=0 dcvar=0 dcvarlot=0
+C14 1 2 C value={C_s} vinit=0
+C15 2 Amp_out C value={0.4*C_s} vinit=0
+R1 Amp_out vo R value=50 noisetemp={T_op_max} noiseflow=0 dcvar=0 dcvarlot=0
+R9 vo 0 R value=50 noisetemp={T_op_max} noiseflow=0 dcvar=0 dcvarlot=0
 V1 1 0 V value={V_in} noise=0 dc=0 dcvar=0
-X1 2 3 0 0 CMOS18N W={W_1} L={L_1} ID={ID_1}
+X1 Amp_out 2 0 0 CMOS18N W={W_1} L={L_1} ID={ID_1}
 .end
