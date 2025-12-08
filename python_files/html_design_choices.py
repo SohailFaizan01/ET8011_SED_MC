@@ -19,7 +19,7 @@ head2html("Most simple solution:")
 head3html("Does it meet the specifications?")
 Vout_Amp_req = (10**(-3)*10**P_1dB * Z_in)**0.5 * (Z_in/(Z_in+Z_out_amp))**(-1)
 gain_req = Vout_Amp_req/V_in_max
-max_power_out = Vout_Amp_req**2/50 + id_1*VDD
+max_power_out = Vout_Amp_req**2/50 + id_n*VDD
 
 text2html(f"""
 <table>

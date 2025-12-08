@@ -13,6 +13,8 @@ fileName = 'KiCad/' + fileName + '/' + fileName + '.kicad_sch'
 
 cir = makeCircuit(fileName,imgWidth=1000)
 
+print(cir.controlled)
+
 specs2circuit(specs, cir)
 
 # --- Gains ---
@@ -21,6 +23,7 @@ asymptotic  = doLaplace(cir, numeric=True, source='V1', detector='V_Amp_out', pa
 loopgain    = doLaplace(cir, numeric=True, source='V1', detector='V_Amp_out', pardefs='circuit', lgref='Gm_M1_X1', transfer='loopgain')
 servo       = doLaplace(cir, numeric=True, source='V1', detector='V_Amp_out', pardefs='circuit', lgref='Gm_M1_X1', transfer='servo')
 direct      = doLaplace(cir, numeric=True, source='V1', detector='V_Amp_out', pardefs='circuit', lgref='Gm_M1_X1', transfer='direct')
+
 
 # --- Noise ---
 noise       = doNoise(cir, source="V1", detector="V_Amp_out", numeric=True, pardefs='circuit')
@@ -45,30 +48,30 @@ stepdict_ID_1 = {
     "num": 1000                # Number of steps
 }
 
-lin_gain = doLaplace(cir, numeric=True, source='V1', detector='V_Amp_out', pardefs='circuit', lgref='Gm_M1_X1', transfer='gain', stepdict=stepdict_ID_1).laplace
-ip_V = np.linspace(0.01, 0.25, 1000)
-# # test = lin_gain[0].subs(s,2*sp.pi*80e6)
-# # eqn2html("lin_gain_at_80MHz", lin_gain.laplace)
+# lin_gain = doLaplace(cir, numeric=True, source='V1', detector='V_Amp_out', pardefs='circuit', lgref='Gm_M1_X1', transfer='gain', stepdict=stepdict_ID_1).laplace
+# ip_V = np.linspace(0.01, 0.25, 1000)
+# # # test = lin_gain[0].subs(s,2*sp.pi*80e6)
+# # # eqn2html("lin_gain_at_80MHz", lin_gain.laplace)
 
-num_gain = [expr.subs(s, 2 * sp.pi * 80e6).evalf() for expr in lin_gain]
-# diff_gain= [expr.subs(s, 2 * sp.pi * 80e6).evalf() for expr in lin_gain]
-# dG_dVin= np.gradient(lin_gain.subs(s,2*sp.pi*80e6).Y, ip_V)
-derivatives = []
-for i in range(len(num_gain) - 1):
-    # Get the y values (y2 and y1)
-    y2 = num_gain[i + 1]
-    y1 = num_gain[i]
+# num_gain = [expr.subs(s, 2 * sp.pi * 80e6).evalf() for expr in lin_gain]
+# # diff_gain= [expr.subs(s, 2 * sp.pi * 80e6).evalf() for expr in lin_gain]
+# # dG_dVin= np.gradient(lin_gain.subs(s,2*sp.pi*80e6).Y, ip_V)
+# derivatives = []
+# for i in range(len(num_gain) - 1):
+#     # Get the y values (y2 and y1)
+#     y2 = num_gain[i + 1]
+#     y1 = num_gain[i]
 
-    # Get the corresponding x values (x2 and x1)
-    x2 = ip_V[i + 1]
-    x1 = ip_V[i]
+#     # Get the corresponding x values (x2 and x1)
+#     x2 = ip_V[i + 1]
+#     x1 = ip_V[i]
     
-    # Calculate the slope and append it to the results list
-    slope = (y2 - y1) / (x2 - x1)
-    derivatives.append(slope)
+#     # Calculate the slope and append it to the results list
+#     slope = (y2 - y1) / (x2 - x1)
+#     derivatives.append(slope)
 
-# Convert the final list to a NumPy array for consistency
-dG_dVin_manual = np.array(derivatives)
+# # Convert the final list to a NumPy array for consistency
+# dG_dVin_manual = np.array(derivatives)
 
 
 
