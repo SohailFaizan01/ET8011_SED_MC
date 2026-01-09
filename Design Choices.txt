@@ -1,0 +1,52 @@
+Amplifier Type:
+ - Current to voltage. To avoid non-linearity of the input ESD protection (TVS Diode), a current input is required. The output is voltage as that will be read out by the spectrum analyser
+
+Input/Output Impedances:
+ - As the input type is current, the input impedance needs to approach 0 Ohm
+ - In order to minimize reflections and maximize power transfer, 50 Ohm output impedance is required.
+
+ 	Implementation: The general controller will satisfy this if it has high enough gain, then it will act as an virtual ground.
+ 			Brute force for simplicity, it remains to be validated if this is an issue with noise requirements
+
+Feedback Structure:
+ - Passive integrating feedback structure, to compensate the differentiated input signal.
+	Implementation: Capacitor 
+
+Controller:
+ - Two stage design in order to obtain enough loop gain, one stage does not have enough output impedance (50 Ohms). Furthermore, class AB output to reduce power consumption
+	Options:
+	 - Input
+		- Cs stage: Inverting stage, will cause a positive feedback loop with the output stage :/
+		- Cd stage: Does not have enough gain
+		- Cg stage: Loads the input
+		- Differential pair: Has gain and does not load the input, has higher noise.
+
+	 - Output
+		- Complementary Parallel: It has gain and low power
+		- Antiparallel (Cs-Cd stage): not good because no gain and the first stage needs full swing, thus contributing to non linearity
+ 
+	implementation: Differential input stage, with complementary parallel output stage
+
+		Differential Input Stage:
+			- NMOS instead of PMOS because...
+			- Connection open because...
+
+		Complementary Parallel:
+			- 
+
+Noise:
+
+
+Drive Capability:
+
+
+Transfer:
+
+
+Distortion/Non Linearity:
+
+
+Other:
+ - Loop gain reference selection: Set Cd to 0 
+
+ - output stage current 
