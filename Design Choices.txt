@@ -46,6 +46,9 @@ Transfer:
 Distortion/Non Linearity:
 
 
+Biasing:
+
+
 Other:
  - Loop gain reference selection: Set Cd to 0 
 
