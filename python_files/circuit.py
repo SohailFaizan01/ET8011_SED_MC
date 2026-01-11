@@ -17,6 +17,8 @@ print(cir.controlled)
 
 specs2circuit(specs, cir)
 
+cir.defPar("c_dg_X1", 0)
+
 # --- Gains ---
 gain        = doLaplace(cir, numeric=True, source='V1', detector='V_Amp_out', pardefs='circuit', lgref='Gm_M1_X1', transfer='gain')
 asymptotic  = doLaplace(cir, numeric=True, source='V1', detector='V_Amp_out', pardefs='circuit', lgref='Gm_M1_X1', transfer='asymptotic')

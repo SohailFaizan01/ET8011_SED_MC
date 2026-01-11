@@ -53,3 +53,5 @@ Other:
  - Loop gain reference selection: Set Cd to 0 
 
  - output stage current 
+
+- Current for stage 1 is determined by the noise spec, current for the second stage is determined by non linearity and drive capability
