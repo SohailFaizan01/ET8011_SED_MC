@@ -29,7 +29,6 @@ Controller:
 
 		Differential Input Stage:
 			- NMOS instead of PMOS because...
-			- Connection open because...
 
 		Complementary Parallel:
 			- 

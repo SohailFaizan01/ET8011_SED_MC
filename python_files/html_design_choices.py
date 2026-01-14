@@ -53,9 +53,9 @@ eqn2html("S_IRnoise",   noise.inoise)
 img2html("onoise.svg",  width=600)
 eqn2html("S_ORnoise",   noise.onoise)
 
-eqn2html("MNA_Matrix",   twoport.M)
-eqn2html("MNA_Iv",   twoport.Iv)
-eqn2html("MNA_Dv",   twoport.Dv)
+# eqn2html("MNA_Matrix",   twoport.M)
+# eqn2html("MNA_Iv",   twoport.Iv)
+# eqn2html("MNA_Dv",   twoport.Dv)
 
-eqn2html("MNA_something", twoport.M.inv())
+# eqn2html("MNA_something", twoport.M.inv())
 

@@ -32,16 +32,16 @@ A_cl      = 2.5            # Closed-loop gain
 
 # --- Transistor ---
 # First Stage
-w1_n      = 500e-6
+w1_n      = 10e-6
 l1_n      = 180e-9
-id1_n     = 1000e-6
+id1_n     = 10e-6
 
 # Second Stage
-w_n       = 500e-6        # Transistor width [m]
+w_n       = 50e-6        # Transistor width [m]
 l_n       = 180e-9         # Transistor lenght [m]
 id_n      = 7e-3           # Transistor drain current [A]
 
-w_p       = 1500e-6        # Transistor width [m]
+w_p       = 150e-6        # Transistor width [m]
 l_p       = 180e-9         # Transistor lenght [m]
 id_p      = 0*7e-3           # Transistor drain current [A]
 
