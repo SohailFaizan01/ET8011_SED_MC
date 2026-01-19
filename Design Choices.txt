@@ -28,18 +28,22 @@ Controller:
 	implementation: Differential input stage, with complementary parallel output stage
 
 		Differential Input Stage:
-			- NMOS instead of PMOS because...
-
-		Complementary Parallel:
-			- 
+			- NMOS instead of PMOS because it can be made smaller
 
 Noise:
+ - First stage is dominant in terms of noise as the noise of the second stage gets divided by the gain of the first stage.
+ - Increase W of S1 until noise spec is met. Current should be increased to maintain IC, and thereby Ft.
 
 
 Drive Capability:
+ - First stage drive capability is equal to the gate current of the second stage.
+
+ - Second stage determines the main drive capability as it is connected directly to the output.
+ - 1mW into 50 Ohms => 0.2236V This is doubled to account for  50 Ohms output impedance => 0.4472V => 4,5 mA drive capability
 
 
 Transfer:
+ - Input = max 0.25V , Output = max 0,4472V => Gain = 1.788 => Cfb = 0.56*Cs
 
 
 Distortion/Non Linearity:
@@ -48,9 +52,10 @@ Distortion/Non Linearity:
 Biasing:
 
 
+
+
+
+
 Other:
  - Loop gain reference selection: Set Cd to 0 
-
- - output stage current 
-
-- Current for stage 1 is determined by the noise spec, current for the second stage is determined by non linearity and drive capability
+ - Current for stage 1 is determined by the noise spec, current for the second stage is determined by non linearity and drive capability

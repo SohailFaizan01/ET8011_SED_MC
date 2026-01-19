@@ -19,10 +19,10 @@ V_in,Amplifier input voltage,1/4,V,Amplifier
 A_cl,Amplifier closed-loop gain,5/2,NA,Amplifier
 W_N,Transistor width,1/20000,m,Amplifier
 L_N,Transistor length,9/50000000,m,Amplifier
-ID_N,Transistor drain current,7/1000,A,Amplifier
+ID_N,Transistor drain current,9/2000,A,Amplifier
 W_P,Transistor width,3/20000,m,Amplifier
 L_P,Transistor length,9/50000000,m,Amplifier
 ID_P,Transistor drain current,0,A,Amplifier
-W1_N,Transistor width,1/100000,m,Amplifier
+W1_N,Transistor width,1/1000,m,Amplifier
 L1_N,Transistor length,9/50000000,m,Amplifier
 ID1_N,Transistor drain current,1/100000,A,Amplifier

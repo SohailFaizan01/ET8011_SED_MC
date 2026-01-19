@@ -5,6 +5,7 @@ prj = initProject("Active_E_Field_Probe")
 
 from python_files import specifications
 from python_files import circuit
+from python_files import optimize_W
 from python_files import html_specifications
 from python_files import html_twoport
 from python_files import html_design_choices
@@ -12,10 +13,10 @@ from python_files import html_design_choices
 
 ############################################## Random Blocks of Code ##############################################
 
-###########      Plot Generation      ###########
+##########      Plot Generation      ###########
 # # Define the noise spectrum function
 # def S_En(f):
-#     return 1e-15 * (1 + 1e12 / f**2) * L_ant**2
+#     return 1e-15 * (1 + 1e12 / f**2)
 
 # # Frequency range (log scale)
 # f = np.logspace(3, 9, 1000)  # 1 kHz to 1 GHz
@@ -33,6 +34,6 @@ from python_files import html_design_choices
 # plt.legend()
 # plt.show()
 
-###########      Loop Gain References      ###########
+# ##########      Loop Gain References      ###########
 # print("Available loop gain references:")
 # print(cir.controlled)
