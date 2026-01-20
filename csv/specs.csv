@@ -23,6 +23,6 @@ ID_N,Transistor drain current,9/2000,A,Amplifier
 W_P,Transistor width,3/20000,m,Amplifier
 L_P,Transistor length,9/50000000,m,Amplifier
 ID_P,Transistor drain current,0,A,Amplifier
-W1_N,Transistor width,1/1000,m,Amplifier
+W1_N,Transistor width,7/1000000,m,Amplifier
 L1_N,Transistor length,9/50000000,m,Amplifier
-ID1_N,Transistor drain current,1/100000,A,Amplifier
+ID1_N,Transistor drain current,1/10000,A,Amplifier

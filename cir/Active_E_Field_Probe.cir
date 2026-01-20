@@ -1,13 +1,14 @@
 Active_E_Field_Probe
-C22 1 6 C value={C_s} vinit=0
-C23 6 Amp_out C value={0.56*C_s} vinit=0
+C22 1 7 C value={C_s} vinit=0
+C23 7 Amp_out C value={0.56*C_s} vinit=0
 R16 Amp_out vo R value=50 noisetemp={T_op_max} noiseflow=0 dcvar=0 dcvarlot=0
 R17 vo 0 R value=50 noisetemp={0} noiseflow=0 dcvar=0 dcvarlot=0
 V1 1 0 V value={V_in} noise=0 dc=0 dcvar=0
-X1 0 2 3 4 CMOS18ND W={W1_N} L={L1_N} ID={ID1_N}
-X2 Amp_out 5 0 0 CMOS18P W={W_P} L={L_P} ID={ID_P}
-X3 Amp_out 5 0 0 CMOS18N W={W_N} L={L_N} ID={ID_N}
-X4 6 0 3 MN18_noise ID={ID1_N} IG={0} W={W1_N} L={L1_N}
-X5 0 0 4 MN18_noise ID={ID1_N} IG={0} W={W1_N} L={L1_N}
-X6 2 0 5 MN18_noise ID={ID_N} IG={0} W={W_N} L={L_N}
+X1 2 3 4 5 CMOS18ND W={W1_N} L={L1_N} ID={ID1_N}
+X2 Amp_out 6 0 0 CMOS18P W={W_P} L={L_P} ID={ID_P}
+X3 Amp_out 6 0 0 CMOS18N W={W_N} L={L_N} ID={ID_N}
+X4 7 0 4 MN18_noise ID={ID1_N} IG={0} W={W1_N} L={L1_N}
+X5 0 0 5 MN18_noise ID={ID1_N} IG={0} W={W1_N} L={L1_N}
+X6 6 0 3 0 CMOS18N W={220e-7} L={L1_N} ID={ID1_N}
+X7 0 0 2 0 CMOS18N W={220e-7} L={L1_N} ID={ID1_N}
 .end

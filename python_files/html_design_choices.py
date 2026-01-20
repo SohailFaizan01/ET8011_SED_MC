@@ -3,7 +3,8 @@
 from SLiCAP import *
 from sympy import symbols, N
 from .specifications import *
-from .circuit import *
+from .circuit import cir
+from .plot_generation import *
 
 htmlPage("Design Process", index=False, label='Design_Process')
 head2html("Initial choices")
@@ -49,9 +50,9 @@ img2html("fb_mag.svg",  width=600)
 # Noise
 img2html("noise_function_plot_HZ.svg", width=700)
 img2html("inoise.svg",  width=600)
-eqn2html("S_IRnoise",   noise.inoise)
+# eqn2html("S_IRnoise",   noise_expr.inoise)
 img2html("onoise.svg",  width=600)
-eqn2html("S_ORnoise",   noise.onoise)
+# eqn2html("S_ORnoise",   noise_expr.onoise)
 
 # eqn2html("MNA_Matrix",   twoport.M)
 # eqn2html("MNA_Iv",   twoport.Iv)

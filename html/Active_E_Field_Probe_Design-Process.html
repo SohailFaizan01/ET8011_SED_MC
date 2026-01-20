@@ -14,7 +14,7 @@
 <p>
 <table>
 <tr><td>Spec</td>                       <td>Required:</td>         <td>Obtained:</td></tr>
-<tr><td>Gain?</td>                      <td> > 1.8</td> <td> (7.0e-19*s**3 + 8.5e-12*s**2 - 1.7*s)/(9.2e-19*s**3 + 9.1e-9*s**2 + s)</td></tr>
+<tr><td>Gain?</td>                      <td> > 1.8</td> <td> (8.8e-42*s**5 + 1.6e-30*s**4 + 7.3e-20*s**3 - 1.3e-11*s**2 - 1.8*s)/(9.4e-42*s**5 + 1.8e-30*s**4 + 1.0e-19*s**3 + 1.0e-9*s**2 + s)</td></tr>
 <tr><td>Output Impedance</td>           <td> 50 </td>     <td> See Graph</td></tr>
 <tr><td>Power Consumption</td>          <td> < 0.05 W</td>     <td> 0.012</td></tr>
 <tr><td>Noise</td>                      <td> See Graph </td>       <td> See Graph</td></tr>
@@ -23,19 +23,19 @@
 </table>
 </p>
 \begin{equation}
-gain=\frac{7.0 \cdot 10^{-19} s^{3} + 8.51 \cdot 10^{-12} s^{2} - 1.729 s}{9.18 \cdot 10^{-19} s^{3} + 9.122 \cdot 10^{-9} s^{2} + s}
+gain=\frac{8.754 \cdot 10^{-42} s^{5} + 1.593 \cdot 10^{-30} s^{4} + 7.252 \cdot 10^{-20} s^{3} - 1.344 \cdot 10^{-11} s^{2} - 1.785 s}{9.433 \cdot 10^{-42} s^{5} + 1.84 \cdot 10^{-30} s^{4} + 1.004 \cdot 10^{-19} s^{3} + 1.024 \cdot 10^{-9} s^{2} + s}
 \end{equation}
 \begin{equation}
-asymptotic=\frac{5.861 \cdot 10^{-12} s^{2} - 1.786 s}{- 3.282 \cdot 10^{-12} s^{2} + s}
+asymptotic=\frac{6.338 \cdot 10^{-23} s^{3} - 1.345 \cdot 10^{-11} s^{2} - 1.786 s}{1.378 \cdot 10^{-34} s^{4} - 2.156 \cdot 10^{-23} s^{3} + 7.641 \cdot 10^{-12} s^{2} + s}
 \end{equation}
 \begin{equation}
-loopgain=\frac{2.847 \cdot 10^{20} s - 8.674 \cdot 10^{31}}{8.223 \cdot 10^{13} s^{2} + 8.174 \cdot 10^{23} s + 2.835 \cdot 10^{30}}
+loopgain=\frac{- 1.243 \cdot 10^{29} s^{3} + 1.944 \cdot 10^{40} s^{2} - 6.891 \cdot 10^{51} s - 9.019 \cdot 10^{62}}{8.513 \cdot 10^{21} s^{4} + 1.66 \cdot 10^{33} s^{3} + 9.063 \cdot 10^{43} s^{2} + 9.169 \cdot 10^{53} s + 4.733 \cdot 10^{59}}
 \end{equation}
 \begin{equation}
-servo=\frac{8.674 \cdot 10^{31} - 2.847 \cdot 10^{20} s}{8.223 \cdot 10^{13} s^{2} + 8.171 \cdot 10^{23} s + 8.957 \cdot 10^{31}}
+servo=\frac{1.243 \cdot 10^{29} s^{3} - 1.944 \cdot 10^{40} s^{2} + 6.891 \cdot 10^{51} s + 9.019 \cdot 10^{62}}{8.513 \cdot 10^{21} s^{4} + 1.66 \cdot 10^{33} s^{3} + 9.061 \cdot 10^{43} s^{2} + 9.238 \cdot 10^{53} s + 9.024 \cdot 10^{62}}
 \end{equation}
 \begin{equation}
-direct=\frac{2.212 \cdot 10^{-17} s^{3} + 8.955 \cdot 10^{-11} s^{2}}{2.901 \cdot 10^{-17} s^{3} + 2.883 \cdot 10^{-7} s^{2} + s}
+direct=\frac{1.669 \cdot 10^{-38} s^{5} + 3.038 \cdot 10^{-27} s^{4} + 1.382 \cdot 10^{-16} s^{3} - 6.201 \cdot 10^{-13} s^{2}}{1.799 \cdot 10^{-38} s^{5} + 3.508 \cdot 10^{-27} s^{4} + 1.915 \cdot 10^{-16} s^{3} + 1.937 \cdot 10^{-6} s^{2} + s}
 \end{equation}
 <figure><img src="img/fb_mag.svg" alt="" style="width:600px">
 </figure>
@@ -43,18 +43,12 @@ direct=\frac{2.212 \cdot 10^{-17} s^{3} + 8.955 \cdot 10^{-11} s^{2}}{2.901 \cdo
 </figure>
 <figure><img src="img/inoise.svg" alt="" style="width:600px">
 </figure>
-\begin{equation}
-S_{IRnoise}=\frac{3.125 \cdot 10^{-27} \left(6.005 \cdot 10^{32} f^{2} + 6.343 \cdot 10^{44}\right) \left(2.05 \cdot 10^{75} f^{2} + 4.821 \cdot 10^{96}\right)}{f^{0.85} \left(2.66 \cdot 10^{95} f^{4} + 3.328 \cdot 10^{112} f^{2} + 1.041 \cdot 10^{129}\right)} + \frac{1.0 \cdot 10^{-57} \left(1.444 \cdot 10^{138} f^{4} + 1.461 \cdot 10^{158} f^{2} + 7.244 \cdot 10^{173}\right)}{f^{0.85} \left(2.66 \cdot 10^{95} f^{4} + 3.328 \cdot 10^{112} f^{2} + 1.041 \cdot 10^{129}\right)} + \frac{1.0 \cdot 10^{-57} \left(3.134 \cdot 10^{138} f^{4} - 2.832 \cdot 10^{156} f^{2} + 6.398 \cdot 10^{173}\right)}{f^{0.85} \left(2.66 \cdot 10^{95} f^{4} + 3.328 \cdot 10^{112} f^{2} + 1.041 \cdot 10^{129}\right)} + \frac{\left(8.836 \cdot 10^{60} f^{2} + 6.343 \cdot 10^{72}\right) \left(9.054 \cdot 10^{75} f^{2} + 2.129 \cdot 10^{97}\right)}{4.255 \cdot 10^{157} f^{4} + 5.325 \cdot 10^{174} f^{2} + 1.666 \cdot 10^{191}} + \frac{1.354 \cdot 10^{137} f^{4} + 4.819 \cdot 10^{153} f^{2} + 9.699 \cdot 10^{169}}{8.311 \cdot 10^{154} f^{4} + 1.04 \cdot 10^{172} f^{2} + 3.254 \cdot 10^{188}} + \frac{3.548 \cdot 10^{137} f^{4} + 7.242 \cdot 10^{155} f^{2} + 3.694 \cdot 10^{173}}{6.649 \cdot 10^{155} f^{4} + 8.321 \cdot 10^{172} f^{2} + 2.603 \cdot 10^{189}} + \frac{5.665 \cdot 10^{137} f^{4} + 5.735 \cdot 10^{157} f^{2} + 2.843 \cdot 10^{173}}{6.649 \cdot 10^{155} f^{4} + 8.321 \cdot 10^{172} f^{2} + 2.603 \cdot 10^{189}}
-\end{equation}
 <figure><img src="img/onoise.svg" alt="" style="width:600px">
 </figure>
-\begin{equation}
-S_{ORnoise}=\frac{0.25 \left(6.005 \cdot 10^{32} f^{2} + 6.343 \cdot 10^{44}\right) \left(1.602 \cdot 10^{80} f^{2} + 3.766 \cdot 10^{101}\right)}{f^{0.85} \left(1.143 \cdot 10^{127} f^{4} + 2.797 \cdot 10^{145} f^{2} + 8.706 \cdot 10^{159}\right)} + \frac{6.25 \cdot 10^{-27} \left(1.444 \cdot 10^{138} f^{4} + 1.461 \cdot 10^{158} f^{2} + 7.244 \cdot 10^{173}\right)}{f^{0.85} \left(1.143 \cdot 10^{127} f^{4} + 2.797 \cdot 10^{145} f^{2} + 8.706 \cdot 10^{159}\right)} + \frac{6.25 \cdot 10^{-27} \left(3.134 \cdot 10^{138} f^{4} - 2.832 \cdot 10^{156} f^{2} + 6.398 \cdot 10^{173}\right)}{f^{0.85} \left(1.143 \cdot 10^{127} f^{4} + 2.797 \cdot 10^{145} f^{2} + 8.706 \cdot 10^{159}\right)} + \frac{\left(8.836 \cdot 10^{60} f^{2} + 6.343 \cdot 10^{72}\right) \left(9.054 \cdot 10^{75} f^{2} + 2.129 \cdot 10^{97}\right)}{2.927 \cdot 10^{158} f^{4} + 7.161 \cdot 10^{176} f^{2} + 2.229 \cdot 10^{191}} + \frac{1.354 \cdot 10^{137} f^{4} + 4.819 \cdot 10^{153} f^{2} + 9.699 \cdot 10^{169}}{5.718 \cdot 10^{155} f^{4} + 1.399 \cdot 10^{174} f^{2} + 4.353 \cdot 10^{188}} + \frac{3.548 \cdot 10^{137} f^{4} + 7.242 \cdot 10^{155} f^{2} + 3.694 \cdot 10^{173}}{4.574 \cdot 10^{156} f^{4} + 1.119 \cdot 10^{175} f^{2} + 3.482 \cdot 10^{189}} + \frac{5.665 \cdot 10^{137} f^{4} + 5.735 \cdot 10^{157} f^{2} + 2.843 \cdot 10^{173}}{4.574 \cdot 10^{156} f^{4} + 1.119 \cdot 10^{175} f^{2} + 3.482 \cdot 10^{189}}
-\end{equation}
 <!-- INSERT -->
 <div id="footnote">
 <p>Go to <a href="Active_E_Field_Probe_index.html">Active_E_Field_Probe_index</a></p>
 <p>SLiCAP: Symbolic Linear Circuit Analysis Program, Version 4.0.10 &copy 2009-2025 SLiCAP development team</p>
 <p>For documentation, examples, support, updates and courses please visit: <a href="https://analog-electronics.tudelft.nl">analog-electronics.tudelft.nl</a></p>
-<p>Last project update: 2026-01-19 11:07:36</p>
+<p>Last project update: 2026-01-20 12:32:16</p>
 </div></body></html>
