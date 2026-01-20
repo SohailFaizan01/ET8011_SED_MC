@@ -1,3 +1,5 @@
+################################################# Optimization code for finding W and I #################################################
+
 from SLiCAP import *
 import numpy as np
 from .circuit import cir
@@ -18,12 +20,8 @@ w_min  = float(input("Enter minimum w: "))
 w_max  = float(input("Enter maximum w: "))
 w_step = float(input("Enter w step size: "))
 
-# Weak: 0.01-0.1
-# Moderate: 0.1 - 10
-# Strong: 10 - 100
-
 # --------------------------------------------------
-# Define frequency grid (SLiCAP-style)
+# Define frequency grid
 # --------------------------------------------------
 
 # f_min = float(input("Enter minimum frequency [Hz]: "))
@@ -32,7 +30,7 @@ w_step = float(input("Enter w step size: "))
 
 f_min = float(1e3)
 f_max = float(1e9)
-n_pts = int(1e3)
+n_pts = int(600)
 
 # keep frequency as SYMBOL
 ini.frequency = sp.Symbol('f')
@@ -63,19 +61,8 @@ def noise_spec(f_hz):
 
 def run_simulation(w):
     """
-    Run simulation for a given w.
-    Returns:
-        noise_sim : noise spectrum [V^2/Hz]
+    Run simulation for a given w. Returns noise_sim : noise spectrum [V^2/Hz]
     """
-    # cir.delPar("W_X1")
-    # cir.defPar("W_X1", w)
-
-    # for spec in specs:
-    #     if spec.symbol == "W1_N":
-    #         spec.value = w
-    #         print(spec.symbol)
-    #         print(spec.value)
-    #         break
 
     specs[24].value = w
     specs2circuit(specs, cir)
@@ -90,8 +77,7 @@ def run_simulation(w):
 
 def compute_3db_bandwidth(tf_expr, f_vec):
     """
-    Computes the -3 dB bandwidth of a Laplace TF.
-    Assumes tf_expr is a function of s.
+    Computes the -3 dB bandwidth of a Laplace TF. Assumes tf_expr is a function of s.
     """
 
     s = sp.Symbol('s')
@@ -118,8 +104,7 @@ def compute_3db_bandwidth(tf_expr, f_vec):
 
 def find_current_for_bandwidth(f_bw_req, f_vec):
     """
-    Sweeps drain current until required -3 dB bandwidth is met.
-    Returns (ID_found, bw_found, IC_found)
+    Sweeps drain current until required -3 dB bandwidth is met. Returns (ID_found, bw_found, IC_found)
     """
 
     ID_values = np.arange(ID_min, ID_max + ID_step, ID_step)
@@ -139,7 +124,7 @@ def find_current_for_bandwidth(f_bw_req, f_vec):
     return None, None, None
 
 # --------------------------------------------------
-# Step 1: Find current for required bandwidth
+# Find current for required bandwidth
 # --------------------------------------------------
 
 ID_0, bw_0, IC_0 = find_current_for_bandwidth(f_bw_req, f)
@@ -222,3 +207,25 @@ print("=================================")
 
 
 
+
+
+
+
+
+############################################## Random Blocks of Code ##############################################
+
+###### Inversion Coeficient
+# Weak: 0.01-0.1
+# Moderate: 0.1 - 10
+# Strong: 10 - 100
+
+##### Failed attempt to change the W specification
+    # cir.delPar("W_X1")
+    # cir.defPar("W_X1", w)
+
+    # for spec in specs:
+    #     if spec.symbol == "W1_N":
+    #         spec.value = w
+    #         print(spec.symbol)
+    #         print(spec.value)
+    #         break

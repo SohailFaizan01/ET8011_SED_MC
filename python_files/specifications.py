@@ -225,4 +225,15 @@ specs.append(specItem("ID1_N",
                       specType    = "Amplifier"))
 specs2csv(specs, "specs.csv")
 
+
+
+
+
+
+
+
+
+
+############################################## Random Blocks of Code ##############################################
+
 # print(vars(specs[0]))

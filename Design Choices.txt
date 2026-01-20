@@ -1,3 +1,5 @@
+#################################### Main Choices ####################################
+
 Amplifier Type:
  - Current to voltage. To avoid non-linearity of the input ESD protection (TVS Diode), a current input is required. The output is voltage as that will be read out by the spectrum analyser
 
@@ -44,6 +46,7 @@ Drive Capability:
 
 Transfer:
  - Input = max 0.25V , Output = max 0,4472V => Gain = 1.788 => Cfb = 0.56*Cs
+ - Vo = 2*(P*R)^0.5
 
 
 Distortion/Non Linearity:
@@ -52,26 +55,27 @@ Distortion/Non Linearity:
 Biasing:
 
 
+#################################### Others ####################################
 
-
-
-
-Other:
  - Loop gain reference selection: Set Cd to 0 
  - Current for stage 1 is determined by the noise spec, current for the second stage is determined by non linearity and drive capability
 
 
-
-
 #################################### Questions for Anton ####################################
+ 
  - How to size the output transistors
  - Cascode a cg to the input pair
 
 
 #################################### To-Do ####################################
+
  - Add loopgain of previous design
  - Fix frequency compensation
- - Make design choises page pretty.
+ - Make design choices page pretty.
+
+#################################### General Questions ####################################
+
+ - Which stage is responsible for which pole in the loopgain graph?
 
 
 

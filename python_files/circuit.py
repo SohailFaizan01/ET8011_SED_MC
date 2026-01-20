@@ -2,22 +2,34 @@
 
 from SLiCAP import *
 from .specifications import specs
-import numpy as np
-from sympy import *
-s = symbols("s")
-# t = symbols("t", real=True, positive=True)
-# w = symbols("w", real=True)
 
+##### Path to kicad schematic
 fileName = "Active_E_Field_Probe"
 fileName = 'KiCad/' + fileName + '/' + fileName + '.kicad_sch'
 
+##### Create slicap circuit object
 cir = makeCircuit(fileName,imgWidth=1000)
-# cirAsymptotic = makeCircuit(fileName,imgWidth=1000)
 
-# print(cir.controlled)
-
+##### Import predefined specifications to the kicad circuit
 specs2circuit(specs, cir)
 
+
+
+
+
+
+
+
+
+
+
+
+############################################## Random Blocks of Code ##############################################
+
+##### List the available loopgain references
+# print(cir.controlled)
+
+##### Set drain gate capacitance to 0
 # cir.defPar("c_dg_X1", 0)
 # cir.defPar("c_dg_X2", 0)
 # cir.defPar("c_dg_X3", 0)

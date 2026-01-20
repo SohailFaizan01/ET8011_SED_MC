@@ -59,3 +59,14 @@ eqn2html('V_RMS', '0.316', units='V', label='eq_vrms')
 text2html("Finally, the input current into the 2-port is:")
 
 eqn2html('I_in', 'Voc*C + I0*D', label='eq_in')
+
+
+
+
+
+
+
+
+
+
+############################################## Random Blocks of Code ##############################################

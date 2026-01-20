@@ -7,48 +7,81 @@
 <script>MathJax = {tex:{tags: 'ams', inlineMath:[['$','$'],]}, svg:{fontCache:'global'}};</script>
 <script type="text/javascript" id="MathJax-script" async  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head><body><div id="top"><h1>Design Process</h1></div>
-<h2>Initial choices</h2>
-<p><ul>           <li>Protect against ESD => TVS Diode => Current input to avoid non linear impedance voltage division</li>           <li>Current input => 0 Ohm input impedance</li>           <li>50 Ohm matched circuit => 50 Ohm output impedance => D/C = 50</li></ul></p>
-<h2>Most simple solution:</h2>
-<h3>Does it meet the specifications?</h3>
-<p>
-<table>
-<tr><td>Spec</td>                       <td>Required:</td>         <td>Obtained:</td></tr>
-<tr><td>Gain?</td>                      <td> > 1.8</td> <td> (8.8e-42*s**5 + 1.6e-30*s**4 + 7.3e-20*s**3 - 1.3e-11*s**2 - 1.8*s)/(9.4e-42*s**5 + 1.8e-30*s**4 + 1.0e-19*s**3 + 1.0e-9*s**2 + s)</td></tr>
-<tr><td>Output Impedance</td>           <td> 50 </td>     <td> See Graph</td></tr>
-<tr><td>Power Consumption</td>          <td> < 0.05 W</td>     <td> 0.012</td></tr>
-<tr><td>Noise</td>                      <td> See Graph </td>       <td> See Graph</td></tr>
-<tr><td>ESD Protection</td>             <td> Yes </td>             <td> Yes</td></tr>
-<tr><td>Intermodulation products</td>   <td> < 50 dBm</td>    <td> TBD</td></tr>
-</table>
-</p>
-\begin{equation}
-gain=\frac{8.754 \cdot 10^{-42} s^{5} + 1.593 \cdot 10^{-30} s^{4} + 7.252 \cdot 10^{-20} s^{3} - 1.344 \cdot 10^{-11} s^{2} - 1.785 s}{9.433 \cdot 10^{-42} s^{5} + 1.84 \cdot 10^{-30} s^{4} + 1.004 \cdot 10^{-19} s^{3} + 1.024 \cdot 10^{-9} s^{2} + s}
+<h3>Amplifier Type</h3>
+<p>Current-to-voltage amplifier. To avoid non-linearity of the input ESD protection (TVS diode), a current input is required. The output quantity is voltage, as this will be read out by the spectrum analyser.</p>
+<h3>Input / Output Impedances</h3>
+<p>- As the input type is current, the input impedance must approach 0 Ohm.<br>- To minimize reflections and maximize power transfer, a 50 Ohm output impedance is required.</p>
+<p><b>Implementation:</b> The general feedback controller will satisfy this requirement if sufficient loop gain is achieved, such that the input behaves as a virtual ground. A brute-force approach is used for simplicity; the impact on noise performance must still be validated.</p>
+<h3>Feedback Structure</h3>
+<p>Passive integrating feedback structure to compensate the differentiated input signal.</p>
+<p><b>Implementation:</b> Capacitive feedback (integrator).</p>
+<h3>Controller</h3>
+<p>A two-stage controller is required to obtain sufficient loop gain. A single-stage design cannot simultaneously provide enough gain and a low output impedance of 50 Ohm. A class-AB output stage is selected to reduce power consumption.</p>
+<p><b>Input stage options:</b></p>
+<p>- Common-source (CS): Inverting stage, results in a positive feedback loop with the output stage.<br>- Common-drain (CD): Insufficient gain.<br>- Common-gate (CG): Loads the signal source.<br>- Differential pair: Provides gain without loading the input, but has higher noise.</p>
+<p><b>Output stage options:</b></p>
+<p>- Complementary parallel stage: Provides gain with low power consumption.<br>- Anti-parallel (CS-CD) stage: Not suitable due to lack of gain and large voltage swing requirements in the first stage, increasing non-linearity.</p>
+<p><b>Final implementation:</b> Differential input stage combined with a complementary parallel output stage.</p>
+<p><b>Differential input stage:</b> NMOS devices are preferred over PMOS devices, as they can be made smaller for the same performance.</p>
+<h3>Noise</h3>
+<p>The first stage dominates the total noise performance. Noise contributions from the second stage are divided by the gain of the first stage and are therefore less significant.</p>
+<p>The width of the input transistor pair is increased until the noise specification is met. The drain current is increased accordingly to maintain a constant inversion coefficient (IC), and thereby preserve the transit frequency (fT).</p>
+<h3>Drive Capability</h3>
+<p>The drive capability of the first stage must at least supply the gate current of the second stage.</p>
+<p>The second stage determines the main drive capability, as it directly drives the output.</p>
+<a id="eq_power"></a>\begin{equation}
+P_{out}=1000\cdot 10^{-6}\,\left[ \mathrm{W}\right]
 \end{equation}
-\begin{equation}
-asymptotic=\frac{6.338 \cdot 10^{-23} s^{3} - 1.345 \cdot 10^{-11} s^{2} - 1.786 s}{1.378 \cdot 10^{-34} s^{4} - 2.156 \cdot 10^{-23} s^{3} + 7.641 \cdot 10^{-12} s^{2} + s}
+<a id="eq_vout"></a>\begin{equation}
+V_{out}=0.2236\,\left[ \mathrm{V}\right]
 \end{equation}
-\begin{equation}
-loopgain=\frac{- 1.243 \cdot 10^{29} s^{3} + 1.944 \cdot 10^{40} s^{2} - 6.891 \cdot 10^{51} s - 9.019 \cdot 10^{62}}{8.513 \cdot 10^{21} s^{4} + 1.66 \cdot 10^{33} s^{3} + 9.063 \cdot 10^{43} s^{2} + 9.169 \cdot 10^{53} s + 4.733 \cdot 10^{59}}
+<p>To account for the 50 Ohm output impedance, the required voltage swing is doubled.</p>
+<a id="eq_vout_amp"></a>\begin{equation}
+V_{out}=0.4472\,\left[ \mathrm{V}\right]
 \end{equation}
-\begin{equation}
-servo=\frac{1.243 \cdot 10^{29} s^{3} - 1.944 \cdot 10^{40} s^{2} + 6.891 \cdot 10^{51} s + 9.019 \cdot 10^{62}}{8.513 \cdot 10^{21} s^{4} + 1.66 \cdot 10^{33} s^{3} + 9.061 \cdot 10^{43} s^{2} + 9.238 \cdot 10^{53} s + 9.024 \cdot 10^{62}}
+<a id="eq_drive"></a>\begin{equation}
+I_{drive}=0.004472\,\left[ \mathrm{A}\right]
 \end{equation}
-\begin{equation}
-direct=\frac{1.669 \cdot 10^{-38} s^{5} + 3.038 \cdot 10^{-27} s^{4} + 1.382 \cdot 10^{-16} s^{3} - 6.201 \cdot 10^{-13} s^{2}}{1.799 \cdot 10^{-38} s^{5} + 3.508 \cdot 10^{-27} s^{4} + 1.915 \cdot 10^{-16} s^{3} + 1.937 \cdot 10^{-6} s^{2} + s}
+<h3>Transfer</h3>
+<a id="eq_gain"></a>\begin{equation}
+A_{v}=1.789
 \end{equation}
-<figure><img src="img/fb_mag.svg" alt="" style="width:600px">
+<p>From the required gain, the feedback capacitor is chosen relative to the sensing capacitor.</p>
+<a id="eq_cfb"></a>\begin{equation}
+C_{fb}=0.56 C_{s}\,\left[ \mathrm{F}\right]
+\end{equation}
+<h3>Distortion / Non-Linearity</h3>
+<p>TBD</p>
+<h3>Biasing</h3>
+<p>TBD</p>
+<h2>Graphs</h2>
+<h3>Magnitude Plot</h3>
+<figure><img src="img/fb_mag.svg" alt="" style="width:700px">
 </figure>
-<figure><img src="img/noise_function_plot_HZ.svg" alt="" style="width:700px">
+\begin{equation}
+gain=\frac{8.755 \cdot 10^{-42} s^{5} + 1.598 \cdot 10^{-30} s^{4} + 7.139 \cdot 10^{-20} s^{3} - 1.634 \cdot 10^{-10} s^{2} - 1.785 s}{3.56 \cdot 10^{-53} s^{6} + 2.253 \cdot 10^{-41} s^{5} + 3.338 \cdot 10^{-30} s^{4} + 1.552 \cdot 10^{-19} s^{3} + 1.024 \cdot 10^{-9} s^{2} + s}
+\end{equation}
+\begin{equation}
+asymptotic=\frac{5.324 \cdot 10^{-33} s^{4} - 1.066 \cdot 10^{-21} s^{3} - 1.634 \cdot 10^{-10} s^{2} - 1.786 s}{5.334 \cdot 10^{-46} s^{5} + 2.863 \cdot 10^{-34} s^{4} - 1.238 \cdot 10^{-23} s^{3} + 7.641 \cdot 10^{-12} s^{2} + s}
+\end{equation}
+\begin{equation}
+loopgain=\frac{- 9.622 \cdot 10^{28} s^{4} - 5.165 \cdot 10^{40} s^{3} + 2.234 \cdot 10^{51} s^{2} - 1.378 \cdot 10^{63} s - 1.804 \cdot 10^{74}}{6.425 \cdot 10^{21} s^{5} + 4.066 \cdot 10^{33} s^{4} + 6.025 \cdot 10^{44} s^{3} + 2.801 \cdot 10^{55} s^{2} + 1.834 \cdot 10^{65} s + 9.465 \cdot 10^{70}}
+\end{equation}
+\begin{equation}
+servo=\frac{9.622 \cdot 10^{28} s^{4} + 5.165 \cdot 10^{40} s^{3} - 2.234 \cdot 10^{51} s^{2} + 1.378 \cdot 10^{63} s + 1.804 \cdot 10^{74}}{6.425 \cdot 10^{21} s^{5} + 4.066 \cdot 10^{33} s^{4} + 6.025 \cdot 10^{44} s^{3} + 2.801 \cdot 10^{55} s^{2} + 1.848 \cdot 10^{65} s + 1.805 \cdot 10^{74}}
+\end{equation}
+\begin{equation}
+direct=\frac{1.669 \cdot 10^{-38} s^{5} + 3.038 \cdot 10^{-27} s^{4} + 1.382 \cdot 10^{-16} s^{3} - 6.201 \cdot 10^{-13} s^{2}}{6.788 \cdot 10^{-50} s^{6} + 4.296 \cdot 10^{-38} s^{5} + 6.365 \cdot 10^{-27} s^{4} + 2.959 \cdot 10^{-16} s^{3} + 1.938 \cdot 10^{-6} s^{2} + s}
+\end{equation}
+<h3>Noise Spectrum</h3>
+<figure><img src="img/noise_function_plot_HZ.svg" alt="" style="width:750px">
 </figure>
-<figure><img src="img/inoise.svg" alt="" style="width:600px">
-</figure>
-<figure><img src="img/onoise.svg" alt="" style="width:600px">
+<figure><img src="img/inoise.svg" alt="" style="width:700px">
 </figure>
 <!-- INSERT -->
 <div id="footnote">
 <p>Go to <a href="Active_E_Field_Probe_index.html">Active_E_Field_Probe_index</a></p>
 <p>SLiCAP: Symbolic Linear Circuit Analysis Program, Version 4.0.10 &copy 2009-2025 SLiCAP development team</p>
 <p>For documentation, examples, support, updates and courses please visit: <a href="https://analog-electronics.tudelft.nl">analog-electronics.tudelft.nl</a></p>
-<p>Last project update: 2026-01-20 12:32:16</p>
+<p>Last project update: 2026-01-20 22:37:29</p>
 </div></body></html>
