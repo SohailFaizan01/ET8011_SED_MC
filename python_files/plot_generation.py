@@ -2,7 +2,7 @@
 
 from SLiCAP import *
 from .circuit import cir
-# from .optimize_W_IC import noise_expr
+from .optimize_W_IC import noise_expr
 
 # --- Gains ---
 gain        = doLaplace(cir, numeric=True, source='V1', detector='V_Amp_out', pardefs='circuit', lgref='Gm_M1_X1', transfer='gain')
@@ -14,7 +14,7 @@ direct      = doLaplace(cir, numeric=True, source='V1', detector='V_Amp_out', pa
 # --- Plots Data Generation ---
 fb_model = [gain, asymptotic, loopgain, servo, direct]
 plotSweep("fb_mag", "Magnitude plots feedback model parameters", fb_model, 1e3, 1e10, 200, yLim=[-75, 75], funcType='dBmag')
-# plotSweep("inoise", "input noise spectral density", [noise_expr], 1e3, 1e9, 200, funcType='inoise')
+plotSweep("inoise", "input noise spectral density", [noise_expr], 1e3, 1e9, 200, funcType='inoise')
 
 
 
