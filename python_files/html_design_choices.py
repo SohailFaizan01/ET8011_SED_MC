@@ -167,6 +167,11 @@ text2html(
     "TBD"
 )
 
+##### Circuit Image
+head2html("Circuit")
+
+img2html("Active_E_Field_Probe.svg",  width=1000)
+
 ##### Gain functions and plots
 head2html("Graphs")
 head3html("Magnitude Plot")

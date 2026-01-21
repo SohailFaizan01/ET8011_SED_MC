@@ -2,8 +2,10 @@
 
 from SLiCAP import *
 import numpy as np
+from sympy import *
 from .circuit import cir
 from .specifications import specs
+
 
 # --------------------------------------------------
 # User input (parameter sweep)
@@ -113,7 +115,7 @@ def find_current_for_bandwidth(f_bw_req, f_vec):
         specs[26].value = ID
         specs2circuit(specs, cir)
 
-        tf = doLaplace(cir, numeric=True, source='V1', detector='V_Amp_out', pardefs='circuit', lgref='Gm_M1_X1', transfer='loopgain').laplace
+        tf = doLaplace(cir, numeric=True, source='V1', detector='V_Amp_out', pardefs='circuit', lgref='Gm_M1_X1', transfer='gain').laplace
 
         bw = compute_3db_bandwidth(tf, f_vec)
 
@@ -135,7 +137,7 @@ if ID_0 is None:
 print("\nInitial bandwidth sizing:")
 print(f"  ID  = {ID_0:.3e} A")
 print(f"  BW  = {bw_0:.3e} Hz")
-print(f"  IC  = {IC_0}")
+print(f"  IC  = {IC_0:.3f}")
 
 # --------------------------------------------------
 # W Search loop
@@ -198,7 +200,7 @@ print("\n========== FINAL DESIGN ==========")
 
 print(f"Drain current     ID = {ID_final:.3e} A")
 print(f"Transistor width  W  = {w_found}")
-print(f"Inversion coeff   IC = {cir.getParValue('IC_X1')}")
+print(f"Inversion coeff   IC = {cir.getParValue('IC_X1'):.3f}")
 print(f"-3 dB bandwidth   BW = {bw_final:.3e} Hz")
 
 print("=================================")

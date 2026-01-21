@@ -2158,7 +2158,7 @@
 	)
 	(wire
 		(pts
-			(xy 171.45 39.37) (xy 186.69 39.37)
+			(xy 171.45 39.37) (xy 232.41 39.37)
 		)
 		(stroke
 			(width 0)
@@ -2255,16 +2255,6 @@
 			(type default)
 		)
 		(uuid "d91a956f-2cbb-4789-8815-2941af3ee122")
-	)
-	(wire
-		(pts
-			(xy 196.85 39.37) (xy 232.41 39.37)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d9a9e0fd-c688-422e-a555-0e5277fe2f0c")
 	)
 	(wire
 		(pts
@@ -2865,7 +2855,7 @@
 				)
 			)
 		)
-		(property "W" "{220e-7}"
+		(property "W" "{W1_N}"
 			(at 133.35 67.945 0)
 			(show_name yes)
 			(do_not_autoplace yes)
@@ -2914,124 +2904,6 @@
 			(project "Active_E_Field_Probe"
 				(path "/8648b04b-5135-4efe-a9b1-6520ac7dc88b"
 					(reference "X7")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "SLiCAP:R")
-		(at 191.77 39.37 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "43a4589d-73ad-4d79-9bfc-73eab4500173")
-		(property "Reference" "R1"
-			(at 192.278 30.734 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "50"
-			(at 192.278 33.274 90)
-			(show_name yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 194.945 38.735 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 194.945 38.735 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor (cannot have zero resistance)"
-			(at 197.612 18.288 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "model" "R"
-			(at 195.58 37.465 0)
-			(show_name yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "noisetemp" "{T_op_max}"
-			(at 192.278 35.814 90)
-			(show_name yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "noiseflow" "0"
-			(at 191.77 30.48 90)
-			(show_name yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "dcvar" "0"
-			(at 191.77 33.02 90)
-			(show_name yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "dcvarlot" "0"
-			(at 191.77 35.56 90)
-			(show_name yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "86af2143-d61c-40f7-84f4-3fb7efabd257")
-		)
-		(pin "1"
-			(uuid "6212b567-9ef6-428b-b585-103403b66af9")
-		)
-		(instances
-			(project "Active_E_Field_Probe"
-				(path "/8648b04b-5135-4efe-a9b1-6520ac7dc88b"
-					(reference "R1")
 					(unit 1)
 				)
 			)
@@ -3467,7 +3339,7 @@
 		(dnp no)
 		(uuid "bfd26564-f464-4336-9bfb-e8c56cce6c50")
 		(property "Reference" "X5"
-			(at 161.925 68.58 0)
+			(at 159.512 93.472 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3475,7 +3347,7 @@
 			)
 		)
 		(property "Value" "~"
-			(at 161.925 71.12 0)
+			(at 159.766 95.504 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3637,7 +3509,7 @@
 				)
 			)
 		)
-		(property "W" "{220e-7}"
+		(property "W" "{W1_N}"
 			(at 151.13 67.945 0)
 			(show_name yes)
 			(do_not_autoplace yes)
@@ -3699,10 +3571,9 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "c8a90258-0229-4213-b39b-30cc6f0ca9ac")
 		(property "Reference" "X4"
-			(at 122.555 68.58 0)
+			(at 126.238 93.218 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3710,7 +3581,7 @@
 			)
 		)
 		(property "Value" "~"
-			(at 122.555 71.12 0)
+			(at 126.238 95.504 0)
 			(effects
 				(font
 					(size 1.27 1.27)
