@@ -10,6 +10,7 @@ from python_files import plot_generation
 from python_files import html_specifications
 # from python_files import html_twoport
 from python_files import html_design_choices
+from python_files import html_circuit_performance
 
 
 ############################################## Random Blocks of Code ##############################################

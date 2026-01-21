@@ -2,7 +2,7 @@
 
 from SLiCAP import *
 import numpy as np
-from sympy import *
+import sympy as sp
 from .circuit import cir
 from .specifications import specs
 
