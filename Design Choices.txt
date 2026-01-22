@@ -79,3 +79,7 @@ Biasing:
 
 
 
+#################################### Frequency Compensation ####################################
+ - Phantom zero: not possible due to capacitive feedback
+ - Pole Splitting /  / Resistive broad banding, will only move the poles further apart
+
