@@ -1555,780 +1555,596 @@
 		)
 	)
 	(junction
-		(at 142.24 49.53)
+		(at 184.15 106.68)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "0607c146-d05e-431f-950d-7a7a40404eda")
+		(uuid "12849a96-0746-4ddf-9b55-cd8b1a5f3df1")
 	)
 	(junction
-		(at 232.41 83.82)
+		(at 138.43 106.68)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "099f7a02-4150-4d75-bac8-e81318611aa6")
-	)
-	(junction
-		(at 111.76 90.17)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "13b8fd63-83ff-4b8b-82e2-8fdd6b18ebf2")
-	)
-	(junction
-		(at 120.65 110.49)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "13d829c0-d5b7-488f-b54d-f15fb4cd4f36")
-	)
-	(junction
-		(at 151.13 49.53)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "1ed87aa0-b9d4-49d2-b215-ea4baee5988a")
-	)
-	(junction
-		(at 223.52 49.53)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "343462ee-5481-4857-8c0b-a50c723e4a7d")
-	)
-	(junction
-		(at 232.41 90.17)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "35d5dc54-0af4-41a2-ac65-873ca67fe86b")
-	)
-	(junction
-		(at 210.82 49.53)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "3c4c40b7-654e-4e63-b5a5-522a7b17f8b8")
-	)
-	(junction
-		(at 210.82 83.82)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "503be6ca-cac7-451d-9bad-9c8ac83a52b5")
-	)
-	(junction
-		(at 210.82 110.49)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "5167e5b7-86ea-4e7a-a61d-6c49f8b74a02")
+		(uuid "1d10633f-226c-411b-abcc-535ce9045e12")
 	)
 	(junction
 		(at 201.93 86.36)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "5fb09161-200f-4e74-9005-331eb9ce32e1")
+		(uuid "2a56125c-ec25-4c26-a87c-155a8e6c53c2")
 	)
 	(junction
-		(at 163.83 110.49)
+		(at 180.34 86.36)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "881f81a5-f935-410a-a029-28ec41ba7533")
+		(uuid "3ebbaf66-7e56-4d0e-86c4-d3c86399390f")
 	)
 	(junction
-		(at 214.63 110.49)
+		(at 180.34 60.96)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "8da958de-b1ad-4c0c-bb8a-f2dbbe1a33f3")
+		(uuid "4dc4e216-7b1a-450c-932a-3a9491db2d20")
 	)
 	(junction
-		(at 168.91 110.49)
+		(at 180.34 106.68)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "ab717358-7e7f-48ed-b56b-3a3057d1cafc")
+		(uuid "60af632f-cb3a-4a8d-a876-ad5ab0448c38")
 	)
 	(junction
-		(at 134.62 49.53)
+		(at 133.35 106.68)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "be007c16-076a-47f8-9d1f-fc4db80fe361")
+		(uuid "99f1a8c9-db01-4094-b5c1-aa8db9090168")
 	)
 	(junction
-		(at 210.82 90.17)
+		(at 171.45 86.36)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "cd034078-17d4-4a2e-904c-c7f6afcfd5df")
+		(uuid "a3d0c8a5-2f92-498f-a6f0-d3b95eefdbf4")
 	)
 	(junction
-		(at 142.24 68.58)
+		(at 193.04 60.96)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "de57e744-fb1c-4046-adc1-253e39284f82")
+		(uuid "a8591a7b-a793-476f-9a59-1b6d28d36599")
 	)
-	(wire
-		(pts
-			(xy 92.71 90.17) (xy 99.06 90.17)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "06973996-83ad-4c2d-9e0f-a55197749c02")
-	)
-	(wire
-		(pts
-			(xy 149.86 76.2) (xy 149.86 71.12)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "078c3deb-8ce7-4582-8e22-8f52f37e3bdf")
-	)
-	(wire
-		(pts
-			(xy 147.32 76.2) (xy 147.32 82.55)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0b9c6da7-3825-4021-81fa-fafe2ee85ff6")
-	)
-	(wire
-		(pts
-			(xy 232.41 90.17) (xy 232.41 95.25)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0e1c1153-90be-4aaf-b233-e2006b9b8055")
-	)
-	(wire
-		(pts
-			(xy 223.52 49.53) (xy 210.82 49.53)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0f7a7bef-f641-4dc1-8888-820d909d0ab2")
-	)
-	(wire
-		(pts
-			(xy 140.97 68.58) (xy 142.24 68.58)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "16378587-effc-43c0-b450-192648446232")
-	)
-	(wire
-		(pts
-			(xy 133.35 49.53) (xy 134.62 49.53)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1b1d7c96-5c20-424e-ad13-c2e7110b5f68")
-	)
-	(wire
-		(pts
-			(xy 151.13 66.04) (xy 151.13 49.53)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2157eb5d-f14b-467c-aee2-2e13219e9f1b")
-	)
-	(wire
-		(pts
-			(xy 210.82 90.17) (xy 210.82 93.98)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "22b98455-a05b-47ce-aa8c-fb15670beddf")
-	)
-	(wire
-		(pts
-			(xy 133.35 66.04) (xy 133.35 49.53)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "22c07b9e-ada7-4ce9-90d6-6598b3ee242e")
-	)
-	(wire
-		(pts
-			(xy 232.41 90.17) (xy 236.22 90.17)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "263ab9a5-0081-4724-b45a-5d0e1f2ae24a")
-	)
-	(wire
-		(pts
-			(xy 201.93 86.36) (xy 201.93 101.6)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "29da1d43-bbd4-4c77-b101-6aa6192e7413")
-	)
-	(wire
-		(pts
-			(xy 227.33 90.17) (xy 232.41 90.17)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2a87feab-520c-4432-9d78-e0046cf65f04")
+	(junction
+		(at 180.34 80.01)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c75b52df-29e3-47a8-8d8c-569fda569649")
 	)
-	(wire
-		(pts
-			(xy 111.76 90.17) (xy 111.76 39.37)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2d8bbed1-a761-4648-9c20-e3f5978f4c45")
+	(junction
+		(at 81.28 86.36)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c8f04b66-b4a0-4794-aaa9-5b994b8d647f")
 	)
-	(wire
-		(pts
-			(xy 134.62 49.53) (xy 134.62 60.96)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2e3852c9-df76-40e3-8296-44cb89260507")
+	(junction
+		(at 201.93 80.01)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c94c9069-1bc0-4542-8237-29de7127c58a")
 	)
-	(wire
-		(pts
-			(xy 182.88 58.42) (xy 182.88 86.36)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2f7aa999-3c99-4548-accd-1ec673a3a85e")
+	(junction
+		(at 90.17 106.68)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "cd81428d-7ae2-483b-85de-1f0f39bf2c2f")
 	)
 	(wire
 		(pts
-			(xy 201.93 71.12) (xy 201.93 86.36)
+			(xy 180.34 74.93) (xy 180.34 80.01)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "31beb568-d46a-4c95-a4d6-57c2a1080e98")
+		(uuid "0818a15e-d46d-424c-a43c-e500a1e14fca")
 	)
 	(wire
 		(pts
-			(xy 92.71 110.49) (xy 120.65 110.49)
+			(xy 81.28 86.36) (xy 87.63 86.36)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "3616ebb5-86ef-4314-aff9-269986faa1f9")
+		(uuid "09e41c82-b096-4b38-85f8-e9211e9624ee")
 	)
 	(wire
 		(pts
-			(xy 210.82 110.49) (xy 210.82 113.03)
+			(xy 196.85 62.23) (xy 196.85 60.96)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "392b1941-655e-43b8-93e6-1c5c94fc960a")
+		(uuid "0d365bb2-9e29-4184-9d09-1672f6ee25bf")
 	)
 	(wire
 		(pts
-			(xy 210.82 104.14) (xy 210.82 110.49)
+			(xy 180.34 106.68) (xy 180.34 109.22)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "3eac0cdd-695e-4f32-8dd1-c409be533d08")
+		(uuid "15181a90-4223-4b51-99f4-bf9398b147e8")
 	)
 	(wire
 		(pts
-			(xy 133.35 66.04) (xy 134.62 66.04)
+			(xy 184.15 106.68) (xy 201.93 106.68)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "428e182c-030a-40ac-9fc1-4c5455cc3134")
+		(uuid "16081ed2-eaa1-4a2b-9273-253ad5852b94")
 	)
 	(wire
 		(pts
-			(xy 137.16 76.2) (xy 137.16 82.55)
+			(xy 184.15 95.25) (xy 184.15 106.68)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "44de4409-e5f2-4ee0-8ae9-ed858236e0ab")
+		(uuid "1edaa65f-28b1-4574-a657-8594d1b061d4")
 	)
 	(wire
 		(pts
-			(xy 153.67 90.17) (xy 156.21 90.17)
+			(xy 106.68 60.96) (xy 180.34 60.96)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "482480ae-d9c3-480f-b5c9-5101828eea03")
+		(uuid "2184a28a-892f-4125-98aa-45760a67bf65")
 	)
 	(wire
 		(pts
-			(xy 120.65 100.33) (xy 120.65 110.49)
+			(xy 180.34 80.01) (xy 180.34 86.36)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "4917fdb5-3fc0-4303-bb81-587dfa8d4b74")
+		(uuid "22643a12-5b2e-44ac-8ea5-f2ca96304cdf")
 	)
 	(wire
 		(pts
-			(xy 232.41 39.37) (xy 232.41 83.82)
+			(xy 196.85 86.36) (xy 201.93 86.36)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "4ba9f6f3-f76f-4139-b84d-b8f42dc9a971")
+		(uuid "24329b0f-9dc8-4d81-85cc-f51ae2ad0daf")
 	)
 	(wire
 		(pts
-			(xy 142.24 49.53) (xy 151.13 49.53)
+			(xy 62.23 91.44) (xy 62.23 86.36)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "4cb86142-e2d7-4dd8-9071-a70d452665ab")
+		(uuid "28eb9ece-5cff-4a34-9661-52b5ba05caf4")
 	)
 	(wire
 		(pts
-			(xy 214.63 99.06) (xy 214.63 110.49)
+			(xy 106.68 78.74) (xy 106.68 60.96)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "4e8cd9d2-c36f-4515-b87f-38c530998552")
+		(uuid "2f680898-f9a1-4c2a-8125-ff4da64639d9")
 	)
 	(wire
 		(pts
-			(xy 201.93 101.6) (xy 204.47 101.6)
+			(xy 180.34 95.25) (xy 184.15 95.25)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "555f4e24-5c31-447e-b6cd-403ddae3ff96")
+		(uuid "37e27919-348d-4b4b-a51d-8631024b410f")
 	)
 	(wire
 		(pts
-			(xy 232.41 105.41) (xy 232.41 110.49)
+			(xy 180.34 86.36) (xy 186.69 86.36)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "59dd93f2-bcb6-4402-aa00-58a7a534b901")
+		(uuid "37ea9588-4a5f-482e-b20a-ba1865693de5")
 	)
 	(wire
 		(pts
-			(xy 134.62 49.53) (xy 142.24 49.53)
+			(xy 116.84 67.31) (xy 143.51 67.31)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "5a6f7ef3-dc9a-4fe7-9d8d-d6288f93c2d3")
+		(uuid "3c41113a-cd3b-459a-b587-e0f396d06bc7")
 	)
 	(wire
 		(pts
-			(xy 223.52 73.66) (xy 223.52 49.53)
+			(xy 123.19 86.36) (xy 125.73 86.36)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "5ba957d8-88b3-4efc-88f7-d89d0c5ac54a")
+		(uuid "3c9a8eb4-d773-4c75-b5b6-90a3faf3b993")
 	)
 	(wire
 		(pts
-			(xy 134.62 76.2) (xy 134.62 71.12)
+			(xy 171.45 67.31) (xy 171.45 86.36)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "5c07c1b2-9a41-4b67-a692-615e29588623")
+		(uuid "41bd9c6a-2c76-4ab1-b311-4e3bc40097be")
 	)
 	(wire
 		(pts
-			(xy 111.76 90.17) (xy 118.11 90.17)
+			(xy 201.93 86.36) (xy 205.74 86.36)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "5eedc8e5-c3d7-4588-8e71-30ccb95450a7")
+		(uuid "41ef2e33-a73a-4080-9532-77fe73730871")
 	)
 	(wire
 		(pts
-			(xy 111.76 39.37) (xy 161.29 39.37)
+			(xy 173.99 67.31) (xy 171.45 67.31)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "6078681d-c7ba-4b3d-adfe-bf7dfe6e2859")
+		(uuid "4b580d7e-619b-4f4a-8993-c1f40a9ef426")
 	)
 	(wire
 		(pts
-			(xy 168.91 110.49) (xy 210.82 110.49)
+			(xy 201.93 50.8) (xy 201.93 80.01)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "632f63b3-3185-461e-b60d-36e561e8d0f8")
+		(uuid "50a69e3f-2929-4beb-a452-f787189bfda6")
 	)
 	(wire
 		(pts
-			(xy 166.37 90.17) (xy 168.91 90.17)
+			(xy 180.34 100.33) (xy 180.34 106.68)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "647a5298-83d8-4971-8350-93cea4386f79")
+		(uuid "5a533e54-cb23-4767-8cbe-5d6da6316135")
 	)
 	(wire
 		(pts
-			(xy 151.13 49.53) (xy 210.82 49.53)
+			(xy 143.51 86.36) (xy 171.45 86.36)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "6eab52d1-eaf3-491a-bcb0-35dacebbecb7")
+		(uuid "5c754216-c21c-4151-8c17-7bb2486484ec")
 	)
 	(wire
 		(pts
-			(xy 92.71 95.25) (xy 92.71 90.17)
+			(xy 201.93 86.36) (xy 201.93 91.44)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "71049791-e778-489d-a74b-0aa72962a349")
+		(uuid "5ec1ea5f-3ccc-4bab-87ef-40a088eca530")
 	)
 	(wire
 		(pts
-			(xy 232.41 83.82) (xy 210.82 83.82)
+			(xy 90.17 96.52) (xy 90.17 106.68)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "763b02b0-b2bf-4aad-ba16-58844fb2c41d")
+		(uuid "62092088-9e86-4bc3-bae8-afdc5f00e7e7")
 	)
 	(wire
 		(pts
-			(xy 128.27 90.17) (xy 130.81 90.17)
+			(xy 180.34 86.36) (xy 180.34 90.17)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "7d1f1b67-0d39-4219-b505-fd306a3bd5e8")
+		(uuid "67867c0f-3cad-4337-a8e2-577cd0ca6472")
 	)
 	(wire
 		(pts
-			(xy 109.22 90.17) (xy 111.76 90.17)
+			(xy 116.84 78.74) (xy 116.84 67.31)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "83d16c77-8695-41bf-b594-0cf5f8450bcf")
+		(uuid "6be7f484-279a-4618-82df-d2825977d338")
 	)
 	(wire
 		(pts
-			(xy 223.52 49.53) (xy 227.33 49.53)
+			(xy 193.04 60.96) (xy 196.85 60.96)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "8eb43c87-1c4f-44b7-95be-cd86058f2e00")
+		(uuid "723013f5-426e-446e-98e5-1a4e2d4a48b8")
 	)
 	(wire
 		(pts
-			(xy 168.91 90.17) (xy 168.91 110.49)
+			(xy 143.51 67.31) (xy 143.51 86.36)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "9d0b1038-41ee-4430-961e-11a637e81676")
+		(uuid "73008164-eb0e-433a-9c00-8ed0533cc077")
 	)
 	(wire
 		(pts
-			(xy 163.83 100.33) (xy 163.83 110.49)
+			(xy 193.04 60.96) (xy 180.34 60.96)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "9e0f2d66-9d83-4bed-b490-be7ae2e0d61e")
+		(uuid "75fbac44-630f-4709-857c-7aeb78bb2db6")
 	)
 	(wire
 		(pts
-			(xy 92.71 105.41) (xy 92.71 110.49)
+			(xy 138.43 86.36) (xy 138.43 106.68)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "ac54a4fe-4866-44a0-a12f-216cbd8bf318")
+		(uuid "7f6ddfa0-4f40-4754-ad63-9b44a3d8530a")
 	)
 	(wire
 		(pts
-			(xy 210.82 73.66) (xy 223.52 73.66)
+			(xy 140.97 50.8) (xy 201.93 50.8)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "acb04e62-a159-47ac-adf7-15aca9108960")
+		(uuid "814e14c6-6193-47e2-bc7e-1412526cf237")
 	)
 	(wire
 		(pts
-			(xy 142.24 68.58) (xy 143.51 68.58)
+			(xy 97.79 86.36) (xy 100.33 86.36)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "aff0b8db-bedb-42db-9e56-b9d6013960e3")
+		(uuid "8710b06c-fd72-49e9-8481-4f9b09d6b52a")
 	)
 	(wire
 		(pts
-			(xy 210.82 78.74) (xy 210.82 83.82)
+			(xy 201.93 80.01) (xy 180.34 80.01)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "b5ddbc5d-1a2f-4190-b992-d25d6dea5492")
+		(uuid "8737a864-12a3-4969-bcf6-a39acf10257e")
 	)
 	(wire
 		(pts
-			(xy 236.22 83.82) (xy 232.41 83.82)
+			(xy 81.28 86.36) (xy 81.28 50.8)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "b7953fa6-b269-49c2-a4b6-5c7b567f556f")
+		(uuid "9f9fe75f-8b40-4a0c-8092-2a55f1433fee")
 	)
 	(wire
 		(pts
-			(xy 210.82 83.82) (xy 210.82 90.17)
+			(xy 205.74 80.01) (xy 201.93 80.01)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "b7c229e9-cfc5-4ffb-aeee-2358ca681641")
+		(uuid "a0aa76c1-863b-41bd-b710-5954a222f1fe")
 	)
 	(wire
 		(pts
-			(xy 171.45 39.37) (xy 232.41 39.37)
+			(xy 133.35 106.68) (xy 138.43 106.68)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "bab8593c-f11f-4857-a842-1e8e6189818f")
+		(uuid "aedaf9f8-0ff0-41a8-bbbc-6109afeee64d")
 	)
 	(wire
 		(pts
-			(xy 210.82 99.06) (xy 214.63 99.06)
+			(xy 62.23 86.36) (xy 68.58 86.36)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "bd81bb14-f72f-467c-8773-f7be31ce2194")
+		(uuid "b3d8a00c-1f39-420b-abc0-3148f715c841")
 	)
 	(wire
 		(pts
-			(xy 163.83 110.49) (xy 168.91 110.49)
+			(xy 171.45 97.79) (xy 173.99 97.79)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "c2ef15c8-43dd-40c9-b9c2-4399241368ab")
+		(uuid "b4c8e1a3-e154-4d27-9db7-5c7df25621c9")
 	)
 	(wire
 		(pts
-			(xy 149.86 76.2) (xy 147.32 76.2)
+			(xy 193.04 69.85) (xy 193.04 60.96)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "c5d82c51-5ae1-4423-8be6-28d2fedbc336")
+		(uuid "b9574fe9-41f6-42d6-83ca-864a7bf9b906")
 	)
 	(wire
 		(pts
-			(xy 210.82 90.17) (xy 217.17 90.17)
+			(xy 78.74 86.36) (xy 81.28 86.36)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "d0b72243-7da1-4b44-910b-40555332a6f8")
+		(uuid "ba8256e1-dcf0-4476-89da-ea0250c30fa2")
 	)
 	(wire
 		(pts
-			(xy 210.82 110.49) (xy 214.63 110.49)
+			(xy 180.34 106.68) (xy 184.15 106.68)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "d399daae-0318-4d67-8d4a-9567688ad41a")
+		(uuid "bb600f36-2c42-4e69-828f-9a2ae5c2e820")
 	)
 	(wire
 		(pts
-			(xy 120.65 110.49) (xy 163.83 110.49)
+			(xy 180.34 60.96) (xy 180.34 64.77)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "d6f5f5e8-5aae-4da6-8a61-66e3e5f30c4a")
+		(uuid "c1136ed7-9093-4325-9732-0d9ba62cde95")
 	)
 	(wire
 		(pts
-			(xy 182.88 86.36) (xy 201.93 86.36)
+			(xy 171.45 86.36) (xy 171.45 97.79)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "d777b481-6e99-4490-99aa-ab9157a076f1")
+		(uuid "c1a48375-f2f4-4a14-87fa-c6df14151d01")
 	)
 	(wire
 		(pts
-			(xy 134.62 76.2) (xy 137.16 76.2)
+			(xy 138.43 106.68) (xy 180.34 106.68)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "d89e7664-e97a-4d3d-86db-89ffb4fede7f")
+		(uuid "c6adecd0-b073-4c03-b944-fa24bbdadf15")
 	)
 	(wire
 		(pts
-			(xy 210.82 49.53) (xy 210.82 68.58)
+			(xy 180.34 69.85) (xy 193.04 69.85)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "d91a956f-2cbb-4789-8815-2941af3ee122")
+		(uuid "caa566b8-85b6-4ee2-97db-bf96b4dcb4af")
 	)
 	(wire
 		(pts
-			(xy 204.47 71.12) (xy 201.93 71.12)
+			(xy 81.28 50.8) (xy 130.81 50.8)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "e660a19c-59dc-4859-9fb8-08da9a0233e8")
+		(uuid "caef20d5-70a2-4375-b517-aa53a39da67e")
 	)
 	(wire
 		(pts
-			(xy 149.86 66.04) (xy 151.13 66.04)
+			(xy 135.89 86.36) (xy 138.43 86.36)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "ebea8fdc-d3b7-4a70-acab-65653df1238e")
+		(uuid "da9aa12a-777a-43db-93a4-a07a881387af")
 	)
 	(wire
 		(pts
-			(xy 149.86 60.96) (xy 149.86 58.42)
+			(xy 62.23 101.6) (xy 62.23 106.68)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "f05dd69a-3abc-4134-bfed-6604f56e9f7c")
+		(uuid "dc986143-efb6-4719-babb-00258d31d5f0")
 	)
 	(wire
 		(pts
-			(xy 227.33 50.8) (xy 227.33 49.53)
+			(xy 62.23 106.68) (xy 90.17 106.68)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "f170fb89-4b3b-409d-8877-51bce978d81e")
+		(uuid "df7e8fca-9882-4917-a2d9-f17b5602f4a6")
 	)
 	(wire
 		(pts
-			(xy 214.63 110.49) (xy 232.41 110.49)
+			(xy 133.35 96.52) (xy 133.35 106.68)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "fb63d6a2-a00f-44c7-9c3c-9b4d06ee75d3")
+		(uuid "e4c63d55-3154-4922-92a0-89cc18038886")
 	)
 	(wire
 		(pts
-			(xy 142.24 49.53) (xy 142.24 68.58)
+			(xy 201.93 101.6) (xy 201.93 106.68)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "fbf33f3b-d950-427a-be6b-15ccc17628a6")
+		(uuid "e6e09c3c-97d5-4b2c-8271-15251f81299f")
 	)
 	(wire
 		(pts
-			(xy 149.86 58.42) (xy 182.88 58.42)
+			(xy 90.17 106.68) (xy 133.35 106.68)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "fd7aa57e-31ba-4518-897c-ecf6be1e2f9e")
+		(uuid "f9eb0e74-ee8b-4c98-ac7d-e717b732ec7a")
 	)
-	(global_label "Amp_out"
+	(global_label "vo"
 		(shape output)
-		(at 236.22 83.82 0)
+		(at 205.74 86.36 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2336,9 +2152,9 @@
 			)
 			(justify left)
 		)
-		(uuid "231a1d96-5983-4ccb-b94b-f2fb0c3dc4b5")
+		(uuid "a6005c35-12bc-49c0-96e7-1b84b42a5538")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 247.1274 83.82 0)
+			(at 210.8418 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2348,9 +2164,9 @@
 			)
 		)
 	)
-	(global_label "vo"
+	(global_label "Amp_out"
 		(shape output)
-		(at 236.22 90.17 0)
+		(at 205.74 80.01 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2358,9 +2174,9 @@
 			)
 			(justify left)
 		)
-		(uuid "7007d233-6bd3-4b74-9dd1-d5bca705bf98")
+		(uuid "c62f2249-650f-4a80-97be-501529bdc651")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 241.3218 90.17 0)
+			(at 216.6474 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2372,15 +2188,15 @@
 	)
 	(symbol
 		(lib_id "SLiCAP:C")
-		(at 166.37 39.37 90)
+		(at 135.89 50.8 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "018d13ad-6da3-4d35-abf6-39b06a8374c2")
-		(property "Reference" "C23"
-			(at 166.37 43.434 90)
+		(uuid "373c50ab-9494-4106-84eb-9a67fc946568")
+		(property "Reference" "C31"
+			(at 135.89 54.864 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2388,7 +2204,7 @@
 			)
 		)
 		(property "Value" "{0.56*C_s}"
-			(at 166.37 45.974 90)
+			(at 135.89 57.404 90)
 			(show_name yes)
 			(effects
 				(font
@@ -2397,7 +2213,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 167.64 36.83 0)
+			(at 137.16 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2406,7 +2222,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 167.64 36.83 0)
+			(at 137.16 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2415,7 +2231,7 @@
 			)
 		)
 		(property "Description" "Capacitor"
-			(at 172.466 32.258 0)
+			(at 141.986 43.688 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2424,7 +2240,7 @@
 			)
 		)
 		(property "model" "C"
-			(at 170.18 36.83 0)
+			(at 139.7 48.26 0)
 			(show_name yes)
 			(effects
 				(font
@@ -2435,7 +2251,7 @@
 			)
 		)
 		(property "vinit" "0"
-			(at 166.3037 35.56 90)
+			(at 135.8237 46.99 90)
 			(show_name yes)
 			(effects
 				(font
@@ -2445,15 +2261,82 @@
 			)
 		)
 		(pin "1"
-			(uuid "f2874923-90c5-4cd5-8931-041df1cfcdb4")
+			(uuid "5197cf53-7837-4deb-8158-90482ce73c22")
 		)
 		(pin "2"
-			(uuid "b0c06255-f00b-4286-8d89-68e0227448d5")
+			(uuid "d4337fa0-d245-4e1d-944a-7fbd1c622549")
 		)
 		(instances
 			(project "Active_E_Field_Probe"
 				(path "/8648b04b-5135-4efe-a9b1-6520ac7dc88b"
-					(reference "C23")
+					(reference "C31")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "SLiCAP:GND")
+		(at 180.34 109.22 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "475f67b7-6f91-494d-ba27-f02482bc0825")
+		(property "Reference" "#022"
+			(at 180.34 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "0"
+			(at 180.34 111.76 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 180.34 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 180.34 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "0V reference potential"
+			(at 180.34 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "426f6902-be07-49cb-9643-86cd0a610529")
+		)
+		(instances
+			(project "Active_E_Field_Probe"
+				(path "/8648b04b-5135-4efe-a9b1-6520ac7dc88b"
+					(reference "#022")
 					(unit 1)
 				)
 			)
@@ -2461,16 +2344,16 @@
 	)
 	(symbol
 		(lib_id "SLiCAP:XM")
-		(at 210.82 73.66 0)
+		(at 180.34 69.85 0)
 		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "049d9013-ceea-4453-8e39-82186a185c95")
+		(uuid "69afe1d0-a6b7-4f19-b9aa-7ee096e0bd0a")
 		(property "Reference" "X2"
-			(at 213.36 80.264 0)
+			(at 182.88 76.454 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2478,7 +2361,7 @@
 			)
 		)
 		(property "Value" "~"
-			(at 211.455 75.565 0)
+			(at 180.975 71.755 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2488,7 +2371,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 210.82 72.39 0)
+			(at 180.34 68.58 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2497,7 +2380,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 210.82 72.39 0)
+			(at 180.34 68.58 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2506,7 +2389,7 @@
 			)
 		)
 		(property "Description" "MOSFET (small-signal N or P channel subcircuit with parameters W,  L, and ID)"
-			(at 245.872 66.548 0)
+			(at 215.392 62.738 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2515,7 +2398,7 @@
 			)
 		)
 		(property "model" "CMOS18P"
-			(at 220.472 77.724 0)
+			(at 189.992 73.914 0)
 			(show_name yes)
 			(effects
 				(font
@@ -2524,7 +2407,7 @@
 			)
 		)
 		(property "W" "{W_P}"
-			(at 212.09 72.136 0)
+			(at 181.61 68.326 0)
 			(show_name yes)
 			(do_not_autoplace yes)
 			(effects
@@ -2535,7 +2418,7 @@
 			)
 		)
 		(property "L" "{L_P}"
-			(at 212.09 69.596 0)
+			(at 181.61 65.786 0)
 			(show_name yes)
 			(do_not_autoplace yes)
 			(effects
@@ -2546,7 +2429,7 @@
 			)
 		)
 		(property "ID" "{ID_P}"
-			(at 212.09 74.93 0)
+			(at 181.61 71.12 0)
 			(show_name yes)
 			(do_not_autoplace yes)
 			(effects
@@ -2557,16 +2440,16 @@
 			)
 		)
 		(pin "4"
-			(uuid "be3e2137-ac18-494f-9347-4d4bd31e5c72")
+			(uuid "5e90a7a5-d612-435d-b9ee-95e30b84dd9e")
 		)
 		(pin "2"
-			(uuid "81c53e2e-863c-4a4e-8775-2ae9438375d9")
+			(uuid "8ec07516-d591-45fd-9eee-edb4491ee0bf")
 		)
 		(pin "3"
-			(uuid "c53493a5-a53a-46bd-8e21-9023a8d69cd6")
+			(uuid "9a5e3896-4364-4a41-ae4b-d961fb985df0")
 		)
 		(pin "1"
-			(uuid "6c42f817-e1ea-4839-af3d-fa85f9f326c0")
+			(uuid "e2e6fa9c-4b5d-4003-94a9-7c4e9357a8a0")
 		)
 		(instances
 			(project "Active_E_Field_Probe"
@@ -2579,16 +2462,16 @@
 	)
 	(symbol
 		(lib_id "SLiCAP:C")
-		(at 104.14 90.17 90)
+		(at 73.66 86.36 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "2efee96f-9881-4362-a4d8-bc6807031a65")
-		(property "Reference" "C22"
-			(at 104.0737 81.28 90)
+		(uuid "7a889041-9f66-46bc-848f-a2da107baf11")
+		(property "Reference" "C30"
+			(at 73.5937 77.47 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2596,7 +2479,7 @@
 			)
 		)
 		(property "Value" "{C_s}"
-			(at 104.0737 83.82 90)
+			(at 73.5937 80.01 90)
 			(show_name yes)
 			(effects
 				(font
@@ -2605,7 +2488,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 105.41 87.63 0)
+			(at 74.93 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2614,7 +2497,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 105.41 87.63 0)
+			(at 74.93 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2623,7 +2506,7 @@
 			)
 		)
 		(property "Description" "Capacitor"
-			(at 110.236 83.058 0)
+			(at 79.756 79.248 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2632,7 +2515,7 @@
 			)
 		)
 		(property "model" "C"
-			(at 107.95 87.63 0)
+			(at 77.47 83.82 0)
 			(show_name yes)
 			(effects
 				(font
@@ -2643,7 +2526,7 @@
 			)
 		)
 		(property "vinit" "0"
-			(at 104.0737 86.36 90)
+			(at 73.5937 82.55 90)
 			(show_name yes)
 			(effects
 				(font
@@ -2652,140 +2535,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "1bd5e7a2-6764-4f86-a600-def45d077e2f")
+			(uuid "629fea73-40aa-4c80-b82a-c1ec3a216730")
 		)
 		(pin "2"
-			(uuid "0ef7af6b-c996-41f1-b1e7-2fc9f18f324c")
+			(uuid "8299cdc9-b676-43be-9e5e-6e81e3a6b6fa")
 		)
 		(instances
 			(project "Active_E_Field_Probe"
 				(path "/8648b04b-5135-4efe-a9b1-6520ac7dc88b"
-					(reference "C22")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "SLiCAP:R")
-		(at 232.41 100.33 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "37b9609b-3e62-4047-8cbf-b358f0375e09")
-		(property "Reference" "R17"
-			(at 234.95 97.7899 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "50"
-			(at 234.95 100.3299 0)
-			(show_name yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 233.045 103.505 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 233.045 103.505 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor (cannot have zero resistance)"
-			(at 253.492 106.172 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "model" "R"
-			(at 234.315 104.14 0)
-			(show_name yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "noisetemp" "{0}"
-			(at 234.95 102.8699 0)
-			(show_name yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "noiseflow" "0"
-			(at 234.95 104.1399 0)
-			(show_name yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "dcvar" "0"
-			(at 234.95 105.4099 0)
-			(show_name yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "dcvarlot" "0"
-			(at 234.95 106.6799 0)
-			(show_name yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "608a47ea-631f-466b-9c73-2c4f94ff9954")
-		)
-		(pin "1"
-			(uuid "b633ce59-daac-494c-8205-a4f5e27a722d")
-		)
-		(instances
-			(project "Active_E_Field_Probe"
-				(path "/8648b04b-5135-4efe-a9b1-6520ac7dc88b"
-					(reference "R17")
+					(reference "C30")
 					(unit 1)
 				)
 			)
@@ -2793,904 +2551,15 @@
 	)
 	(symbol
 		(lib_id "SLiCAP:XM")
-		(at 134.62 66.04 0)
-		(mirror y)
+		(at 180.34 95.25 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "3b8b52fe-fc39-4255-8146-28431423074c")
-		(property "Reference" "X7"
-			(at 129.54 61.0868 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "~"
-			(at 133.985 64.135 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" ""
-			(at 134.62 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 134.62 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "MOSFET (small-signal N or P channel subcircuit with parameters W,  L, and ID)"
-			(at 99.568 73.152 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "model" "CMOS18N"
-			(at 124.46 65.786 0)
-			(show_name yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "W" "{W1_N}"
-			(at 133.35 67.945 0)
-			(show_name yes)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "L" "{L1_N}"
-			(at 133.35 70.485 0)
-			(show_name yes)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "ID" "{ID1_N}"
-			(at 133.35 63.5 0)
-			(show_name yes)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "1"
-			(uuid "b8ebdce4-7d10-478e-9272-666be1142f8e")
-		)
-		(pin "2"
-			(uuid "6be93a37-8d28-48b1-8f8b-f29777c07dd4")
-		)
-		(pin "4"
-			(uuid "9823012b-7781-4404-90c5-28b56daa2d59")
-		)
-		(pin "3"
-			(uuid "84b1051f-4720-4b48-9c49-b299f1168f35")
-		)
-		(instances
-			(project "Active_E_Field_Probe"
-				(path "/8648b04b-5135-4efe-a9b1-6520ac7dc88b"
-					(reference "X7")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "SLiCAP:V")
-		(at 92.71 100.33 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "4f8f7bbb-845e-4483-8406-8ac0a453f9c2")
-		(property "Reference" "V1"
-			(at 96.52 98.9329 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "{V_in}"
-			(at 96.52 101.4729 0)
-			(show_name yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 92.71 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 92.71 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" "Independent voltage source"
-			(at 109.22 107.442 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "noise" "0"
-			(at 96.52 102.7429 0)
-			(show_name yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "dc" "0"
-			(at 96.52 104.0129 0)
-			(show_name yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "dcvar" "0"
-			(at 96.52 105.2829 0)
-			(show_name yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "model" "V"
-			(at 95.885 105.41 0)
-			(show_name yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "80a985b7-6d39-40c3-ad4d-55947f3ef8c1")
-		)
-		(pin "2"
-			(uuid "fd532a64-22c7-416a-a7f6-83f9ea2cb56b")
-		)
-		(instances
-			(project "Active_E_Field_Probe"
-				(path "/8648b04b-5135-4efe-a9b1-6520ac7dc88b"
-					(reference "V1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "SLiCAP:XMD")
-		(at 137.16 87.63 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "5c1c072f-6bb9-4b20-83f1-2be5d97f75f7")
-		(property "Reference" "X1"
-			(at 142.24 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "~"
-			(at 137.795 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" ""
-			(at 137.16 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 137.16 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Differential-pair MOSFET (small-signal N or P channel subcircuit with parameters W,  L, and ID)"
-			(at 164.084 93.726 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "model" "CMOS18ND"
-			(at 142.24 96.52 0)
-			(show_name yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "W" "{W1_N}"
-			(at 137.414 102.362 0)
-			(show_name yes)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "L" "{L1_N}"
-			(at 137.414 104.902 0)
-			(show_name yes)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "ID" "{ID1_N}"
-			(at 137.414 99.822 0)
-			(show_name yes)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "3"
-			(uuid "33adf881-b2c5-4e20-bb8f-9cd987a1be1c")
-		)
-		(pin "1"
-			(uuid "d9fcc9c1-2e13-4a17-9518-c6600d17ce70")
-		)
-		(pin "2"
-			(uuid "bb3c0d7c-6e78-4730-bcc6-471aacf30c3f")
-		)
-		(pin "4"
-			(uuid "fb4a5120-7dc0-4f1b-a5ad-0089cc375ce6")
-		)
-		(instances
-			(project ""
-				(path "/8648b04b-5135-4efe-a9b1-6520ac7dc88b"
-					(reference "X1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "SLiCAP:R")
-		(at 222.25 90.17 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "89e4ae15-e512-4991-a198-099d39ef0032")
-		(property "Reference" "R16"
-			(at 222.758 81.534 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "50"
-			(at 222.758 84.074 90)
-			(show_name yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 225.425 89.535 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 225.425 89.535 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor (cannot have zero resistance)"
-			(at 228.092 69.088 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "model" "R"
-			(at 226.06 88.265 0)
-			(show_name yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "noisetemp" "{T_op_max}"
-			(at 222.758 86.614 90)
-			(show_name yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "noiseflow" "0"
-			(at 222.25 81.28 90)
-			(show_name yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "dcvar" "0"
-			(at 222.25 83.82 90)
-			(show_name yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "dcvarlot" "0"
-			(at 222.25 86.36 90)
-			(show_name yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "8d3c7d30-7c30-4111-936c-e581a69323e5")
-		)
-		(pin "1"
-			(uuid "be5659d6-4f74-4c28-a26c-08e8ad7acb0d")
-		)
-		(instances
-			(project "Active_E_Field_Probe"
-				(path "/8648b04b-5135-4efe-a9b1-6520ac7dc88b"
-					(reference "R16")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "SLiCAP:GND")
-		(at 210.82 113.03 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "a5cb57e3-d80b-42cd-9b10-cf9228b136af")
-		(property "Reference" "#016"
-			(at 210.82 118.11 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "0"
-			(at 210.82 115.57 0)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 210.82 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 210.82 123.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "0V reference potential"
-			(at 210.82 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "e2f588c7-b39f-467d-8495-e72487ddac91")
-		)
-		(instances
-			(project "Active_E_Field_Probe"
-				(path "/8648b04b-5135-4efe-a9b1-6520ac7dc88b"
-					(reference "#016")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "SLiCAP:M_noise")
-		(at 161.29 95.25 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "bfd26564-f464-4336-9bfb-e8c56cce6c50")
-		(property "Reference" "X5"
-			(at 159.512 93.472 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "~"
-			(at 159.766 95.504 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 161.29 96.52 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 161.29 96.52 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" "Input-referred noise sources of a MOSFET (N or P channel, parameters W, L, ID, and IG)"
-			(at 133.096 83.566 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "ID" "{ID1_N}"
-			(at 161.925 73.66 0)
-			(show_name yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "IG" "{0}"
-			(at 161.925 76.2 0)
-			(show_name yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "W" "{W1_N}"
-			(at 161.925 78.74 0)
-			(show_name yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "L" "{L1_N}"
-			(at 161.925 81.28 0)
-			(show_name yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "model" "MN18_noise"
-			(at 161.925 83.82 0)
-			(show_name yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "87ff50e8-5572-496b-b2f0-360a1d4e2025")
-		)
-		(pin "3"
-			(uuid "ea3d44ca-fbfc-4bec-b609-fbe64257c699")
-		)
-		(pin "2"
-			(uuid "3d9d9dd1-1867-4e0e-ba00-14d4251aa101")
-		)
-		(instances
-			(project "Active_E_Field_Probe"
-				(path "/8648b04b-5135-4efe-a9b1-6520ac7dc88b"
-					(reference "X5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "SLiCAP:XM")
-		(at 149.86 66.04 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "c2c3cba7-c59f-4ac4-b0e9-d6ef5dea041c")
-		(property "Reference" "X6"
-			(at 154.94 61.0868 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "~"
-			(at 150.495 64.135 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" ""
-			(at 149.86 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 149.86 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "MOSFET (small-signal N or P channel subcircuit with parameters W,  L, and ID)"
-			(at 184.912 73.152 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "model" "CMOS18N"
-			(at 159.766 65.532 0)
-			(show_name yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "W" "{W1_N}"
-			(at 151.13 67.945 0)
-			(show_name yes)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "L" "{L1_N}"
-			(at 151.13 70.485 0)
-			(show_name yes)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "ID" "{ID1_N}"
-			(at 151.13 63.5 0)
-			(show_name yes)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "1"
-			(uuid "4705ec2e-0c0b-4811-82fb-6b451b184df5")
-		)
-		(pin "2"
-			(uuid "3fbfdabd-95fb-43d6-830a-5bee5f45bc0e")
-		)
-		(pin "4"
-			(uuid "7bd71b6d-d35d-4a49-bd3c-11be0d4601a2")
-		)
-		(pin "3"
-			(uuid "314b0e3b-14fa-4ac9-82ed-661664c1e80f")
-		)
-		(instances
-			(project ""
-				(path "/8648b04b-5135-4efe-a9b1-6520ac7dc88b"
-					(reference "X6")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "SLiCAP:M_noise")
-		(at 123.19 95.25 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "c8a90258-0229-4213-b39b-30cc6f0ca9ac")
-		(property "Reference" "X4"
-			(at 126.238 93.218 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "~"
-			(at 126.238 95.504 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 123.19 96.52 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 123.19 96.52 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" "Input-referred noise sources of a MOSFET (N or P channel, parameters W, L, ID, and IG)"
-			(at 151.384 83.566 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "ID" "{ID1_N}"
-			(at 122.555 73.66 0)
-			(show_name yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "IG" "{0}"
-			(at 122.555 76.2 0)
-			(show_name yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "W" "{W1_N}"
-			(at 122.555 78.74 0)
-			(show_name yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "L" "{L1_N}"
-			(at 122.555 81.28 0)
-			(show_name yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "model" "MN18_noise"
-			(at 122.555 83.82 0)
-			(show_name yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "a0f58ae5-31fd-4246-beab-7ebe0e2f44ef")
-		)
-		(pin "3"
-			(uuid "1f7906eb-c925-425c-b71a-103f25c22f0e")
-		)
-		(pin "2"
-			(uuid "e7b793e1-c4d4-4ae1-a177-2f75293b14bb")
-		)
-		(instances
-			(project ""
-				(path "/8648b04b-5135-4efe-a9b1-6520ac7dc88b"
-					(reference "X4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "SLiCAP:XM")
-		(at 210.82 99.06 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "d6a5dd0a-4ef1-45df-b50b-232b8897bac1")
+		(uuid "953ef216-b7f7-4a87-8750-efadc411ab30")
 		(property "Reference" "X3"
-			(at 213.36 92.456 0)
+			(at 182.88 88.646 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3698,7 +2567,7 @@
 			)
 		)
 		(property "Value" "~"
-			(at 211.455 97.155 0)
+			(at 180.975 93.345 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3708,7 +2577,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 210.82 100.33 0)
+			(at 180.34 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3717,7 +2586,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 210.82 100.33 0)
+			(at 180.34 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3726,7 +2595,7 @@
 			)
 		)
 		(property "Description" "MOSFET (small-signal N or P channel subcircuit with parameters W,  L, and ID)"
-			(at 245.872 106.172 0)
+			(at 215.392 102.362 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3735,7 +2604,7 @@
 			)
 		)
 		(property "model" "CMOS18N"
-			(at 220.472 94.996 0)
+			(at 189.992 91.186 0)
 			(show_name yes)
 			(effects
 				(font
@@ -3744,7 +2613,7 @@
 			)
 		)
 		(property "W" "{W_N}"
-			(at 212.09 100.584 0)
+			(at 181.61 96.774 0)
 			(show_name yes)
 			(do_not_autoplace yes)
 			(effects
@@ -3755,7 +2624,7 @@
 			)
 		)
 		(property "L" "{L_N}"
-			(at 212.09 103.124 0)
+			(at 181.61 99.314 0)
 			(show_name yes)
 			(do_not_autoplace yes)
 			(effects
@@ -3766,7 +2635,7 @@
 			)
 		)
 		(property "ID" "{ID_N}"
-			(at 212.09 97.79 0)
+			(at 181.61 93.98 0)
 			(show_name yes)
 			(do_not_autoplace yes)
 			(effects
@@ -3777,16 +2646,16 @@
 			)
 		)
 		(pin "4"
-			(uuid "39766d8a-241f-40d9-8273-93a0265b1e45")
+			(uuid "6830bbbb-f0be-485c-9134-8046a5fc54ef")
 		)
 		(pin "2"
-			(uuid "c20f7f62-a0a8-467f-81c2-2b62ac87bcea")
+			(uuid "df6b0c7f-e112-4507-801e-89539aea6699")
 		)
 		(pin "3"
-			(uuid "ff874ec8-9286-4b52-ab70-80b621e96d5f")
+			(uuid "c814957e-bd92-49de-a7dc-02cee6134496")
 		)
 		(pin "1"
-			(uuid "4afcd1e5-0651-4198-89da-37528961c225")
+			(uuid "fdcc3672-b338-4da8-a3f8-4bed10ca0c37")
 		)
 		(instances
 			(project "Active_E_Field_Probe"
@@ -3798,35 +2667,36 @@
 		)
 	)
 	(symbol
-		(lib_id "SLiCAP:GND")
-		(at 227.33 50.8 0)
+		(lib_id "SLiCAP:R")
+		(at 201.93 96.52 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "fc784959-aeaf-43c0-9eb6-cddf29b344da")
-		(property "Reference" "#017"
-			(at 227.33 55.88 0)
+		(uuid "aadfe88f-8640-42dc-81cc-b539d2f4a587")
+		(property "Reference" "R25"
+			(at 204.47 93.9799 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
+				(justify left)
 			)
 		)
-		(property "Value" "0"
-			(at 227.33 53.34 0)
-			(do_not_autoplace yes)
+		(property "Value" "50"
+			(at 204.47 96.5199 0)
+			(show_name yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
-			(at 227.33 50.8 0)
+			(at 202.565 99.695 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3835,7 +2705,602 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 227.33 60.96 0)
+			(at 202.565 99.695 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor (cannot have zero resistance)"
+			(at 223.012 102.362 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "model" "R"
+			(at 203.835 100.33 0)
+			(show_name yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "noisetemp" "{0}"
+			(at 204.47 99.0599 0)
+			(show_name yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "noiseflow" "0"
+			(at 204.47 100.3299 0)
+			(show_name yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "dcvar" "0"
+			(at 204.47 101.5999 0)
+			(show_name yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "dcvarlot" "0"
+			(at 204.47 102.8699 0)
+			(show_name yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "c2159c86-eb66-4b49-b4d4-e072c6847091")
+		)
+		(pin "1"
+			(uuid "633ee2c4-d7a4-4871-aeba-3fbc14dd7888")
+		)
+		(instances
+			(project "Active_E_Field_Probe"
+				(path "/8648b04b-5135-4efe-a9b1-6520ac7dc88b"
+					(reference "R25")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "SLiCAP:M_noise")
+		(at 92.71 91.44 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c05787f6-2df3-4d1d-b286-dfe15c955708")
+		(property "Reference" "X4"
+			(at 92.075 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "~"
+			(at 92.075 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 92.71 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 92.71 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "Input-referred noise sources of a MOSFET (N or P channel, parameters W, L, ID, and IG)"
+			(at 120.904 79.756 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "ID" "{ID1_N}"
+			(at 92.075 69.85 0)
+			(show_name yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "IG" "{0}"
+			(at 92.075 72.39 0)
+			(show_name yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "W" "{W1_N}"
+			(at 92.075 74.93 0)
+			(show_name yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "L" "{L1_N}"
+			(at 92.075 77.47 0)
+			(show_name yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "model" "MN18_noise"
+			(at 92.075 80.01 0)
+			(show_name yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "4e8e3885-b47b-4bb7-bb95-73fdf209ceea")
+		)
+		(pin "3"
+			(uuid "661f2f82-d6d5-477e-acf7-0743c3b6a6fe")
+		)
+		(pin "2"
+			(uuid "4ff55f2e-5c85-4577-baed-6350c739f418")
+		)
+		(instances
+			(project "Active_E_Field_Probe"
+				(path "/8648b04b-5135-4efe-a9b1-6520ac7dc88b"
+					(reference "X4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "SLiCAP:M_noise")
+		(at 130.81 91.44 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "cedd09b9-e2b8-4811-8a28-738266213eeb")
+		(property "Reference" "X5"
+			(at 131.445 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "~"
+			(at 131.445 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 130.81 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 130.81 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "Input-referred noise sources of a MOSFET (N or P channel, parameters W, L, ID, and IG)"
+			(at 102.616 79.756 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "ID" "{ID1_N}"
+			(at 131.445 69.85 0)
+			(show_name yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "IG" "{0}"
+			(at 131.445 72.39 0)
+			(show_name yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "W" "{W1_N}"
+			(at 131.445 74.93 0)
+			(show_name yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "L" "{L1_N}"
+			(at 131.445 77.47 0)
+			(show_name yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "model" "MN18_noise"
+			(at 131.445 80.01 0)
+			(show_name yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "246fb6ce-7d18-4655-8be8-6644b007c742")
+		)
+		(pin "3"
+			(uuid "9f05df04-ee29-44da-a35d-955900d6ac35")
+		)
+		(pin "2"
+			(uuid "6e398092-a3d7-4997-9566-fa19a7f224a2")
+		)
+		(instances
+			(project "Active_E_Field_Probe"
+				(path "/8648b04b-5135-4efe-a9b1-6520ac7dc88b"
+					(reference "X5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "SLiCAP:XMD")
+		(at 106.68 83.82 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d4f285d8-325e-4213-a676-442551ddbc6e")
+		(property "Reference" "X1"
+			(at 111.76 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "~"
+			(at 107.315 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 106.68 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 106.68 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Differential-pair MOSFET (small-signal N or P channel subcircuit with parameters W,  L, and ID)"
+			(at 133.604 89.916 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "model" "CMOS18ND"
+			(at 111.76 92.71 0)
+			(show_name yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "W" "{W1_N}"
+			(at 106.934 98.552 0)
+			(show_name yes)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "L" "{L1_N}"
+			(at 106.934 101.092 0)
+			(show_name yes)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "ID" "{ID1_N}"
+			(at 106.934 96.012 0)
+			(show_name yes)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "3"
+			(uuid "dbb64dde-fdc8-4255-a4b2-20255d0857a8")
+		)
+		(pin "1"
+			(uuid "64bff857-d034-4b83-a267-eec6f48c608c")
+		)
+		(pin "2"
+			(uuid "2a38739d-a77b-41d6-8eef-b7191e081ce2")
+		)
+		(pin "4"
+			(uuid "6d157fb1-9f85-49a0-a86e-0fb9cc348bb5")
+		)
+		(instances
+			(project "Active_E_Field_Probe"
+				(path "/8648b04b-5135-4efe-a9b1-6520ac7dc88b"
+					(reference "X1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "SLiCAP:R")
+		(at 191.77 86.36 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f08da622-dac7-4f0c-96f8-a3973fc49490")
+		(property "Reference" "R24"
+			(at 192.278 77.724 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "50"
+			(at 192.278 80.264 90)
+			(show_name yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 194.945 85.725 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 194.945 85.725 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor (cannot have zero resistance)"
+			(at 197.612 65.278 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "model" "R"
+			(at 195.58 84.455 0)
+			(show_name yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "noisetemp" "{T_op_max}"
+			(at 192.278 82.804 90)
+			(show_name yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "noiseflow" "0"
+			(at 191.77 77.47 90)
+			(show_name yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "dcvar" "0"
+			(at 191.77 80.01 90)
+			(show_name yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "dcvarlot" "0"
+			(at 191.77 82.55 90)
+			(show_name yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "bd95021b-2ac7-41da-adca-080e83d512ff")
+		)
+		(pin "1"
+			(uuid "e57b6e20-402d-4fd4-a58f-f280a47647e8")
+		)
+		(instances
+			(project "Active_E_Field_Probe"
+				(path "/8648b04b-5135-4efe-a9b1-6520ac7dc88b"
+					(reference "R24")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "SLiCAP:GND")
+		(at 196.85 62.23 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f5a0f57a-2038-41de-8e09-b243364f4111")
+		(property "Reference" "#023"
+			(at 196.85 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "0"
+			(at 196.85 64.77 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 196.85 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 196.85 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3844,7 +3309,7 @@
 			)
 		)
 		(property "Description" "0V reference potential"
-			(at 227.33 58.42 0)
+			(at 196.85 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3853,12 +3318,129 @@
 			)
 		)
 		(pin "1"
-			(uuid "df3450b4-1f9e-4cf3-828e-0246efa70a67")
+			(uuid "999dd8a5-8b8f-4b95-9ab9-e79feb99cbdb")
 		)
 		(instances
 			(project "Active_E_Field_Probe"
 				(path "/8648b04b-5135-4efe-a9b1-6520ac7dc88b"
-					(reference "#017")
+					(reference "#023")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "SLiCAP:V")
+		(at 62.23 96.52 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "fde0effe-42d0-4eed-b346-9656d94abdbb")
+		(property "Reference" "V1"
+			(at 66.04 95.1229 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "{V_in}"
+			(at 66.04 97.6629 0)
+			(show_name yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 62.23 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 62.23 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "Independent voltage source"
+			(at 78.74 103.632 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "noise" "0"
+			(at 66.04 98.9329 0)
+			(show_name yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "dc" "0"
+			(at 66.04 100.2029 0)
+			(show_name yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "dcvar" "0"
+			(at 66.04 101.4729 0)
+			(show_name yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "model" "V"
+			(at 65.405 101.6 0)
+			(show_name yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "1a014ed6-c0a9-4336-8e15-633680b6c8a3")
+		)
+		(pin "2"
+			(uuid "991f19f5-f336-4c0f-a493-c8dc2a7cf32a")
+		)
+		(instances
+			(project "Active_E_Field_Probe"
+				(path "/8648b04b-5135-4efe-a9b1-6520ac7dc88b"
+					(reference "V1")
 					(unit 1)
 				)
 			)

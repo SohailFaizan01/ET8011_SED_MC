@@ -21,6 +21,9 @@ eqn2html("loopgain",    loopgain.laplace)
 eqn2html("servo",       servo.laplace)
 eqn2html("direct",      direct.laplace)
 
+##### Pole Zero Plot
+pz2html(PoleZero, label='PoleZero Loopgain', labelText='PoleZero Loopgain')
+
 ##### Input referred noise
 head3html("Noise Spectrum")
 img2html("noise_function_plot_HZ.svg", width=750)

@@ -10,17 +10,30 @@ from .specifications import specs
 # --------------------------------------------------
 # User input (parameter sweep)
 # --------------------------------------------------
-f_bw_req = float(input("Enter required -3 dB bandwidth [Hz]: "))
+# f_bw_req = float(input("Enter required -3 dB bandwidth [Hz]: "))
+f_bw_req = 100e6
 
-ID_min   = float(input("Enter minimum drain current [A]: "))
-ID_max   = float(input("Enter maximum drain current [A]: "))
-ID_step  = float(input("Enter current step [A]: "))
+# ID_min   = float(input("Enter minimum drain current [A]: "))
+ID_min = 300e-6
 
-IC_tol   = float(input("Enter allowed IC deviation (e.g. 0.2 for ±20%): "))
+# ID_max   = float(input("Enter maximum drain current [A]: "))
+ID_max = 300e-6
 
-w_min  = float(input("Enter minimum w: "))
-w_max  = float(input("Enter maximum w: "))
-w_step = float(input("Enter w step size: "))
+# ID_step  = float(input("Enter current step [A]: "))
+ID_step = 1e-6
+
+# IC_tol   = float(input("Enter allowed IC deviation (e.g. 0.2 for ±20%): "))
+IC_tol = 0.1
+
+# w_min  = float(input("Enter minimum w: "))
+w_min = 5e-6
+
+# w_max  = float(input("Enter maximum w: "))
+w_max = 10e-6
+
+# w_step = float(input("Enter w step size: "))
+w_step = 1e-6
+
 
 # --------------------------------------------------
 # Define frequency grid

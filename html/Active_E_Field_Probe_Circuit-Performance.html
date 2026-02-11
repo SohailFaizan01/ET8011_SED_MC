@@ -15,20 +15,29 @@
 <figure><img src="img/fb_mag.svg" alt="" style="width:800px">
 </figure>
 \begin{equation}
-gain=\frac{1.755 \cdot 10^{-41} s^{5} + 2.971 \cdot 10^{-30} s^{4} + 1.255 \cdot 10^{-19} s^{3} - 1.425 \cdot 10^{-11} s^{2} - 1.785 s}{1.89 \cdot 10^{-41} s^{5} + 3.449 \cdot 10^{-30} s^{4} + 1.771 \cdot 10^{-19} s^{3} + 1.783 \cdot 10^{-9} s^{2} + s}
+gain=\frac{3.425 \cdot 10^{-21} s^{3} + 2.208 \cdot 10^{-12} s^{2} - 1.744 s}{3.769 \cdot 10^{-21} s^{3} + 3.834 \cdot 10^{-11} s^{2} + s}
 \end{equation}
 \begin{equation}
-asymptotic=\frac{6.581 \cdot 10^{-23} s^{3} - 1.419 \cdot 10^{-11} s^{2} - 1.786 s}{3.718 \cdot 10^{-34} s^{4} - 5.218 \cdot 10^{-25} s^{3} + 8.233 \cdot 10^{-12} s^{2} + s}
+asymptotic=-1.786
 \end{equation}
 \begin{equation}
-loopgain=\frac{- 6.566 \cdot 10^{26} s^{3} + 9.215 \cdot 10^{35} s^{2} - 1.454 \cdot 10^{49} s - 1.766 \cdot 10^{60}}{3.339 \cdot 10^{19} s^{4} + 6.093 \cdot 10^{30} s^{3} + 3.13 \cdot 10^{41} s^{2} + 3.136 \cdot 10^{51} s + 7.456 \cdot 10^{56}}
+loopgain=- \frac{3.644 \cdot 10^{34}}{1.406 \cdot 10^{14} s^{2} + 1.43 \cdot 10^{24} s + 8.635 \cdot 10^{32}}
 \end{equation}
 \begin{equation}
-servo=\frac{6.566 \cdot 10^{26} s^{3} - 9.215 \cdot 10^{35} s^{2} + 1.454 \cdot 10^{49} s + 1.766 \cdot 10^{60}}{3.339 \cdot 10^{19} s^{4} + 6.094 \cdot 10^{30} s^{3} + 3.13 \cdot 10^{41} s^{2} + 3.151 \cdot 10^{51} s + 1.767 \cdot 10^{60}}
+servo=\frac{3.644 \cdot 10^{34}}{1.406 \cdot 10^{14} s^{2} + 1.43 \cdot 10^{24} s + 3.73 \cdot 10^{34}}
 \end{equation}
 \begin{equation}
-direct=\frac{4.159 \cdot 10^{-38} s^{5} + 7.041 \cdot 10^{-27} s^{4} + 2.972 \cdot 10^{-16} s^{3} - 1.648 \cdot 10^{-10} s^{2}}{4.478 \cdot 10^{-38} s^{5} + 8.171 \cdot 10^{-27} s^{4} + 4.198 \cdot 10^{-16} s^{3} + 4.206 \cdot 10^{-6} s^{2} + s}
+direct=\frac{1.48 \cdot 10^{-19} s^{3} + 9.539 \cdot 10^{-11} s^{2}}{1.628 \cdot 10^{-19} s^{3} + 1.656 \cdot 10^{-9} s^{2} + s}
 \end{equation}
+<h2><a id="PoleZero Loopgain"></a>PZ  analysis results</h2>
+<h3>Gain type: loopgain</h3>
+<p>DC value = $-42.2$</p>
+<table><tr><th>pole</th><th>Re [Hz]</th><th>Im [Hz]</th><th>Mag [Hz]</th><th>Q</th></tr>
+<tr><td>p<sub>1</sub></td><td>$-102.6\cdot 10^{6}$</td><td></td><td>$102.6\cdot 10^{6}$</td><td></td></tr>
+<tr><td>p<sub>2</sub></td><td>$-1.516\cdot 10^{9}$</td><td></td><td>$1.516\cdot 10^{9}$</td><td></td></tr>
+</table>
+<table><tr><th>zero</th><th>Re [Hz]</th><th>Im [Hz]</th><th>Mag [Hz]</th><th>Q</th></tr>
+</table>
 <h3>Noise Spectrum</h3>
 <figure><img src="img/noise_function_plot_HZ.svg" alt="" style="width:750px">
 </figure>
@@ -39,5 +48,5 @@ direct=\frac{4.159 \cdot 10^{-38} s^{5} + 7.041 \cdot 10^{-27} s^{4} + 2.972 \cd
 <p>Go to <a href="Active_E_Field_Probe_index.html">Active_E_Field_Probe_index</a></p>
 <p>SLiCAP: Symbolic Linear Circuit Analysis Program, Version 4.0.10 &copy 2009-2025 SLiCAP development team</p>
 <p>For documentation, examples, support, updates and courses please visit: <a href="https://analog-electronics.tudelft.nl">analog-electronics.tudelft.nl</a></p>
-<p>Last project update: 2026-01-22 15:00:46</p>
+<p>Last project update: 2026-02-11 10:57:07</p>
 </div></body></html>

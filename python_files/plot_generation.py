@@ -3,7 +3,8 @@
 from SLiCAP import *
 from sympy import cancel, Number, expand
 from .circuit import cir
-from .optimize_W_IC import noise_expr
+#from .optimize_W_IC import noise_expr
+noise_expr = doNoise(cir, source="V1", detector="V_vo", numeric=True, pardefs='circuit')
 
 # --- Gains ---
 gain        = doLaplace(cir, numeric=True, source='V1', detector='V_Amp_out', pardefs='circuit', lgref='Gm_M1_X1', transfer='gain')
@@ -11,6 +12,8 @@ asymptotic  = doLaplace(cir, numeric=True, source='V1', detector='V_Amp_out', pa
 loopgain    = doLaplace(cir, numeric=True, source='V1', detector='V_Amp_out', pardefs='circuit', lgref='Gm_M1_X1', transfer='loopgain')
 servo       = doLaplace(cir, numeric=True, source='V1', detector='V_Amp_out', pardefs='circuit', lgref='Gm_M1_X1', transfer='servo')
 direct      = doLaplace(cir, numeric=True, source='V1', detector='V_Amp_out', pardefs='circuit', lgref='Gm_M1_X1', transfer='direct')
+
+PoleZero    = doPZ(cir, numeric=True, source='V1', detector='V_Amp_out', pardefs='circuit', lgref='Gm_M1_X1', transfer='loopgain')
 
 # --- Plots Data Generation ---
 noise_expr.inoise = cancel(noise_expr.inoise)

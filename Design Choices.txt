@@ -54,6 +54,23 @@ Distortion/Non Linearity:
 
 Biasing:
 
+#################################### Order of Design ####################################
+ - Set quiescent current to meet bandwidth requirement, the bandwidth varies with signal amplitude, the quiescent yields the minimum bandwidth. Non linearity might require more current still.
+ - Input stage current should meet the bandwidth of the second stage to ensure stability.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #################################### Others ####################################
 
@@ -82,4 +99,13 @@ Biasing:
 #################################### Frequency Compensation ####################################
  - Phantom zero: not possible due to capacitive feedback
  - Pole Splitting /  / Resistive broad banding, will only move the poles further apart
+
+
+
+#################################### To-Do ####################################
+ - Dominant pole is set by the capacitance second stage, cascoding will this time increase the bandwidth!
+ - Set bandwidth, non linearity requirement through the current and width in the second stage
+ - Set noise and gain though the width in the first stage and make sure there is enough current to drive the second stage, ie bandwidth greater or equal to the second stage.
+
+
 
