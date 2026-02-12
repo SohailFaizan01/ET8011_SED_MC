@@ -5,10 +5,9 @@ prj = initProject("Active_E_Field_Probe")
 
 from python_files import specifications
 from python_files import circuit
-# from python_files import optimize_W_IC
+from python_files import stages_optimization
 from python_files import plot_generation
 from python_files import html_specifications
-# from python_files import html_twoport
 from python_files import html_design_choices
 from python_files import html_circuit_performance
 

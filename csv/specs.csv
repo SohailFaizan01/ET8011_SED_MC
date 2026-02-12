@@ -17,12 +17,12 @@ Z_in_amp,Amplifier input impedance,50,Ohm,Amplifier
 Z_out_amp,Amplifier output impedance,50,Ohm,Amplifier
 V_in,Amplifier input voltage,1/4,V,Amplifier
 A_cl,Amplifier closed-loop gain,5/2,NA,Amplifier
-W_N,Transistor width,1/10000,m,Amplifier
+W_N,Transistor width,9/250000,m,Amplifier
 L_N,Transistor length,9/50000000,m,Amplifier
-ID_N,Transistor drain current,6749999999999999/1000000000000000000,A,Amplifier
-W_P,Transistor width,3/20000,m,Amplifier
+ID_N,Transistor drain current,9/2000,A,Amplifier
+W_P,Transistor width,9/62500,m,Amplifier
 L_P,Transistor length,9/50000000,m,Amplifier
-ID_P,Transistor drain current,0,A,Amplifier
-W1_N,Transistor width,1/5000,m,Amplifier
+ID_P,Transistor drain current,-9/2000,A,Amplifier
+W1_N,Transistor width,1/1000000,m,Amplifier
 L1_N,Transistor length,9/50000000,m,Amplifier
 ID1_N,Transistor drain current,1/1000,A,Amplifier

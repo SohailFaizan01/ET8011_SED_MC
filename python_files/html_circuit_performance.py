@@ -28,7 +28,7 @@ pz2html(PoleZero, label='PoleZero Loopgain', labelText='PoleZero Loopgain')
 head3html("Noise Spectrum")
 img2html("noise_function_plot_HZ.svg", width=750)
 img2html("inoise.svg",  width=700)
-# eqn2html("S_IRnoise",   noise_expr.inoise)
+eqn2html("S_IRnoise",   noise_expr.inoise)
 
 
 

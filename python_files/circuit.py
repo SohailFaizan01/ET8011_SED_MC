@@ -14,18 +14,7 @@ cir = makeCircuit(fileName,imgWidth=1000)
 ##### Import predefined specifications to the kicad circuit
 specs2circuit(specs, cir)
 
-# print("Available loop gain references:")
-#print(cir.controlled)
-#cir.defPar("c_dg_X1", 0)
-#print(N(cir.getParValue("c_gs_X1"),2))
-print(N(cir.getParValue("f_T_X1"),2))
-print(N(cir.getParValue("g_m_X1"),2))
-print(N(cir.getParValue("g_m_X2"),2))
-print(N(cir.getParValue("g_m_X3"),2))
 
-#cir.defPar("c_dg_X1", 0)
-cir.defPar("c_dg_X2", 0)
-cir.defPar("c_dg_X3", 0)
 
 
 
@@ -37,6 +26,7 @@ cir.defPar("c_dg_X3", 0)
 ############################################## Random Blocks of Code ##############################################
 
 ##### List the available loopgain references
+# print("Available loop gain references:")
 # print(cir.controlled)
 
 ##### Set drain gate capacitance to 0
@@ -44,6 +34,10 @@ cir.defPar("c_dg_X3", 0)
 # cir.defPar("c_dg_X2", 0)
 # cir.defPar("c_dg_X3", 0)
 
-# print("Available loop gain references:")
-# print(cir.controlled)
-
+##### Print parameter value
+# print(N(cir.getParValue("f_T_X1"),2))
+# print(N(cir.getParValue("g_m_X1"),2))
+# print(N(cir.getParValue("g_m_X2"),2))
+# print(N(cir.getParValue("g_m_X3"),2))
+#print(N(cir.getParValue("c_gs_X1"),2))
+#print(cir.parDefs)
