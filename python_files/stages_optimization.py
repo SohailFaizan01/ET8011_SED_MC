@@ -6,7 +6,6 @@ from SLiCAP import *
 import numpy as np
 import sympy as sp
 from .circuit import cir
-from .specifications import specs
 
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#
 #@@@@@@@@@@@@@@@@@@@@@@@ FIRST STAGE W OPTIMIZATION @@@@@@@@@@@@@@@@@@@@@@@#
@@ -87,6 +86,14 @@ else:
     print(f"W = {W_final*1e6:.0f} µm")
     print(f"Iterations = {i+1}")
 
+
+############################################################################
+#####  Determine minimum W for sufficient loopgain #####
+############################################################################
+
+
+
+
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#
 #@@@@@@@@@@@@@@@@@@@@@@@ SECOND STAGE OPTIMIZATION @@@@@@@@@@@@@@@@@@@@@@@@#
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#
@@ -161,8 +168,6 @@ else:
     print(f"Iterations = {i+1}")
 
 
-
-
 ############################################################################
 #### Determine required quiescent current (linearity & drive capability)####
 #Need to know GM, there will be a range of solutions for a given I and W
@@ -228,6 +233,7 @@ else:
     print(f"IqN = {IqN*1e3:.2f} mA")
     print(f"IqP = {IqP*1e3:.2f} mA")
     print(f"Iterations = {i+1}")
+
 
 ############################################################################
 ##### Determine the required Ciss to ensure sufficient bandwidth #####
@@ -303,6 +309,7 @@ else:
     print(f"Wn = {Wn*1e6:.1f} µm")
     print(f"Wp = {Wp*1e6:.1f} µm")
     print(f"Iterations = {i+1}")
+
 
 ############################################################################
 ##### (Optionally) Apply pole splitting to ensure stability #####

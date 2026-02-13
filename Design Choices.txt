@@ -109,3 +109,47 @@ Biasing:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+13/02/26
+
+First Stage => noise optimization: small device, L always smallest, scale W based on gm. ensuring highest possible inversion level (upto IC_Crit, after that gm does not significantly increase) 
+
+Maybe IC_Crit is not required and a trade off can be made for absolute noise performance and less power consumption 
+
+find IC_Crit (Id/W) increase Id until gm hits IC_Crit - Scale W until noise performance is obtained. 
+
+
+Equations:
+
+ - Bandwidth 	= gm 1st & Ciss 2nd
+ - Noise 	= gm 1st & Ciss 1st
+ - Gain 2nd 	= gm 2nd * 100 Ohm
+ - Gain 1st 	= gm 1st * Rout 1st
+
+
+ Find IC_crit - obtain minimum gm whilst meeting noise spec (decreasing w which whilst keeping IC the same will increase noise)
+ Size the second stage Ciss to the biggest W that still meets the bandwidth 	<^-^>
+ determine the Id of the 2nd stage by setting the gm target. 			needs adjusting
+ 
