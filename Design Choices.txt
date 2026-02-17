@@ -152,4 +152,11 @@ Equations:
  Find IC_crit - obtain minimum gm whilst meeting noise spec (decreasing w which whilst keeping IC the same will increase noise)
  Size the second stage Ciss to the biggest W that still meets the bandwidth 	<^-^>
  determine the Id of the 2nd stage by setting the gm target. 			needs adjusting
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+17/02/26
+
+Set noise budget to first stage
+loop whole circuit to find optimum IC for the first stage
  

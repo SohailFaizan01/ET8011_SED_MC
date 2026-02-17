@@ -12,6 +12,7 @@ servo       = doLaplace(cir, numeric=True, source='V1', detector='V_Amp_out', pa
 direct      = doLaplace(cir, numeric=True, source='V1', detector='V_Amp_out', pardefs='circuit', lgref='Gm_M1_X1', transfer='direct')
 
 PoleZero    = doPZ(cir, numeric=True, source='V1', detector='V_Amp_out', pardefs='circuit', lgref='Gm_M1_X1', transfer='loopgain')
+PoleZeroServo    = doPZ(cir, numeric=True, source='V1', detector='V_Amp_out', pardefs='circuit', lgref='Gm_M1_X1', transfer='servo')
 
 noise_expr = doNoise(cir, source="V1", detector="V_vo", numeric=True, pardefs='circuit')
 # --- Plots Data Generation ---
@@ -37,8 +38,10 @@ except Exception:
     # If scaling fails, proceed with the unscaled expression.
     pass
 # --- End of scaling ---
-fb_model = [gain, asymptotic, loopgain, servo, direct]
-plotSweep("fb_mag", "Magnitude plots feedback model parameters", fb_model, 1e3, 1e10, 200, yLim=[-75, 75], funcType='dBmag')
+fb_model_mag = [gain, asymptotic, loopgain, servo, direct]
+fb_model_ph = [gain, asymptotic, loopgain, servo, direct]
+plotSweep("fb_mag", "Magnitude plots feedback model parameters", fb_model_mag, 1e3, 1e10, 200, yLim=[-75, 75], funcType='dBmag')
+plotSweep("ph_mag", "Phase plots feedback model parameters", fb_model_ph, 1e3, 1e10, 200, yLim=[-190, 190], funcType='phase')
 plotSweep("inoise", "input noise spectral density", [noise_expr], 1e3, 1e9, 200, funcType='inoise')
 
 

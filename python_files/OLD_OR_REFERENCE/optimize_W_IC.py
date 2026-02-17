@@ -3,8 +3,8 @@
 from SLiCAP import *
 import numpy as np
 import sympy as sp
-from .circuit import cir
-from .specifications import specs
+from ..circuit import cir
+from ..specifications import specs
 
 
 # --------------------------------------------------

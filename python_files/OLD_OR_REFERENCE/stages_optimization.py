@@ -5,7 +5,7 @@
 from SLiCAP import *
 import numpy as np
 import sympy as sp
-from .circuit import cir
+from ..circuit import cir
 
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#
 #@@@@@@@@@@@@@@@@@@@@@@@ FIRST STAGE W OPTIMIZATION @@@@@@@@@@@@@@@@@@@@@@@#
@@ -16,75 +16,75 @@ from .circuit import cir
 # Note: DECREASING W MEANS LESS GAIN IN THE FIRST STAGE, POWER CONSUMPTION IN THE SECOND STAGE WILL SUFFER DRASTICALLY
 ############################################################################
 
-max_iter  = 10
-tol       = 0.01        # 1% margin tolerance
-converged = False
+# max_iter  = 10
+# tol       = 0.01        # 1% margin tolerance
+# converged = False
 
-# Frequency range for evaluation
-fmin = 1e3
-fmax = 1e9
-freqs = np.logspace(np.log10(fmin), np.log10(fmax), 50)
-f = sp.Symbol('f')
+# # Frequency range for evaluation
+# fmin = 1e3
+# fmax = 1e9
+# freqs = np.logspace(np.log10(fmin), np.log10(fmax), 50)
+# f = sp.Symbol('f')
 
-for i in range(max_iter):
+# for i in range(max_iter):
 
-    # --------------------------------------------------------
-    # Obtain noise expression
-    # --------------------------------------------------------
-    noise_expr = doNoise(cir, source="V1", detector="V_vo", numeric=True, pardefs='circuit').inoise
+#     # --------------------------------------------------------
+#     # Obtain noise expression
+#     # --------------------------------------------------------
+#     noise_expr = doNoise(cir, source="V1", detector="V_vo", numeric=True, pardefs='circuit').inoise
 
-    W = float(cir.getParValue("W1_N"))
+#     W = float(cir.getParValue("W1_N"))
 
-    # --------------------------------------------------------
-    # Evaluate worst-case noise ratio over frequency
-    # --------------------------------------------------------
-    worst_ratio = 0
+#     # --------------------------------------------------------
+#     # Evaluate worst-case noise ratio over frequency
+#     # --------------------------------------------------------
+#     worst_ratio = 0
 
-    for freq in freqs:
-        noise_sim = float(sp.N(noise_expr.subs(f, freq)))
-        noise_spec = 1e-15 * (1 + 1e12 / freq**2)
+#     for freq in freqs:
+#         noise_sim = float(sp.N(noise_expr.subs(f, freq)))
+#         noise_spec = 1e-15 * (1 + 1e12 / freq**2)
 
-        ratio = noise_sim / noise_spec
-        worst_ratio = max(worst_ratio, ratio)
+#         ratio = noise_sim / noise_spec
+#         worst_ratio = max(worst_ratio, ratio)
 
-    # --------------------------------------------------------
-    # Check convergence
-    # --------------------------------------------------------
+#     # --------------------------------------------------------
+#     # Check convergence
+#     # --------------------------------------------------------
 
-    if worst_ratio < 1 + tol:
-        converged = True
-        break
+#     if worst_ratio < 1 + tol:
+#         converged = True
+#         break
 
-    # --------------------------------------------------------
-    # Proportional scaling
-    # If noise too high → increase W
-    # --------------------------------------------------------
-    scale = worst_ratio**2
+#     # --------------------------------------------------------
+#     # Proportional scaling
+#     # If noise too high → increase W
+#     # --------------------------------------------------------
+#     scale = worst_ratio**2
 
-    # Clamp for stability
-    scale = max(0.5, min(2.0, scale))
+#     # Clamp for stability
+#     scale = max(0.5, min(2.0, scale))
 
-    W *= scale
+#     W *= scale
 
-    # Round to 1 µm grid
-    W = round(W * 1e6) * 1e-6
+#     # Round to 1 µm grid
+#     W = round(W * 1e6) * 1e-6
 
-    cir.defPar("W1_N", W)
+#     cir.defPar("W1_N", W)
 
-# ------------------------------------------------------------
-# Print results
-# ------------------------------------------------------------
-W_final = float(cir.getParValue("W1_N"))
+# # ------------------------------------------------------------
+# # Print results
+# # ------------------------------------------------------------
+# W_final = float(cir.getParValue("W1_N"))
 
-if not converged:
-    print("\nMaximum iterations reached — noise target not met.")
-    print(f"W = {W_final*1e6:.0f} µm")
-else:
+# if not converged:
+#     print("\nMaximum iterations reached — noise target not met.")
+#     print(f"W = {W_final*1e6:.0f} µm")
+# else:
     
-    print("\nNoise requirement satisfied.")
-    print("\n----- Noise Sizing Results -----")
-    print(f"W = {W_final*1e6:.0f} µm")
-    print(f"Iterations = {i+1}")
+#     print("\nNoise requirement satisfied.")
+#     print("\n----- Noise Sizing Results -----")
+#     print(f"W = {W_final*1e6:.0f} µm")
+#     print(f"Iterations = {i+1}")
 
 
 ############################################################################
@@ -159,7 +159,7 @@ ratio = Wp_final / Wn_final
 if not converged:
     print("\nMaximum iterations reached — gm matching not achieved.")
 else:
-    print("\nObtained gm-matched ratio:")
+    print("\n----- Obtained gm-matched ratio -----")
     print(f"Ratio Wp/Wn = {ratio:.2f}")
     print(f"Wn = {Wn_final*1e6:.0f} µm")
     print(f"Wp = {Wp_final*1e6:.0f} µm")
@@ -211,11 +211,6 @@ for i in range(max_iter):
     # If loopgain too large → decrease current
     # --------------------------------------------------------
     scale = max(0.5, min(2.0, LG_desired / LG_DC))              #Implement proportional scaling to speed up convergence
-
-    # if LG_DC < LG_desired:
-    #     scale = 1.2
-    # else:
-    #     scale = 0.8
 
     IqN *= scale
     IqP  = -abs(IqN)
@@ -325,59 +320,59 @@ else:
 # PRETTY POINTLESS AS THE ABOVE ALREADY OPTIMIZES FOR THE SPECIFIED FIRST STAGE CURRENT
 ############################################################################
 
-max_iter  = 10
-tol       = 0.01
-converged = False
-BW_desired = 100e6
+# max_iter  = 10
+# tol       = 0.01
+# converged = False
+# BW_desired = 100e6
 
-s = sp.Symbol('s')
+# s = sp.Symbol('s')
 
-ID1 = float(cir.getParValue("ID1_N"))
+# ID1 = float(cir.getParValue("ID1_N"))
 
-for i in range(max_iter):
-    # print(ID1)
-    # ------------------------------------------------------------
-    # Recompute loopgain
-    # ------------------------------------------------------------
-    LG = doLaplace(cir, numeric=True, source='V1', detector='V_Amp_out', pardefs='circuit', lgref='Gm_M1_X1', transfer='loopgain').laplace
+# for i in range(max_iter):
+#     # print(ID1)
+#     # ------------------------------------------------------------
+#     # Recompute loopgain
+#     # ------------------------------------------------------------
+#     LG = doLaplace(cir, numeric=True, source='V1', detector='V_Amp_out', pardefs='circuit', lgref='Gm_M1_X1', transfer='loopgain').laplace
 
-    LG_DC = abs(sp.N(LG.subs(s, 1e3)))
-    LG_3dB_target = LG_DC / sp.sqrt(2)
+#     LG_DC = abs(sp.N(LG.subs(s, 1e3)))
+#     LG_3dB_target = LG_DC / sp.sqrt(2)
 
-    LG_eval = abs(sp.N(LG.subs(s, 2*sp.pi*BW_desired*1j)))
+#     LG_eval = abs(sp.N(LG.subs(s, 2*sp.pi*BW_desired*1j)))
 
-    ratio = LG_3dB_target / LG_eval
-    error = ratio - 1
+#     ratio = LG_3dB_target / LG_eval
+#     error = ratio - 1
 
-    # ------------------------------------------------------------
-    # Convergence check
-    # ------------------------------------------------------------
-    if abs(error) < tol:
-        converged = True
-        break
+#     # ------------------------------------------------------------
+#     # Convergence check
+#     # ------------------------------------------------------------
+#     if abs(error) < tol:
+#         converged = True
+#         break
 
-    # ------------------------------------------------------------
-    # Proportional scaling
-    # Since BW ∝ ID → linear scaling works well
-    # ------------------------------------------------------------
-    scale = ratio
-    # print(scale)
-    # Clamp for stability
-    scale = max(0.7, min(1.3, scale))
+#     # ------------------------------------------------------------
+#     # Proportional scaling
+#     # Since BW ∝ ID → linear scaling works well
+#     # ------------------------------------------------------------
+#     scale = ratio
+#     # print(scale)
+#     # Clamp for stability
+#     scale = max(0.7, min(1.3, scale))
 
-    ID1 *= scale
-    # ID1 = max(ID1, 10e-6)  # prevent collapse
+#     ID1 *= scale
+#     # ID1 = max(ID1, 10e-6)  # prevent collapse
 
-    cir.defPar("ID1_N", ID1)
+#     cir.defPar("ID1_N", ID1)
 
-# ------------------------------------------------------------
-# Print results
-# ------------------------------------------------------------
+# # ------------------------------------------------------------
+# # Print results
+# # ------------------------------------------------------------
 
-if not converged:
-    print("\nMaximum iterations reached — no valid minimum current found.")
-else:
-    print("\nMinimum drive current found.")
-    print("\n----- Drive Current Optimization -----")
-    print(f"ID1_N = {ID1*1e3:.2f} mA")
-    print(f"Iterations = {i+1}")
+# if not converged:
+#     print("\nMaximum iterations reached — no valid minimum current found.")
+# else:
+#     print("\nMinimum drive current found.")
+#     print("\n----- Drive Current Optimization -----")
+#     print(f"ID1_N = {ID1*1e3:.2f} mA")
+#     print(f"Iterations = {i+1}")

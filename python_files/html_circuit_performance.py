@@ -14,6 +14,8 @@ img2html("Active_E_Field_Probe.svg",  width=1000)
 head2html("Graphs")
 head3html("Magnitude Plot")
 img2html("fb_mag.svg",  width=800)
+img2html("ph_mag.svg",  width=800)
+
 
 eqn2html("gain",        gain.laplace)
 eqn2html("asymptotic",  asymptotic.laplace)
@@ -23,7 +25,7 @@ eqn2html("direct",      direct.laplace)
 
 ##### Pole Zero Plot
 pz2html(PoleZero, label='PoleZero Loopgain', labelText='PoleZero Loopgain')
-
+pz2html(PoleZeroServo, label='PoleZero Servo', labelText='PoleZero Servo')
 ##### Input referred noise
 head3html("Noise Spectrum")
 img2html("noise_function_plot_HZ.svg", width=750)

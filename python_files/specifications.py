@@ -7,7 +7,7 @@ k = 1.3806749e-23          #Boltzmann constant
 
 # --- Antenna / System ---
 L_ant    = 0.25            # Antenna length [m]
-C_ant    = 12e-12         # Capacitance per meter [F/m]
+C_ant    = 12e-12          # Capacitance per meter [F/m]
 Cs       = C_ant * L_ant   # Antenna capacitance [F]
 Z_in     = 50              # Receiver input impedance [Ω]
 L_Cable  = 25              # Max cable length [m]
@@ -37,13 +37,16 @@ l1_n      = 180e-9
 id1_n     = 1e-3
 
 # Second Stage
-w_n       = 36e-6        # Transistor width [m]
-l_n       = 180e-9        # Transistor lenght [m]
-id_n      = 1*4.5e-3     # Transistor drain current [A]
+w_n       = 10e-6          # Transistor width [m]
+l_n       = 180e-9         # Transistor lenght [m]
+id_n      = 1*4.5e-3       # Transistor drain current [A]
 
-w_p       = 144e-6        # Transistor width [m]
-l_p       = 180e-9        # Transistor lenght [m]
+w_p       = 35e-6          # Transistor width [m]
+l_p       = 180e-9         # Transistor lenght [m]
 id_p      = -1*4.5e-3      # Transistor drain current [A]
+
+# Compensation Circuitry
+R_ph      = 1e-3             # Phantom Zero resistance [Ohm]
 
 specs = []
 
@@ -223,6 +226,13 @@ specs.append(specItem("ID1_N",
                       value       = id1_n,
                       units       = "A",
                       specType    = "Amplifier"))
+
+specs.append(specItem("R_ph",
+                      description = "Phantom Zero Resistance",
+                      value       = R_ph,
+                      units       = "Ohm",
+                      specType    = "Amplifier"))
+
 specs2csv(specs, "specs.csv")
 
 
