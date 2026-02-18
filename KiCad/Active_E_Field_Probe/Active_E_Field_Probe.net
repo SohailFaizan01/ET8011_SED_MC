@@ -1,7 +1,7 @@
 (export (version "E")
   (design
     (source "C:\\DATA\\TU Delft\\MSC EE Year 2\\ET8011_SED_MC_Complete\\ET8011_SED_MC\\KiCad\\Active_E_Field_Probe\\Active_E_Field_Probe.kicad_sch")
-    (date "2026-02-18T10:48:55+0100")
+    (date "2026-02-18T12:21:31+0100")
     (tool "Eeschema 9.0.7")
     (sheet (number "1") (name "/") (tstamps "/")
       (title_block
@@ -247,7 +247,7 @@
       (description "MOSFET (small-signal N or P channel subcircuit with parameters W,  L, and ID)")
       (fields
         (field (name "model") "CMOS18N")
-        (field (name "W") "{W1_N}")
+        (field (name "W") "{0.025*W1_N}")
         (field (name "L") "{L1_N}")
         (field (name "ID") "{ID1_N}")
         (field (name "Footprint"))
@@ -255,7 +255,7 @@
         (field (name "Description") "MOSFET (small-signal N or P channel subcircuit with parameters W,  L, and ID)"))
       (libsource (lib "SLiCAP") (part "XM") (description "MOSFET (small-signal N or P channel subcircuit with parameters W,  L, and ID)"))
       (property (name "model") (value "CMOS18N"))
-      (property (name "W") (value "{W1_N}"))
+      (property (name "W") (value "{0.025*W1_N}"))
       (property (name "L") (value "{L1_N}"))
       (property (name "ID") (value "{ID1_N}"))
       (property (name "Sheetname") (value ""))
@@ -267,7 +267,7 @@
       (description "MOSFET (small-signal N or P channel subcircuit with parameters W,  L, and ID)")
       (fields
         (field (name "model") "CMOS18N")
-        (field (name "W") "{W1_N}")
+        (field (name "W") "{0.025*W1_N}")
         (field (name "L") "{L1_N}")
         (field (name "ID") "{ID1_N}")
         (field (name "Footprint"))
@@ -275,7 +275,7 @@
         (field (name "Description") "MOSFET (small-signal N or P channel subcircuit with parameters W,  L, and ID)"))
       (libsource (lib "SLiCAP") (part "XM") (description "MOSFET (small-signal N or P channel subcircuit with parameters W,  L, and ID)"))
       (property (name "model") (value "CMOS18N"))
-      (property (name "W") (value "{W1_N}"))
+      (property (name "W") (value "{0.025*W1_N}"))
       (property (name "L") (value "{L1_N}"))
       (property (name "ID") (value "{ID1_N}"))
       (property (name "Sheetname") (value ""))

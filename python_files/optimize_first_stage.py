@@ -18,12 +18,12 @@ max_iter_ic    = 10
 tol = 0.01
 noise_margin = 0.8
 
-BW_desired = 100e6
+BW_desired = 80e6
 
 # USER SETTINGS
-W_max      = 100e-6      # upper width limit
-step       = 10e-6
-objective  = "max_gm_over_I"    # "max_gm", "min_power", "max_gm_over_I"
+W_max      = 200e-6      # upper width limit
+step       = 190e-6
+objective  = "max_gm"    # "max_gm", "min_power", "max_gm_over_I"
 
 f = sp.Symbol('f')
 s = sp.Symbol('s')

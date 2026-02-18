@@ -10,6 +10,6 @@ X2 Amp_out 7 0 0 CMOS18P W={W_P} L={L_P} ID={ID_P}
 X3 Amp_out 7 0 0 CMOS18N W={W_N} L={L_N} ID={ID_N}
 X4 8 0 5 MN18_noise ID={ID1_N} IG={0} W={W1_N} L={L1_N}
 X5 0 0 6 MN18_noise ID={ID1_N} IG={0} W={W1_N} L={L1_N}
-X6 0 0 3 0 CMOS18N W={W1_N} L={L1_N} ID={ID1_N}
-X7 7 0 4 0 CMOS18N W={W1_N} L={L1_N} ID={ID1_N}
+X6 0 0 3 0 CMOS18N W={0.025*W1_N} L={L1_N} ID={ID1_N}
+X7 7 0 4 0 CMOS18N W={0.025*W1_N} L={L1_N} ID={ID1_N}
 .end

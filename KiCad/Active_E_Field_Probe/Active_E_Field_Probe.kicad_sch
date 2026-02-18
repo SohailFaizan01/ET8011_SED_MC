@@ -2569,7 +2569,7 @@
 				)
 			)
 		)
-		(property "W" "{W1_N}"
+		(property "W" "{0.025*W1_N}"
 			(at 120.65 65.405 0)
 			(show_name yes)
 			(do_not_autoplace yes)
@@ -3012,7 +3012,7 @@
 				)
 			)
 		)
-		(property "W" "{W1_N}"
+		(property "W" "{0.025*W1_N}"
 			(at 102.87 65.405 0)
 			(show_name yes)
 			(do_not_autoplace yes)
