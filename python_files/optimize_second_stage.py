@@ -69,150 +69,242 @@ if not converged:
     print("\nMaximum iterations reached — gm matching not achieved.")
 else:
     print("\n----- Obtained gm-matched ratio -----")
-    print(f"Ratio Wp/Wn = {ratio:.2f}")
-    print(f"Wn = {Wn_final*1e6:.0f} µm")
-    print(f"Wp = {Wp_final*1e6:.0f} µm")
-    print(f"gmn = {gm3*1e3:.2f} mS")
-    print(f"gmp = {gm2*1e3:.2f} mS")
-    print(f"Iterations = {i+1}")
+    print(f"Ratio Wp/Wn        = {ratio:.2f}")
+    print(f"Wn                 = {Wn_final*1e6:.0f} µm")
+    print(f"Wp                 = {Wp_final*1e6:.0f} µm")
+    print(f"gmn                = {gm3*1e3:.2f} mS")
+    print(f"gmp                = {gm2*1e3:.2f} mS")
+    print(f"Iterations         = {i+1}")
 
+
+# ############################################################################
+# ##### Determine the required Ciss to ensure sufficient bandwidth #####
+# ############################################################################
+
+# # ------------------------------------------------------------
+# # User input
+# # ------------------------------------------------------------
+# BW_desired = 100e6        # desired bandwidth (Hz)
+# max_iter   = 10
+# tol        = 0.01         # 1% tolerance
+# converged  = False
+
+# # ------------------------------------------------------------
+# # Obtain loopgain transfer function
+# # ------------------------------------------------------------
+# LG = doLaplace(cir, numeric=True, source='V1', detector='V_Amp_out', pardefs='circuit', lgref='Gm_M1_X1', transfer='loopgain').laplace
+# s = sp.Symbol('s')
+
+# # ------------------------------------------------------------
+# # Loopgain magnitude at DC and -3dB
+# # ------------------------------------------------------------
+# LG_DC = abs(sp.N(LG.subs(s, 1e3)))
+# LG_3dB_target = LG_DC / sp.sqrt(2)
+
+# # ------------------------------------------------------------
+# # Iterative scaling
+# # ------------------------------------------------------------
+# Wn = cir.getParValue("W_N")
+# Wp = cir.getParValue("W_P")
+
+# for i in range(max_iter):
+
+#     # Evaluate loopgain at desired BW
+#     LG_eval = abs(sp.N(LG.subs(s, 2*sp.pi*BW_desired*1j)))
+
+#     # If magnitude too small → bandwidth too small → reduce W
+#     scale = max(0.5, min(2.0, (LG_eval/LG_3dB_target)**2))      #Implement proportional scaling to speed up convergence
+
+#     Wn *= scale
+#     Wp  = Wn * ratio
+
+#     Wn = round(Wn * 1e6) * 1e-6   # round to nearest 1 µm
+#     Wp = round(Wp * 1e6) * 1e-6
+
+#     cir.defPar("W_N", Wn)
+#     cir.defPar("W_P", Wp)
+
+#     # Recompute loopgain with new widths
+#     LG = doLaplace(cir, numeric=True, source='V1', detector='V_Amp_out', pardefs='circuit', lgref='Gm_M1_X1', transfer='loopgain').laplace
+
+#     LG_DC = abs(sp.N(LG.subs(s, 1e3)))
+#     LG_3dB_target = LG_DC / sp.sqrt(2)
+#     LG_eval = abs(sp.N(LG.subs(s, 2*sp.pi*BW_desired*1j)))
+
+#     # Check convergence
+#     if abs(LG_eval - LG_3dB_target)/LG_3dB_target < tol:
+#         converged = True
+#         break
+
+# # ------------------------------------------------------------
+# # Print results
+# # ------------------------------------------------------------
+# if not converged:
+#     print("\n  Maximum iterations reached — no valid bandwidth found.")
+# else:
+#     print("\nObtained desired -3dB Bandwidth.")
+#     print("\n----- Bandwidth Sizing Results -----")
+#     print(f"Wp = {Wp*1e6:.1f} µm")
+#     print(f"Wn = {Wn*1e6:.1f} µm")
+#     print(f"Iterations = {i+1}")
 
 ############################################################################
-##### Determine the required Ciss to ensure sufficient bandwidth #####
+#### Output Stage Bias + Drive Capability Sizing ####
 ############################################################################
 
-# ------------------------------------------------------------
-# User input
-# ------------------------------------------------------------
-BW_desired = 100e6        # desired bandwidth (Hz)
-max_iter   = 10
-tol        = 0.01         # 1% tolerance
-converged  = False
 
-# ------------------------------------------------------------
-# Obtain loopgain transfer function
-# ------------------------------------------------------------
-LG = doLaplace(cir, numeric=True, source='V1', detector='V_Amp_out', pardefs='circuit', lgref='Gm_M1_X1', transfer='loopgain').laplace
-s = sp.Symbol('s')
+gm_quiescent_target = 1e-3     # 1 mS at Iq
+gm_peak_target      = 10e-3    # 10 mS at peak
+drive_capability    = 4.5e-3   # 4.5 mA
 
-# ------------------------------------------------------------
-# Loopgain magnitude at DC and -3dB
-# ------------------------------------------------------------
-LG_DC = abs(sp.N(LG.subs(s, 1e3)))
-LG_3dB_target = LG_DC / sp.sqrt(2)
+max_iter_outer = 20
+max_iter_inner = 15
+tol = 0.02
 
-# ------------------------------------------------------------
-# Iterative scaling
-# ------------------------------------------------------------
-Wn = cir.getParValue("W_N")
-Wp = cir.getParValue("W_P")
+Iq = 0.5e-3  # initial guess
 
-for i in range(max_iter):
+for outer in range(max_iter_outer):
 
-    # Evaluate loopgain at desired BW
-    LG_eval = abs(sp.N(LG.subs(s, 2*sp.pi*BW_desired*1j)))
+    I_peak = Iq + drive_capability
 
-    # If magnitude too small → bandwidth too small → reduce W
-    scale = max(0.5, min(2.0, (LG_eval/LG_3dB_target)**2))      #Implement proportional scaling to speed up convergence
+    # ------------------------------------------------------------
+    # INNER LOOP: Solve W for gm_peak = 10 mS at I_peak
+    # ------------------------------------------------------------
 
-    Wn *= scale
-    Wp  = Wn * ratio
+    W = 20e-6  # initial width guess
 
-    Wn = round(Wn * 1e6) * 1e-6   # round to nearest 1 µm
-    Wp = round(Wp * 1e6) * 1e-6
+    for inner in range(max_iter_inner):
 
-    cir.defPar("W_N", Wn)
-    cir.defPar("W_P", Wp)
+        cir.defPar("W_N", W)
+        cir.defPar("W_P", W * ratio)
+        cir.defPar("ID_N", I_peak)
+        cir.defPar("ID_P", -I_peak)
 
-    # Recompute loopgain with new widths
-    LG = doLaplace(cir, numeric=True, source='V1', detector='V_Amp_out', pardefs='circuit', lgref='Gm_M1_X1', transfer='loopgain').laplace
+        gm_peak_p = float(cir.getParValue("g_m_X2"))
 
-    LG_DC = abs(sp.N(LG.subs(s, 1e3)))
-    LG_3dB_target = LG_DC / sp.sqrt(2)
-    LG_eval = abs(sp.N(LG.subs(s, 2*sp.pi*BW_desired*1j)))
+        error_peak = (gm_peak_p - gm_peak_target) / gm_peak_target
 
-    # Check convergence
-    if abs(LG_eval - LG_3dB_target)/LG_3dB_target < tol:
-        converged = True
+        if abs(error_peak) < tol:
+            gm_peak_n = float(cir.getParValue("g_m_X3"))
+            ICp_p = float(cir.getParValue("IC_X2"))
+            ICn_p = float(cir.getParValue("IC_X3"))
+            break
+
+        # proportional scaling (gm roughly proportional to W)
+        W *= gm_peak_target / gm_peak_p
+
+    # ------------------------------------------------------------
+    # Now evaluate quiescent gm with this W
+    # ------------------------------------------------------------
+
+    cir.defPar("ID_N", Iq)
+    cir.defPar("ID_P", -Iq)
+
+    gm_quiescent_p = float(cir.getParValue("g_m_X2"))
+    gm_quiescent_n = float(cir.getParValue("g_m_X3"))
+
+    error_q = (gm_quiescent_p - gm_quiescent_target) / gm_quiescent_target
+
+    if abs(error_q) < tol:
         break
 
-# ------------------------------------------------------------
-# Print results
-# ------------------------------------------------------------
-if not converged:
-    print("\n  Maximum iterations reached — no valid bandwidth found.")
-else:
-    print("\nObtained desired -3dB Bandwidth.")
-    print("\n----- Bandwidth Sizing Results -----")
-    print(f"Wp = {Wp*1e6:.1f} µm")
-    print(f"Wn = {Wn*1e6:.1f} µm")
-    print(f"Iterations = {i+1}")
+    # gm ~ sqrt(I) approx → update Iq
+    Iq *= (gm_quiescent_target / gm_quiescent_p)**2
+
+# Final values
+Wp_final = float(cir.getParValue("W_P"))
+Wn_final = float(cir.getParValue("W_N"))
+
+cir.defPar("ID_N", Iq)
+cir.defPar("ID_P", -Iq)
+
+ICp_q = float(cir.getParValue("IC_X2"))
+ICn_q = float(cir.getParValue("IC_X3"))
+
+print("\n----- Output Stage Bias Sizing -----")
+print(f"Iterations         = {outer+1}")
+print(f"Peak current       = {(Iq+drive_capability)*1e3:.2f} mA")
+print(f"Iq                 = {Iq*1e3:.2f} mA")
+print(f"Wn                 = {Wn_final*1e6:.1f} µm")
+print(f"Wp                 = {Wp_final*1e6:.1f} µm")
+
+print("\n----- Output Stage Parameters Peak Current-----")
+print(f"gmn peak           = {gm_peak_n*1e3:.2f} mS")
+print(f"gmp peak           = {gm_peak_p*1e3:.2f} mS")
+print(f"ICn peak           = {ICn_p:.1f}")
+print(f"ICp peak           = {ICp_p:.1f}")
+
+print("\n----- Output Stage Parameters Quiescent Current-----")
+print(f"gmn quiescent      = {gm_quiescent_n*1e3:.2f} mS")
+print(f"gmp quiescent      = {gm_quiescent_p*1e3:.2f} mS")
+print(f"ICn quiescent      = {ICn_q:.2f}")
+print(f"ICp quiescent      = {ICp_q:.2f}")
 
 
-############################################################################
-#### Determine required quiescent current (linearity & drive capability)####
-############################################################################
+# ############################################################################
+# #### Determine required quiescent current (linearity & drive capability)#### OLD
+# ############################################################################
 
-# ------------------------------------------------------------
-# Parameters
-# ------------------------------------------------------------
-gm_target = 10e-3  # target gm in S (10 mS)
-max_iter  = 20
-tol       = 0.01
-converged = False
+# # ------------------------------------------------------------
+# # Parameters
+# # ------------------------------------------------------------
+# gm_target = 10e-3  # target gm in S (10 mS)
+# max_iter  = 20
+# tol       = 0.01
+# converged = False
 
-# Read current transistor widths (fixed)
-Wn = float(cir.getParValue("W_N"))
-Wp = float(cir.getParValue("W_P"))
+# # Read current transistor widths (fixed)
+# Wn = float(cir.getParValue("W_N"))
+# Wp = float(cir.getParValue("W_P"))
 
-# Initial current
-ID = float(cir.getParValue("ID_N"))
+# # Initial current
+# ID = float(cir.getParValue("ID_N"))
 
-# ------------------------------------------------------------
-# Iterative scaling to reach target gm
-# ------------------------------------------------------------
-for i in range(max_iter):
+# # ------------------------------------------------------------
+# # Iterative scaling to reach target gm
+# # ------------------------------------------------------------
+# for i in range(max_iter):
     
-    # Update the current in the circuit
-    cir.defPar("ID_N", ID)
-    cir.defPar("ID_P", -ID)
+#     # Update the current in the circuit
+#     cir.defPar("ID_N", ID)
+#     cir.defPar("ID_P", -ID)
     
-    # Read resulting gm
-    gm_sim = float(cir.getParValue("g_m_X2"))
-    gm_simn = float(cir.getParValue("g_m_X3"))
+#     # Read resulting gm
+#     gm_sim = float(cir.getParValue("g_m_X2"))
+#     gm_simn = float(cir.getParValue("g_m_X3"))
     
-    # Check convergence
-    gm_ratio = gm_sim / gm_target
-    if abs(gm_ratio - 1) < tol:
-        converged = True
-        break
+#     # Check convergence
+#     gm_ratio = gm_sim / gm_target
+#     if abs(gm_ratio - 1) < tol:
+#         converged = True
+#         break
     
-    # Scale current: gm ∝ sqrt(I)
-    ID *= (gm_target / gm_sim)**2
+#     # Scale current: gm ∝ sqrt(I)
+#     ID *= (gm_target / gm_sim)**2
     
-    # Optional: limit scaling to avoid overshoot
-    ID = max(0.5*ID, min(2*ID, ID))
+#     # Optional: limit scaling to avoid overshoot
+#     ID = max(0.5*ID, min(2*ID, ID))
 
-# ------------------------------------------------------------
-# Extract final IC
-# ------------------------------------------------------------
-IC_final = float(cir.getParValue("IC_X2"))
-IC_finaln = float(cir.getParValue("IC_X3"))
+# # ------------------------------------------------------------
+# # Extract final IC
+# # ------------------------------------------------------------
+# IC_final = float(cir.getParValue("IC_X2"))
+# IC_finaln = float(cir.getParValue("IC_X3"))
 
-# ------------------------------------------------------------
-# Print results
-# ------------------------------------------------------------
-if not converged:
-    print("\nWARNING: Current optimization for target gm did not converge.")
-else:
-    print("\n----- Output Stage gm Optimization Results -----")
+# # ------------------------------------------------------------
+# # Print results
+# # ------------------------------------------------------------
+# if not converged:
+#     print("\nWARNING: Current optimization for target gm did not converge.")
+# else:
+#     print("\n----- Output Stage gm Optimization Results -----")
 
-print(f"Iq = {ID*1e3:.2f} mA")
-print(f"gmp = {gm_sim*1e3:.2f} mS")
-print(f"gmn = {gm_simn*1e3:.2f} mS")
-print(f"ICp = {IC_final:.2f}")
-print(f"ICn = {IC_finaln:.2f}")
-print(f"Iterations = {i+1}")
+# print(f"Iq = {ID*1e3:.2f} mA")
+# print(f"gmp = {gm_sim*1e3:.2f} mS")
+# print(f"gmn = {gm_simn*1e3:.2f} mS")
+# print(f"ICp = {IC_final:.2f}")
+# print(f"ICn = {IC_finaln:.2f}")
+# print(f"Iterations = {i+1}")
 
 
 ############################################################################

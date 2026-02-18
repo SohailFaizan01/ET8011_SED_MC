@@ -159,4 +159,12 @@ Equations:
 
 Set noise budget to first stage
 loop whole circuit to find optimum IC for the first stage
+
+implement root locus code
+fix that with phantom zero
+
+update design page
+
+set ic2 to drive capability ~(drivecapability + Iq), obtain W for 10mS, set gm2 to 1mS for quiescent, obtain Iq
+
  
