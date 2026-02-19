@@ -36,7 +36,12 @@ w1_n      = 1e-6
 l1_n      = 180e-9
 id1_n     = 1e-3
 
-# Second Stage
+# Second Stage (middle)
+w2_n      = 1e-6
+l2_n      = 180e-9
+id2_n     = 1e-3
+
+# Second Stage (last one push pull)
 w_n       = 10e-6          # Transistor width [m]
 l_n       = 180e-9         # Transistor lenght [m]
 id_n      = 1*4.5e-3       # Transistor drain current [A]
@@ -224,6 +229,24 @@ specs.append(specItem("L1_N",
 specs.append(specItem("ID1_N",
                       description = "Transistor drain current",
                       value       = id1_n,
+                      units       = "A",
+                      specType    = "Amplifier"))
+
+specs.append(specItem("W2_N",
+                      description = "Transistor width",
+                      value       = w2_n,
+                      units       = "m",
+                      specType    = "Amplifier"))
+
+specs.append(specItem("L2_N",
+                      description = "Transistor length",
+                      value       = l2_n,
+                      units       = "m",
+                      specType    = "Amplifier"))
+
+specs.append(specItem("ID2_N",
+                      description = "Transistor drain current",
+                      value       = id2_n,
                       units       = "A",
                       specType    = "Amplifier"))
 

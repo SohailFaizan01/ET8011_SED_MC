@@ -5,8 +5,17 @@ prj = initProject("Active_E_Field_Probe")
 
 from python_files import specifications
 from python_files import circuit
-from python_files import optimize_second_stage
-from python_files import optimize_first_stage
+
+# 2 Stage Design
+# from python_files import optimize_second_stage
+# from python_files import optimize_first_stage
+
+# 3 Stage Design
+from python_files import three_optimize_third_stage
+from python_files import three_optimize_second_stage
+from python_files import three_optimize_first_stage
+
+#HTML generation
 from python_files import plot_generation
 from python_files import html_specifications
 from python_files import html_design_choices
