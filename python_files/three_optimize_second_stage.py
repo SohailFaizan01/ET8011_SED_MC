@@ -15,7 +15,7 @@ print("\n--- Optimizing Second Stage (Source Follower) ---")
 f_local = 100e6         # Hz, local bandwidth target for the pole formed by Rout2 and Ciss3
 V_swing_est = 0.45      # V, estimated peak voltage swing required at stage 2 output to drive stage 3
 drive_offset = 0.25  # %, additional current margin to ensure drive capability (accounts for non-idealities)
-max_iter = 20
+max_iter = 30
 tolerance = 0.01
 
 # ==========================================================================
@@ -41,28 +41,38 @@ gm_target = 2 * np.pi * f_local * Ciss3
 # This corresponds to your formula Id = (0.45)/ro with ro=1/gm.
 # ==========================================================================
 
-Id_target = (V_swing_est * gm_target) * drive_offset
+Id_target = (V_swing_est * gm_target) * (1 + drive_offset)
 
 # ==========================================================================
 # STEP 3: Find transistor width W for the required gm and Id
-# We have a target gm and a target Id. We can now iterate to find the
-# width W that satisfies these conditions.
-# The transistor for stage 2 is X4.
-# Assumed parameters from specs/schematic: W2_N, ID2_N
+# We have a target gm and a target Id. We use a binary search to find the
+# width W that satisfies these conditions for the fixed target current.
+# This method is more robust than proportional scaling, especially if the
+# transistor enters weak inversion where gm becomes independent of W.
 # ==========================================================================
 
-W = float(cir.getParValue("W2_N"))  # Initial guess from specs
-
-# Set the target current. This will be fixed during the loop.
+# Set the target current, which remains fixed during the search for W.
 cir.defPar("ID2_N", Id_target)
+
+# --- Binary Search for Width ---
+W_low = 0.1e-6   # Minimum realistic width
+W_high = 1000e-6 # Maximum realistic width
+W = (W_low + W_high) / 2.0
 
 converged = False
 for i in range(max_iter):
-    # Update width in the circuit
+    # Set the midpoint width for this iteration
+    W = (W_low + W_high) / 2.0
     cir.defPar("W2_N", W)
 
-    # Get the resulting transconductance
-    gm_sim = float(cir.getParValue("g_m_X4"))
+    try:
+        gm_sim = float(cir.getParValue("g_m_X4"))
+    except Exception as e:
+        # If simulation fails, this width might be invalid.
+        # Assume it's too small and increase the lower bound to avoid getting stuck.
+        print(f"Warning: Simulation failed for W={W*1e6:.2f}µm. Adjusting search range.")
+        W_low = W
+        continue
 
     # Check for convergence
     error = abs(gm_sim - gm_target) / gm_target
@@ -70,18 +80,16 @@ for i in range(max_iter):
         converged = True
         break
 
-    # Update W. For a fixed ID, gm is roughly proportional to sqrt(W).
-    # gm = sqrt(2*kp*(W/L)*ID) => W is proportional to gm^2.
-    scale = (gm_target / gm_sim)**2
-    
-    # Clamp scale factor for stability
-    scale = max(0.5, min(2.0, scale))
-    W *= scale
+    if gm_sim < gm_target:
+        # gm is too low, need a larger width
+        W_low = W
+    else:
+        # gm is too high, need a smaller width
+        W_high = W
 
-    # Round to a reasonable grid (e.g., 0.1 um)
-    W = round(W * 1e7) / 1e7
-    if W == 0: # Avoid width becoming zero
-        W = 1e-6
+# Final application of the determined width
+W = (W_low + W_high) / 2.0
+cir.defPar("W2_N", W)
 
 # ==========================================================================
 # Final application and reporting

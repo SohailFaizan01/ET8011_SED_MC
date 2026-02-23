@@ -36,8 +36,9 @@ w1_n      = 1e-6
 l1_n      = 180e-9
 id1_n     = 1e-3
 
-w1c_n      = 0.1e-6
+w1c_n      = 1e-6
 l1c_n      = 180e-9
+
 # Second Stage (middle)
 w2_n      = 1e-6
 l2_n      = 180e-9
@@ -232,6 +233,18 @@ specs.append(specItem("ID1_N",
                       description = "Transistor drain current",
                       value       = id1_n,
                       units       = "A",
+                      specType    = "Amplifier"))
+
+specs.append(specItem("W1C_N",
+                      description = "Transistor width",
+                      value       = w1c_n,
+                      units       = "m",
+                      specType    = "Amplifier"))
+
+specs.append(specItem("L1C_N",
+                      description = "Transistor length",
+                      value       = l1c_n,
+                      units       = "m",
                       specType    = "Amplifier"))
 
 specs.append(specItem("W2_N",
