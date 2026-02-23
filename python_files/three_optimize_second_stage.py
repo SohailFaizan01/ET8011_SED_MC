@@ -14,6 +14,7 @@ print("\n--- Optimizing Second Stage (Source Follower) ---")
 # ==========================================================================
 f_local = 100e6         # Hz, local bandwidth target for the pole formed by Rout2 and Ciss3
 V_swing_est = 0.45      # V, estimated peak voltage swing required at stage 2 output to drive stage 3
+drive_offset = 0.25  # %, additional current margin to ensure drive capability (accounts for non-idealities)
 max_iter = 20
 tolerance = 0.01
 
@@ -40,7 +41,7 @@ gm_target = 2 * np.pi * f_local * Ciss3
 # This corresponds to your formula Id = (0.45)/ro with ro=1/gm.
 # ==========================================================================
 
-Id_target = V_swing_est * gm_target
+Id_target = (V_swing_est * gm_target) * drive_offset
 
 # ==========================================================================
 # STEP 3: Find transistor width W for the required gm and Id

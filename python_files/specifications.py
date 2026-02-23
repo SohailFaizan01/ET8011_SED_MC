@@ -31,17 +31,19 @@ V_in_max  = L_ant * E_max  # Max input voltage [V]
 A_cl      = 2.5            # Closed-loop gain
 
 # --- Transistor ---
-# First Stage
+# Input Stage
 w1_n      = 1e-6
 l1_n      = 180e-9
 id1_n     = 1e-3
 
+w1c_n      = 0.1e-6
+l1c_n      = 180e-9
 # Second Stage (middle)
 w2_n      = 1e-6
 l2_n      = 180e-9
 id2_n     = 1e-3
 
-# Second Stage (last one push pull)
+# Output Stage (push pull)
 w_n       = 10e-6          # Transistor width [m]
 l_n       = 180e-9         # Transistor lenght [m]
 id_n      = 1*4.5e-3       # Transistor drain current [A]

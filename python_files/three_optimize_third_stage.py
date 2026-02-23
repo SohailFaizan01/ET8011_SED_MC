@@ -150,9 +150,11 @@ cir.defPar("ID_P", -Iq)
 ICp_q = float(cir.getParValue("IC_X2"))
 ICn_q = float(cir.getParValue("IC_X3"))
 
+I_peak = Iq + drive_capability
+
 print("\n----- Output Stage Bias Sizing -----")
 print(f"Iterations         = {outer+1}")
-print(f"Peak current       = {(Iq+drive_capability)*1e3:.2f} mA")
+print(f"Peak current       = {(I_peak)*1e3:.2f} mA")
 print(f"Iq                 = {Iq*1e3:.2f} mA")
 print(f"Wn                 = {Wn_final*1e6:.1f} µm")
 print(f"Wp                 = {Wp_final*1e6:.1f} µm")

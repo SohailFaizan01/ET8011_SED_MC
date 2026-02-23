@@ -1603,6 +1603,12 @@
 		(uuid "43d1c72e-e97f-4df4-b768-ca36a67bd6f7")
 	)
 	(junction
+		(at 165.1 63.5)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4ac66b28-d968-4d3c-a2c0-a15cae2c59c2")
+	)
+	(junction
 		(at 198.12 46.99)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1649,12 +1655,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "a8591a7b-a793-476f-9a59-1b6d28d36599")
-	)
-	(junction
-		(at 181.61 46.99)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "aad67719-94fe-44e3-b72e-79801cf5a04a")
 	)
 	(junction
 		(at 105.41 106.68)
@@ -1720,7 +1720,7 @@
 	)
 	(wire
 		(pts
-			(xy 165.1 46.99) (xy 165.1 66.04)
+			(xy 165.1 46.99) (xy 165.1 63.5)
 		)
 		(stroke
 			(width 0)
@@ -1900,16 +1900,6 @@
 	)
 	(wire
 		(pts
-			(xy 181.61 46.99) (xy 198.12 46.99)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "526032e7-6165-4f7f-b26b-966b9a9606d4")
-	)
-	(wire
-		(pts
 			(xy 165.1 97.79) (xy 189.23 97.79)
 		)
 		(stroke
@@ -1930,7 +1920,7 @@
 	)
 	(wire
 		(pts
-			(xy 78.74 86.36) (xy 82.55 86.36)
+			(xy 78.74 86.36) (xy 95.25 86.36)
 		)
 		(stroke
 			(width 0)
@@ -2017,6 +2007,16 @@
 			(type default)
 		)
 		(uuid "67867c0f-3cad-4337-a8e2-577cd0ca6472")
+	)
+	(wire
+		(pts
+			(xy 170.18 63.5) (xy 165.1 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "697b3d4f-8ac5-4818-8053-571c72402326")
 	)
 	(wire
 		(pts
@@ -2130,7 +2130,7 @@
 	)
 	(wire
 		(pts
-			(xy 165.1 46.99) (xy 181.61 46.99)
+			(xy 165.1 46.99) (xy 198.12 46.99)
 		)
 		(stroke
 			(width 0)
@@ -2230,16 +2230,6 @@
 	)
 	(wire
 		(pts
-			(xy 92.71 86.36) (xy 95.25 86.36)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b6987d0f-bd17-45d8-a801-6df69b160841")
-	)
-	(wire
-		(pts
 			(xy 210.82 55.88) (xy 210.82 46.99)
 		)
 		(stroke
@@ -2320,6 +2310,26 @@
 	)
 	(wire
 		(pts
+			(xy 165.1 63.5) (xy 165.1 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d516eada-295c-4c57-9408-eb5216431ecd")
+	)
+	(wire
+		(pts
+			(xy 170.18 71.12) (xy 170.18 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "db6e9370-e240-4b7c-b2eb-9340ed050b03")
+	)
+	(wire
+		(pts
 			(xy 64.77 104.14) (xy 64.77 106.68)
 		)
 		(stroke
@@ -2327,16 +2337,6 @@
 			(type default)
 		)
 		(uuid "dc986143-efb6-4719-babb-00258d31d5f0")
-	)
-	(wire
-		(pts
-			(xy 181.61 71.12) (xy 181.61 46.99)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "df17dd42-fe64-4b19-8317-53343dffea82")
 	)
 	(wire
 		(pts
@@ -2380,13 +2380,13 @@
 	)
 	(wire
 		(pts
-			(xy 165.1 71.12) (xy 181.61 71.12)
+			(xy 170.18 71.12) (xy 165.1 71.12)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "eb2ba251-0d1d-43f6-9b40-f9b170445788")
+		(uuid "efd605ed-3bf1-4281-97f0-f6988fd512b7")
 	)
 	(wire
 		(pts
@@ -2595,7 +2595,7 @@
 				)
 			)
 		)
-		(property "W" "{0.1*W1_N}"
+		(property "W" "{W1C_N}"
 			(at 118.11 65.405 0)
 			(show_name yes)
 			(do_not_autoplace yes)
@@ -2606,7 +2606,7 @@
 				(justify left)
 			)
 		)
-		(property "L" "{L1_N}"
+		(property "L" "{L1C_N}"
 			(at 118.11 67.945 0)
 			(show_name yes)
 			(do_not_autoplace yes)
@@ -2829,124 +2829,6 @@
 			(project "Active_E_Field_Probe"
 				(path "/8648b04b-5135-4efe-a9b1-6520ac7dc88b"
 					(reference "X2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "SLiCAP:R")
-		(at 87.63 86.36 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "788465bf-6dbe-428c-8962-8777cf084dcb")
-		(property "Reference" "R1"
-			(at 87.63 89.154 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "{R_ph}"
-			(at 87.63 91.694 90)
-			(show_name yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 90.805 85.725 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 90.805 85.725 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor (cannot have zero resistance)"
-			(at 93.472 65.278 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "model" "R"
-			(at 91.44 84.455 0)
-			(show_name yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "noisetemp" "{T_op_max}"
-			(at 87.63 94.234 90)
-			(show_name yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "noiseflow" "0"
-			(at 87.63 77.47 90)
-			(show_name yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "dcvar" "0"
-			(at 87.63 80.01 90)
-			(show_name yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "dcvarlot" "0"
-			(at 87.63 82.55 90)
-			(show_name yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "8a5e3ad5-731b-4939-aa22-dc09fc8590e6")
-		)
-		(pin "2"
-			(uuid "286e9a5a-479f-47f1-a09e-5252c5990c8c")
-		)
-		(instances
-			(project ""
-				(path "/8648b04b-5135-4efe-a9b1-6520ac7dc88b"
-					(reference "R1")
 					(unit 1)
 				)
 			)
@@ -3346,7 +3228,7 @@
 				)
 			)
 		)
-		(property "W" "{0.1*W1_N}"
+		(property "W" "{W1C_N}"
 			(at 135.89 65.405 0)
 			(show_name yes)
 			(do_not_autoplace yes)
@@ -3357,7 +3239,7 @@
 				(justify left)
 			)
 		)
-		(property "L" "{L1_N}"
+		(property "L" "{L1C_N}"
 			(at 135.89 67.945 0)
 			(show_name yes)
 			(do_not_autoplace yes)

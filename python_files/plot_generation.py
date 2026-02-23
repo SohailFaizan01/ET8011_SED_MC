@@ -11,8 +11,10 @@ loopgain    = doLaplace(cir, numeric=True, source='V1', detector='V_Amp_out', pa
 servo       = doLaplace(cir, numeric=True, source='V1', detector='V_Amp_out', pardefs='circuit', lgref='Gm_M1_X1', transfer='servo')
 direct      = doLaplace(cir, numeric=True, source='V1', detector='V_Amp_out', pardefs='circuit', lgref='Gm_M1_X1', transfer='direct')
 
-PoleZero    = doPZ(cir, numeric=True, source='V1', detector='V_Amp_out', pardefs='circuit', lgref='Gm_M1_X1', transfer='loopgain')
-PoleZeroServo    = doPZ(cir, numeric=True, source='V1', detector='V_Amp_out', pardefs='circuit', lgref='Gm_M1_X1', transfer='servo')
+PoleZeroLG   = doPZ(cir, numeric=True, source='V1', detector='V_Amp_out', pardefs='circuit', lgref='Gm_M1_X1', transfer='loopgain')
+PoleZeroS   = doPZ(cir, numeric=True, source='V1', detector='V_Amp_out', pardefs='circuit', lgref='Gm_M1_X1', transfer='servo')
+PoleZeroG    = doPZ(cir, numeric=True, source='V1', detector='V_Amp_out', pardefs='circuit', lgref='Gm_M1_X1', transfer='gain')
+
 
 noise_expr = doNoise(cir, source="V1", detector="V_vo", numeric=True, pardefs='circuit')
 # --- Plots Data Generation ---
