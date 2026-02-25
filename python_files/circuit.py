@@ -18,7 +18,6 @@ specs2circuit(specs, cir)
 
 
 
-
 ############################################## Random Blocks of Code ##############################################
 
 ##### List the available loopgain references

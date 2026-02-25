@@ -3,6 +3,7 @@
 from SLiCAP import *
 from sympy import cancel, Number, expand
 from .circuit import cir
+from .three_optimize_third_stage import I_peak, Iq
 
 # --- Gains ---
 gain        = doLaplace(cir, numeric=True, source='V1', detector='V_Amp_out', pardefs='circuit', lgref='Gm_M1_X1', transfer='gain')
@@ -16,8 +17,64 @@ PoleZeroS   = doPZ(cir, numeric=True, source='V1', detector='V_Amp_out', pardefs
 PoleZeroG    = doPZ(cir, numeric=True, source='V1', detector='V_Amp_out', pardefs='circuit', lgref='Gm_M1_X1', transfer='gain')
 
 
-noise_expr = doNoise(cir, source="V1", detector="V_vo", numeric=True, pardefs='circuit')
+step_dict_P_swing = {   "params":   "ID_P",
+                        "method":   "lin",
+                        "start":    str(-1*Iq),
+                        "stop":     str(-1*I_peak),
+                        "num":      10            
+                    }
+
+# step_dict_N_swing = {   "params":   "ID_N",
+#                         "method":   "lin",
+#                         "start":    "60e-6",
+#                         "stop":     "4.56e-3",
+#                         "num":      3            
+#                     }
+step_dict_N_swing = {}
+step_dict_N_swing['params'] = "ID_N"
+step_dict_N_swing['method'] = "lin"
+step_dict_N_swing['start']  = 60e-6 
+step_dict_N_swing['stop']   = 4.56e-3
+step_dict_N_swing['num']    = 3
+
+I_inter = (Iq + I_peak) / 2
+# plotPZ("Stepped_PZ_plot_P_q", "Stepped PZ plot P_q", PoleZeroG, xscale="G", yscale="G", xmin=-3, xmax=1, ymin=-4, ymax=4)
+cir.defPar("ID_P", -1*I_inter)
+PoleZeroLG_2   = doPZ(cir, numeric=True, source='V1', detector='V_Amp_out', pardefs='circuit', lgref='Gm_M1_X1', transfer='loopgain')
+PoleZeroG_2   = doPZ(cir, numeric=True, source='V1', detector='V_Amp_out', pardefs='circuit', lgref='Gm_M1_X1', transfer='gain')
+# plotPZ("Stepped_PZ_plot_P_inter", "Stepped PZ plot P_inter", PoleZeroG_2, xscale="G", yscale="G", xmin=-3, xmax=1, ymin=-4, ymax=4)
+
+cir.defPar("ID_P", -1*I_peak)
+PoleZeroLG_3   = doPZ(cir, numeric=True, source='V1', detector='V_Amp_out', pardefs='circuit', lgref='Gm_M1_X1', transfer='loopgain')
+PoleZeroG_3   = doPZ(cir, numeric=True, source='V1', detector='V_Amp_out', pardefs='circuit', lgref='Gm_M1_X1', transfer='gain')
+plotPZ("Stepped_PZ_plot_P_peak", "Stepped PZ plot P_peak", [PoleZeroG,PoleZeroG_2,PoleZeroG_3], xscale="G", yscale="G", xmin=-3, xmax=1, ymin=-4, ymax=4)  
+
+
+
+# pzStepped_P_swing_LG  = doPZ(cir, numeric=True, source='V1', detector='V_Amp_out', pardefs='circuit', lgref='Gm_M1_X1', transfer='loopgain', stepdict=step_dict_P_swing)
+# pzStepped_N_swing_LG  = doPZ(cir, numeric=True, source='V1', detector='V_Amp_out', pardefs='circuit', lgref='Gm_M1_X1', transfer='loopgain', stepdict=step_dict_N_swing)
+# pzStepped_P_swing_G   = doPZ(cir, numeric=True, source='V1', detector='V_Amp_out', pardefs='circuit', lgref='Gm_M1_X1', transfer='gain', stepdict=step_dict_P_swing)
+# pzStepped_N_swing_G   = doPZ(cir, numeric=True, source='V1', detector='V_Amp_out', pardefs='circuit', lgref='Gm_M1_X1', transfer='gain', stepdict=step_dict_N_swing)
+
+
+
+
+# pz_stepped_P_swing_LG = plotPZ("pzStepped", "Stepped PZ plot", pzStepped_P_swing_LG, xscale="M", yscale="M", xmin=-1000, xmax=200, ymin=-2e3, ymax=2e3)
+# pz_stepped_N_swing_LG = plotPZ("pzStepped", "Stepped PZ plot", pzStepped_N_swing_LG, xscale="M", yscale="M", xmin=-1000, xmax=200, ymin=-2e3, ymax=2e3)
+
+# pz_stepped_P_swing_G = plotPZ("pzStepped", "Stepped PZ plot", pzStepped_P_swing_G, xscale="M", yscale="M", xmin=-1000, xmax=200, ymin=-2e3, ymax=2e3)
+# pz_stepped_N_swing_G = plotPZ("pzStepped", "Stepped PZ plot", pzStepped_N_swing_G, xscale="M", yscale="M", xmin=-1000, xmax=200, ymin=-2e3, ymax=2e3)
+
+# plotPZ("Stepped_PZ_plot_P_swing_LG", "Stepped PZ plot P_swing", pzStepped_P_swing_LG, xscale="M", yscale="M", xmin=-1000, xmax=200, ymin=-2e3, ymax=2e3)
+# plotPZ("Stepped_PZ_plot_N_swing_LG", "Stepped PZ plot N_swing", pzStepped_N_swing_LG, xscale="M", yscale="M", xmin=-1000, xmax=200, ymin=-2e3, ymax=2e3)
+
+# plotPZ("Stepped_PZ_plot_P_swing_G", "Stepped PZ plot P_swing G", pzStepped_P_swing_G, xscale="M", yscale="M", xmin=-1000, xmax=200, ymin=-2e3, ymax=2e3)
+# plotPZ("Stepped_PZ_plot_N_swing_G", "Stepped PZ plot N_swing G", pzStepped_N_swing_G, xscale="M", yscale="M", xmin=-1000, xmax=200, ymin=-2e3, ymax=2e3)
+
+
+
 # --- Plots Data Generation ---
+noise_expr = doNoise(cir, source="V1", detector="V_vo", numeric=True, pardefs='circuit')
 noise_expr.inoise = cancel(noise_expr.inoise)
 
 # --- Scale noise expression to avoid numerical overflow ---

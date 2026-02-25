@@ -1627,12 +1627,6 @@
 		(uuid "4f39ead6-a50f-4180-8b3d-aa230ff3e0a0")
 	)
 	(junction
-		(at 95.25 86.36)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "5b7b006c-7abf-428d-a080-4e67ece9d9b1")
-	)
-	(junction
 		(at 198.12 106.68)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1661,6 +1655,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "cd81428d-7ae2-483b-85de-1f0f39bf2c2f")
+	)
+	(junction
+		(at 95.25 86.36)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d2a643b8-d628-4fa8-a817-891e796c5010")
 	)
 	(junction
 		(at 149.86 106.68)
@@ -1697,16 +1697,6 @@
 			(type default)
 		)
 		(uuid "0818a15e-d46d-424c-a43c-e500a1e14fca")
-	)
-	(wire
-		(pts
-			(xy 95.25 86.36) (xy 102.87 86.36)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "09e41c82-b096-4b38-85f8-e9211e9624ee")
 	)
 	(wire
 		(pts
@@ -1870,6 +1860,16 @@
 	)
 	(wire
 		(pts
+			(xy 95.25 86.36) (xy 102.87 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "45c2bf6b-edca-4bf8-bb4b-8eafaac4ebbb")
+	)
+	(wire
+		(pts
 			(xy 198.12 74.93) (xy 198.12 86.36)
 		)
 		(stroke
@@ -1877,6 +1877,16 @@
 			(type default)
 		)
 		(uuid "46106e93-07a0-463e-a7d0-75e1912720d9")
+	)
+	(wire
+		(pts
+			(xy 78.74 86.36) (xy 81.28 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "467a5707-628c-46e6-8e06-8dbe01a0a7c5")
 	)
 	(wire
 		(pts
@@ -1917,16 +1927,6 @@
 			(type default)
 		)
 		(uuid "575b19b1-4ec7-4936-a495-ced5d66ea775")
-	)
-	(wire
-		(pts
-			(xy 78.74 86.36) (xy 95.25 86.36)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "57f5418d-0c73-4db7-b45d-629b1259af98")
 	)
 	(wire
 		(pts
@@ -2047,6 +2047,16 @@
 			(type default)
 		)
 		(uuid "75fbac44-630f-4709-857c-7aeb78bb2db6")
+	)
+	(wire
+		(pts
+			(xy 91.44 86.36) (xy 95.25 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "78d51360-4613-4e45-85b8-14744794b1d7")
 	)
 	(wire
 		(pts
@@ -3277,6 +3287,122 @@
 			(project "Active_E_Field_Probe"
 				(path "/8648b04b-5135-4efe-a9b1-6520ac7dc88b"
 					(reference "X7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "SLiCAP:R")
+		(at 86.36 86.36 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "be384568-18d1-4d6a-9f42-9b36657a7a47")
+		(property "Reference" "R1"
+			(at 86.36 69.85 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "{R_ph}"
+			(at 86.36 72.39 90)
+			(show_name yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 89.535 85.725 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 89.535 85.725 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor (cannot have zero resistance)"
+			(at 92.202 65.278 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "model" "R"
+			(at 90.17 84.455 0)
+			(show_name yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "noisetemp" "{T_op_max}"
+			(at 86.36 74.93 90)
+			(show_name yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "noiseflow" "0"
+			(at 86.36 77.47 90)
+			(show_name yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "dcvar" "0"
+			(at 86.36 80.01 90)
+			(show_name yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "dcvarlot" "0"
+			(at 86.36 82.55 90)
+			(show_name yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "596feea6-561d-47fa-b043-e5041dece846")
+		)
+		(pin "1"
+			(uuid "9967ab99-49be-42c4-8011-7cbcaba6543c")
+		)
+		(instances
+			(project ""
+				(path "/8648b04b-5135-4efe-a9b1-6520ac7dc88b"
+					(reference "R1")
 					(unit 1)
 				)
 			)

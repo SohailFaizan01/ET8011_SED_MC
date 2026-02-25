@@ -13,23 +13,25 @@
 </figure>
 <h2><a id="netlist_Active_E_Field_Probe"></a>Netlist: Active_E_Field_Probe.cir</h2>
 <pre>Active_E_Field_Probe
-C22 1 7 C value={C_s} vinit=0
-C23 7 Amp_out C value={0.56*C_s} vinit=0
-R16 Amp_out vo R value=50 noisetemp={T_op_max} noiseflow=0 dcvar=0 dcvarlot=0
-R17 vo 0 R value=50 noisetemp={0} noiseflow=0 dcvar=0 dcvarlot=0
-V1 1 0 V value={V_in} noise=0 dc=0 dcvar=0
-X1 2 3 4 5 CMOS18ND W={W1_N} L={L1_N} ID={ID1_N}
-X2 Amp_out 6 0 0 CMOS18P W={W_P} L={L_P} ID={ID_P}
-X3 Amp_out 6 0 0 CMOS18N W={W_N} L={L_N} ID={ID_N}
-X4 7 0 4 MN18_noise ID={ID1_N} IG={0} W={W1_N} L={L1_N}
-X5 0 0 5 MN18_noise ID={ID1_N} IG={0} W={W1_N} L={L1_N}
-X6 6 0 3 0 CMOS18N W={W1_N} L={L1_N} ID={ID1_N}
-X7 0 0 2 0 CMOS18N W={W1_N} L={L1_N} ID={ID1_N}
+C1 2 1 C value={C_s} vinit=0
+C2 9 Amp_out C value={0.56*C_s} vinit=0
+R1 1 9 R value={R_ph} noisetemp=T_op_max noiseflow=0 dcvar=0 dcvarlot=0
+R2 Amp_out vo R value=50 noisetemp={T_op_max} noiseflow=0 dcvar=0 dcvarlot=0
+R3 vo 0 R value=50 noisetemp={0} noiseflow=0 dcvar=0 dcvarlot=0
+V1 2 0 V value={V_in} noise=0 dc=0 dcvar=0
+X1 3 4 5 6 CMOS18ND W={W1_N} L={L1_N} ID={ID1_N}
+X2 Amp_out 7 0 0 CMOS18P W={W_P} L={L_P} ID={ID_P}
+X3 Amp_out 7 0 0 CMOS18N W={W_N} L={L_N} ID={ID_N}
+X4 0 8 7 0 CMOS18N W={W2_N} L={L2_N} ID={ID2_N}
+X5 9 0 5 MN18_noise ID={ID1_N} IG={0} W={W1_N} L={L1_N}
+X6 0 0 6 MN18_noise ID={ID1_N} IG={0} W={W1_N} L={L1_N}
+X7 8 0 4 0 CMOS18N W={W1C_N} L={L1C_N} ID={ID1_N}
+X8 0 0 3 0 CMOS18N W={W1C_N} L={L1C_N} ID={ID1_N}
 .end</pre>
 <!-- INSERT -->
 <div id="footnote">
 <p>Go to <a href="index.html">index</a></p>
-<p>SLiCAP: Symbolic Linear Circuit Analysis Program, Version 4.0.5 &copy 2009-2025 SLiCAP development team</p>
+<p>SLiCAP: Symbolic Linear Circuit Analysis Program, Version 4.0.10 &copy 2009-2025 SLiCAP development team</p>
 <p>For documentation, examples, support, updates and courses please visit: <a href="https://analog-electronics.tudelft.nl">analog-electronics.tudelft.nl</a></p>
-<p>Last project update: 2026-01-22 12:15:27</p>
+<p>Last project update: 2026-02-25 12:13:51</p>
 </div></body></html>

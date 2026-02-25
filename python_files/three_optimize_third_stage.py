@@ -162,12 +162,16 @@ print(f"Wp                 = {Wp_final*1e6:.1f} µm")
 print("\n----- Output Stage Parameters Peak Current-----")
 print(f"gmn peak           = {gm_peak_n*1e3:.2f} mS")
 print(f"gmp peak           = {gm_peak_p*1e3:.2f} mS")
+print(f"Gain peak - N      = {(gm_peak_n + gm_quiescent_p)*100:.2f}")
+print(f"Gain peak - P      = {(gm_peak_p + gm_quiescent_n)*100:.2f}")
 print(f"ICn peak           = {ICn_p:.1f}")
 print(f"ICp peak           = {ICp_p:.1f}")
 
 print("\n----- Output Stage Parameters Quiescent Current-----")
 print(f"gmn quiescent      = {gm_quiescent_n*1e3:.2f} mS")
 print(f"gmp quiescent      = {gm_quiescent_p*1e3:.2f} mS")
+print(f"Gain quiescent     = {(gm_quiescent_p+gm_quiescent_n)*100:.2f}")
+
 print(f"ICn quiescent      = {ICn_q:.2f}")
 print(f"ICp quiescent      = {ICp_q:.2f}")
 

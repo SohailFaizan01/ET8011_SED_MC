@@ -27,6 +27,10 @@ eqn2html("direct",      direct.laplace)
 pz2html(PoleZeroLG, label='PoleZero Loopgain', labelText='PoleZero Loopgain')
 pz2html(PoleZeroS, label='PoleZero Servo', labelText='PoleZero Servo')
 pz2html(PoleZeroG, label='PoleZero Gain', labelText='PoleZero Gain')
+
+# img2html("Stepped_PZ_plot_P_q.svg", width=750)
+# img2html("Stepped_PZ_plot_P_inter.svg", width=750)
+img2html("Stepped_PZ_plot_P_peak.svg", width=750)
 ##### Input referred noise
 head3html("Noise Spectrum")
 img2html("noise_function_plot_HZ.svg", width=750)
