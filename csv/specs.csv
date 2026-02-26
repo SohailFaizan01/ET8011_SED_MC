@@ -31,4 +31,4 @@ L1C_N,Transistor length,9/50000000,m,Amplifier
 W2_N,Transistor width,1/1000000,m,Amplifier
 L2_N,Transistor length,9/50000000,m,Amplifier
 ID2_N,Transistor drain current,1/1000,A,Amplifier
-R_ph,Phantom Zero Resistance,50,Ohm,Amplifier
+R_ph,Phantom Zero Resistance,200,Ohm,Amplifier

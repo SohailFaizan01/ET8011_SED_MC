@@ -55,7 +55,7 @@ id_p      = -1*4.5e-3      # Transistor drain current [A]
 
 # Compensation Circuitry
 # R_ph      = 40             # Phantom Zero resistance [Ohm]
-R_ph      = 50             # Phantom Zero resistance [Ohm]
+R_ph      = 200             # Phantom Zero resistance [Ohm]
 
 specs = []
 
