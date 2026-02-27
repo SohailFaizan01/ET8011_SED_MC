@@ -1,64 +1,40 @@
 ################################################# Circuit Performance HTML Page #################################################
 from SLiCAP import *
-import numpy as np
-import sympy as sp
-from .plot_generation import *
 
-htmlPage("Circuit Performance", index=False, label='Circuit_Performance')
-
-##### Circuit Image
-head2html("Circuit")
-img2html("Active_E_Field_Probe.svg",  width=1000)
-
-##### Gain functions and plots
-head2html("Graphs")
-head3html("Magnitude Plot")
-img2html("fb_mag.svg",  width=800)
-img2html("ph_mag.svg",  width=800)
+from .plot_generation import generate_performance_plots
 
 
-eqn2html("gain",        gain.laplace)
-eqn2html("asymptotic",  asymptotic.laplace)
-eqn2html("loopgain",    loopgain.laplace)
-eqn2html("servo",       servo.laplace)
-eqn2html("direct",      direct.laplace)
+def generate_circuit_performance_html(cir, design_tag="", iq=None, i_peak=None):
+    suffix = design_tag.upper().strip()
+    title = "Circuit Performance" if not suffix else f"Circuit Performance ({suffix})"
+    label = "Circuit_Performance" if not suffix else f"Circuit_Performance_{suffix}"
 
-##### Pole Zero Plot
-pz2html(PoleZeroLG, label='PoleZero Loopgain', labelText='PoleZero Loopgain')
-pz2html(PoleZeroS, label='PoleZero Servo', labelText='PoleZero Servo')
-pz2html(PoleZeroG, label='PoleZero Gain', labelText='PoleZero Gain')
+    perf = generate_performance_plots(cir, suffix=suffix, iq=iq, i_peak=i_peak)
 
-# img2html("Stepped_PZ_plot_P_q.svg", width=750)
-# img2html("Stepped_PZ_plot_P_inter.svg", width=750)
-img2html("Stepped_PZ_plot_P_peak.svg", width=750)
-##### Input referred noise
-head3html("Noise Spectrum")
-img2html("noise_function_plot_HZ.svg", width=750)
-img2html("inoise.svg",  width=700)
-eqn2html("S_IRnoise",   noise_expr.inoise)
+    htmlPage(title, index=False, label=label)
 
+    head2html("Circuit")
+    img2html("Active_E_Field_Probe.svg", width=1000)
 
+    head2html("Graphs")
+    head3html("Magnitude Plot")
+    img2html(perf["fb_mag_image"], width=800)
+    img2html(perf["ph_mag_image"], width=800)
 
+    eqn2html("gain", perf["gain"].laplace)
+    eqn2html("asymptotic", perf["asymptotic"].laplace)
+    eqn2html("loopgain", perf["loopgain"].laplace)
+    eqn2html("servo", perf["servo"].laplace)
+    eqn2html("direct", perf["direct"].laplace)
 
+    pz2html(perf["pole_zero_lg"], label=f"PoleZero Loopgain {suffix}".strip(), labelText='PoleZero Loopgain')
+    pz2html(perf["pole_zero_s"], label=f"PoleZero Servo {suffix}".strip(), labelText='PoleZero Servo')
+    pz2html(perf["pole_zero_g"], label=f"PoleZero Gain {suffix}".strip(), labelText='PoleZero Gain')
 
+    if perf["stepped_pz_image"] is not None:
+        img2html(perf["stepped_pz_image"], width=750)
 
-
-
-
-
-############################################## Random Blocks of Code ##############################################
-
-##### Print Output Impedance Stuff
-# Output Impedance
-#img2html("R_out.svg",   width=600)
-#eqn2html("R_out",       Rout_result.laplace, units="Ohm")
-
-##### Output referred noise
-# img2html("onoise.svg",  width=600)
-# eqn2html("S_ORnoise",   noise_expr.onoise)
-
-##### Print MNA Matrix Stuff
-# eqn2html("MNA_Matrix",   twoport.M)
-# eqn2html("MNA_Iv",   twoport.Iv)
-# eqn2html("MNA_Dv",   twoport.Dv)
-# eqn2html("MNA_something", twoport.M.inv())
+    head3html("Noise Spectrum")
+    img2html("noise_function_plot_HZ.svg", width=750)
+    img2html(perf["inoise_image"], width=700)
+    eqn2html("S_IRnoise", perf["noise_expr"].inoise)

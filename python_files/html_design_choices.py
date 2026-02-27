@@ -4,7 +4,6 @@ from SLiCAP import *
 from sympy import symbols, N
 from .specifications import *
 from .circuit import cir
-from .plot_generation import *
 
 htmlPage("Design Process", index=False, label='Design_Process')
 

@@ -1,0 +1,104 @@
+<a id="Circuit_Performance_PN"></a><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+<meta name="Language" content="English"/>
+<title>"Circuit Performance (PN)"</title><link rel="stylesheet" href="css/slicap.css">
+<script>MathJax = {tex:{tags: 'ams', inlineMath:[['$','$'],]}, svg:{fontCache:'global'}};</script>
+<script type="text/javascript" id="MathJax-script" async  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head><body><div id="top"><h1>Circuit Performance (PN)</h1></div>
+<h2>Circuit</h2>
+<figure><img src="img/Active_E_Field_Probe.svg" alt="" style="width:1000px">
+</figure>
+<h2>Graphs</h2>
+<h3>Magnitude Plot</h3>
+<figure><img src="img/fb_mag_PN.svg" alt="" style="width:800px">
+</figure>
+<figure><img src="img/ph_mag_PN.svg" alt="" style="width:800px">
+</figure>
+\begin{equation}
+gain=\frac{4.249 \cdot 10^{-51} s^{6} + 5.289 \cdot 10^{-40} s^{5} + 1.536 \cdot 10^{-29} s^{4} + 1.955 \cdot 10^{-20} s^{3} - 1.195 \cdot 10^{-11} s^{2} - 1.686 s}{4.11 \cdot 10^{-62} s^{7} + 1.878 \cdot 10^{-50} s^{6} + 1.881 \cdot 10^{-39} s^{5} + 5.382 \cdot 10^{-29} s^{4} + 2.156 \cdot 10^{-19} s^{3} + 7.772 \cdot 10^{-10} s^{2} + s}
+\end{equation}
+\begin{equation}
+asymptotic=\frac{1.269 \cdot 10^{-33} s^{4} + 4.466 \cdot 10^{-22} s^{3} - 1.77 \cdot 10^{-11} s^{2} - 1.786 s}{1.935 \cdot 10^{-52} s^{6} + 1.756 \cdot 10^{-41} s^{5} - 7.001 \cdot 10^{-33} s^{4} + 5.967 \cdot 10^{-21} s^{3} + 6.1 \cdot 10^{-10} s^{2} + s}
+\end{equation}
+\begin{equation}
+loopgain=\frac{- 1.492 \cdot 10^{29} s^{5} - 1.354 \cdot 10^{40} s^{4} + 5.398 \cdot 10^{48} s^{3} - 4.602 \cdot 10^{60} s^{2} - 4.704 \cdot 10^{71} s - 7.711 \cdot 10^{80}}{3.357 \cdot 10^{19} s^{6} + 1.519 \cdot 10^{31} s^{5} + 1.523 \cdot 10^{42} s^{4} + 4.397 \cdot 10^{52} s^{3} + 1.715 \cdot 10^{62} s^{2} + 1.644 \cdot 10^{71} s + 4.573 \cdot 10^{79}}
+\end{equation}
+\begin{equation}
+servo=\frac{1.492 \cdot 10^{29} s^{5} + 1.354 \cdot 10^{40} s^{4} - 5.398 \cdot 10^{48} s^{3} + 4.602 \cdot 10^{60} s^{2} + 4.704 \cdot 10^{71} s + 7.711 \cdot 10^{80}}{3.357 \cdot 10^{19} s^{6} + 1.534 \cdot 10^{31} s^{5} + 1.537 \cdot 10^{42} s^{4} + 4.396 \cdot 10^{52} s^{3} + 1.761 \cdot 10^{62} s^{2} + 6.348 \cdot 10^{71} s + 8.168 \cdot 10^{80}}
+\end{equation}
+\begin{equation}
+direct=\frac{7.59 \cdot 10^{-50} s^{6} + 9.447 \cdot 10^{-39} s^{5} + 2.744 \cdot 10^{-28} s^{4} + 3.417 \cdot 10^{-19} s^{3} + 8.506 \cdot 10^{-11} s^{2}}{7.342 \cdot 10^{-61} s^{7} + 3.322 \cdot 10^{-49} s^{6} + 3.331 \cdot 10^{-38} s^{5} + 9.615 \cdot 10^{-28} s^{4} + 3.751 \cdot 10^{-18} s^{3} + 3.596 \cdot 10^{-9} s^{2} + s}
+\end{equation}
+<h2><a id="PoleZero Loopgain PN"></a>PZ  analysis results</h2>
+<h3>Gain type: loopgain</h3>
+<p>DC value = $-16.86$</p>
+<table><tr><th>pole</th><th>Re [Hz]</th><th>Im [Hz]</th><th>Mag [Hz]</th><th>Q</th></tr>
+<tr><td>p<sub>1</sub></td><td>$-87.59\cdot 10^{6}$</td><td></td><td>$87.59\cdot 10^{6}$</td><td></td></tr>
+<tr><td>p<sub>2</sub></td><td>$-111.9\cdot 10^{6}$</td><td></td><td>$111.9\cdot 10^{6}$</td><td></td></tr>
+<tr><td>p<sub>3</sub></td><td>$-501.9\cdot 10^{6}$</td><td></td><td>$501.9\cdot 10^{6}$</td><td></td></tr>
+<tr><td>p<sub>4</sub></td><td>$-6.841\cdot 10^{9}$</td><td></td><td>$6.841\cdot 10^{9}$</td><td></td></tr>
+<tr><td>p<sub>5</sub></td><td>$-12.71\cdot 10^{9}$</td><td></td><td>$12.71\cdot 10^{9}$</td><td></td></tr>
+<tr><td>p<sub>6</sub></td><td>$-51.77\cdot 10^{9}$</td><td></td><td>$51.77\cdot 10^{9}$</td><td></td></tr>
+</table>
+<table><tr><th>zero</th><th>Re [Hz]</th><th>Im [Hz]</th><th>Mag [Hz]</th><th>Q</th></tr>
+<tr><td>z<sub>1</sub></td><td>$2.698\cdot 10^{9}$</td><td>$4.423\cdot 10^{9}$</td><td>$5.181\cdot 10^{9}$</td><td>$0.9602$</td></tr>
+<tr><td>z<sub>2</sub></td><td>$2.698\cdot 10^{9}$</td><td>$-4.423\cdot 10^{9}$</td><td>$5.181\cdot 10^{9}$</td><td>$0.9602$</td></tr>
+<tr><td>z<sub>3</sub></td><td>$-265.3\cdot 10^{6}$</td><td></td><td>$265.3\cdot 10^{6}$</td><td></td></tr>
+<tr><td>z<sub>4</sub></td><td>$-5.131\cdot 10^{9}$</td><td></td><td>$5.131\cdot 10^{9}$</td><td></td></tr>
+<tr><td>z<sub>5</sub></td><td>$-14.45\cdot 10^{9}$</td><td></td><td>$14.45\cdot 10^{9}$</td><td></td></tr>
+</table>
+<h2><a id="PoleZero Servo PN"></a>PZ  analysis results</h2>
+<h3>Gain type: servo</h3>
+<p>DC value = $0.944$</p>
+<table><tr><th>pole</th><th>Re [Hz]</th><th>Im [Hz]</th><th>Mag [Hz]</th><th>Q</th></tr>
+<tr><td>p<sub>1</sub></td><td>$-176.6\cdot 10^{6}$</td><td>$520.8\cdot 10^{6}$</td><td>$550.0\cdot 10^{6}$</td><td>$1.557$</td></tr>
+<tr><td>p<sub>2</sub></td><td>$-176.6\cdot 10^{6}$</td><td>$-520.8\cdot 10^{6}$</td><td>$550.0\cdot 10^{6}$</td><td>$1.557$</td></tr>
+<tr><td>p<sub>3</sub></td><td>$-288.2\cdot 10^{6}$</td><td></td><td>$288.2\cdot 10^{6}$</td><td></td></tr>
+<tr><td>p<sub>4</sub></td><td>$-6.757\cdot 10^{9}$</td><td></td><td>$6.757\cdot 10^{9}$</td><td></td></tr>
+<tr><td>p<sub>5</sub></td><td>$-12.77\cdot 10^{9}$</td><td></td><td>$12.77\cdot 10^{9}$</td><td></td></tr>
+<tr><td>p<sub>6</sub></td><td>$-52.56\cdot 10^{9}$</td><td></td><td>$52.56\cdot 10^{9}$</td><td></td></tr>
+</table>
+<table><tr><th>zero</th><th>Re [Hz]</th><th>Im [Hz]</th><th>Mag [Hz]</th><th>Q</th></tr>
+<tr><td>z<sub>1</sub></td><td>$2.698\cdot 10^{9}$</td><td>$4.423\cdot 10^{9}$</td><td>$5.181\cdot 10^{9}$</td><td>$0.9602$</td></tr>
+<tr><td>z<sub>2</sub></td><td>$2.698\cdot 10^{9}$</td><td>$-4.423\cdot 10^{9}$</td><td>$5.181\cdot 10^{9}$</td><td>$0.9602$</td></tr>
+<tr><td>z<sub>3</sub></td><td>$-265.3\cdot 10^{6}$</td><td></td><td>$265.3\cdot 10^{6}$</td><td></td></tr>
+<tr><td>z<sub>4</sub></td><td>$-5.131\cdot 10^{9}$</td><td></td><td>$5.131\cdot 10^{9}$</td><td></td></tr>
+<tr><td>z<sub>5</sub></td><td>$-14.45\cdot 10^{9}$</td><td></td><td>$14.45\cdot 10^{9}$</td><td></td></tr>
+</table>
+<h2><a id="PoleZero Gain PN"></a>PZ  analysis results</h2>
+<h3>Gain type: gain</h3>
+<p>DC value = $undefined$</p>
+<table><tr><th>pole</th><th>Re [Hz]</th><th>Im [Hz]</th><th>Mag [Hz]</th><th>Q</th></tr>
+<tr><td>p<sub>1</sub></td><td>$-176.6\cdot 10^{6}$</td><td>$520.8\cdot 10^{6}$</td><td>$550.0\cdot 10^{6}$</td><td>$1.557$</td></tr>
+<tr><td>p<sub>2</sub></td><td>$-176.6\cdot 10^{6}$</td><td>$-520.8\cdot 10^{6}$</td><td>$550.0\cdot 10^{6}$</td><td>$1.557$</td></tr>
+<tr><td>p<sub>3</sub></td><td>$-288.2\cdot 10^{6}$</td><td></td><td>$288.2\cdot 10^{6}$</td><td></td></tr>
+<tr><td>p<sub>4</sub></td><td>$-6.757\cdot 10^{9}$</td><td></td><td>$6.757\cdot 10^{9}$</td><td></td></tr>
+<tr><td>p<sub>5</sub></td><td>$-12.77\cdot 10^{9}$</td><td></td><td>$12.77\cdot 10^{9}$</td><td></td></tr>
+<tr><td>p<sub>6</sub></td><td>$-52.56\cdot 10^{9}$</td><td></td><td>$52.56\cdot 10^{9}$</td><td></td></tr>
+</table>
+<table><tr><th>zero</th><th>Re [Hz]</th><th>Im [Hz]</th><th>Mag [Hz]</th><th>Q</th></tr>
+<tr><td>z<sub>1</sub></td><td>$679.9\cdot 10^{6}$</td><td></td><td>$679.9\cdot 10^{6}$</td><td></td></tr>
+<tr><td>z<sub>2</sub></td><td>$-439.2\cdot 10^{6}$</td><td>$698.1\cdot 10^{6}$</td><td>$824.7\cdot 10^{6}$</td><td>$0.9389$</td></tr>
+<tr><td>z<sub>3</sub></td><td>$-439.2\cdot 10^{6}$</td><td>$-698.1\cdot 10^{6}$</td><td>$824.7\cdot 10^{6}$</td><td>$0.9389$</td></tr>
+<tr><td>z<sub>4</sub></td><td>$-6.881\cdot 10^{9}$</td><td></td><td>$6.881\cdot 10^{9}$</td><td></td></tr>
+<tr><td>z<sub>5</sub></td><td>$-12.73\cdot 10^{9}$</td><td></td><td>$12.73\cdot 10^{9}$</td><td></td></tr>
+</table>
+<figure><img src="img/Stepped_PZ_plot_P_peak_PN.svg" alt="" style="width:750px">
+</figure>
+<h3>Noise Spectrum</h3>
+<figure><img src="img/noise_function_plot_HZ.svg" alt="" style="width:750px">
+</figure>
+<figure><img src="img/inoise_PN.svg" alt="" style="width:700px">
+</figure>
+\begin{equation}
+S_{IRnoise}=\frac{5.685 \cdot 10^{-219} f^{22} + 2.812 \cdot 10^{-198} f^{20} + 5.356 \cdot 10^{-178} f^{18} + 4.605 \cdot 10^{-158} f^{16} + 1.537 \cdot 10^{-138} f^{14} + 1.598 \cdot 10^{-119} f^{12} + 1.646 \cdot 10^{-100} f^{10} + 2.569 \cdot 10^{-81} f^{8} + 1.08 \cdot 10^{-63} f^{6} + 3.546 \cdot 10^{-46} f^{4} + 8.147 \cdot 10^{-28} f^{2} + 9.473 \cdot 10^{-17} f^{1.05} + 2.639 \cdot 10^{-34} f^{3.05} + 1.021 \cdot 10^{-52} f^{5.05} + 3.585 \cdot 10^{-70} f^{7.05} + 8.627 \cdot 10^{-88} f^{9.05} - 2.083 \cdot 10^{-107} f^{11.05} + 1.086 \cdot 10^{-124} f^{13.05} + 6.286 \cdot 10^{-144} f^{15.05} + 1.242 \cdot 10^{-163} f^{17.05} + 9.965 \cdot 10^{-184} f^{19.05} + 3.261 \cdot 10^{-204} f^{21.05} + 3.208 \cdot 10^{-225} f^{23.05} + 2.936 \cdot 10^{-10}}{f^{1.05} + 1.835 \cdot 10^{-18} f^{3.05} - 2.92 \cdot 10^{-37} f^{5.05} + 8.277 \cdot 10^{-54} f^{7.05} + 9.127 \cdot 10^{-72} f^{9.05} - 5.048 \cdot 10^{-90} f^{11.05} + 2.156 \cdot 10^{-107} f^{13.05} + 1.188 \cdot 10^{-126} f^{15.05} + 2.194 \cdot 10^{-146} f^{17.05} + 1.554 \cdot 10^{-166} f^{19.05} + 3.712 \cdot 10^{-187} f^{21.05}}
+\end{equation}
+<!-- INSERT -->
+<div id="footnote">
+<p>Go to <a href="Active_E_Field_Probe_index.html">Active_E_Field_Probe_index</a></p>
+<p>SLiCAP: Symbolic Linear Circuit Analysis Program, Version 4.0.10 &copy 2009-2025 SLiCAP development team</p>
+<p>For documentation, examples, support, updates and courses please visit: <a href="https://analog-electronics.tudelft.nl">analog-electronics.tudelft.nl</a></p>
+<p>Last project update: 2026-02-27 02:05:27</p>
+</div></body></html>

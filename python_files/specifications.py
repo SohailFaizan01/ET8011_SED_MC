@@ -30,8 +30,10 @@ V_in_max  = L_ant * E_max  # Max input voltage [V]
 # I_out_max = 15e-3        # Max output current [A]
 A_cl      = 2.5            # Closed-loop gain
 
-# --- Transistor ---
-# Input Stage
+# ################ Transistor ##########
+# __________Input Stage___________
+
+# N I/P Stage
 w1_n      = 1e-6
 l1_n      = 180e-9
 id1_n     = 1e-3
@@ -39,10 +41,25 @@ id1_n     = 1e-3
 w1c_n      = 1e-6
 l1c_n      = 180e-9
 
-# Second Stage (middle)
+# P I/P Stage
+w1_p      = 1e-6
+l1_p      = 180e-9
+id1_p     = 1e-3
+
+w1c_p      = 1e-6
+l1c_p      = 180e-9
+
+# __________Intermediate Stage___________
+
+# N I/P Stage
 w2_n      = 1e-6
 l2_n      = 180e-9
 id2_n     = 1e-3
+
+# P I/P Stage
+w2_p      = 1e-6
+l2_p      = 180e-9
+id2_p     = 1e-3
 
 # Output Stage (push pull)
 w_n       = 10e-6          # Transistor width [m]
@@ -217,7 +234,7 @@ specs.append(specItem("ID_P",
                       value       = id_p,
                       units       = "A",
                       specType    = "Amplifier"))
-
+# Input stage N
 specs.append(specItem("W1_N",
                       description = "Transistor width",
                       value       = w1_n,
@@ -248,6 +265,7 @@ specs.append(specItem("L1C_N",
                       units       = "m",
                       specType    = "Amplifier"))
 
+# Intermediate Stage N
 specs.append(specItem("W2_N",
                       description = "Transistor width",
                       value       = w2_n,
@@ -263,6 +281,56 @@ specs.append(specItem("L2_N",
 specs.append(specItem("ID2_N",
                       description = "Transistor drain current",
                       value       = id2_n,
+                      units       = "A",
+                      specType    = "Amplifier"))
+
+# Input stage P
+specs.append(specItem("W1_P",
+                      description = "Transistor width",
+                      value       = w1_p,
+                      units       = "m",
+                      specType    = "Amplifier"))
+
+specs.append(specItem("L1_P",
+                      description = "Transistor length",
+                      value       = l1_p,
+                      units       = "m",
+                      specType    = "Amplifier"))
+
+specs.append(specItem("ID1_P",
+                      description = "Transistor drain current",
+                      value       = id1_p,
+                      units       = "A",
+                      specType    = "Amplifier"))
+
+specs.append(specItem("W1C_P",
+                      description = "Transistor width",
+                      value       = w1c_p,
+                      units       = "m",
+                      specType    = "Amplifier"))
+
+specs.append(specItem("L1C_P",
+                      description = "Transistor length",
+                      value       = l1c_p,
+                      units       = "m",
+                      specType    = "Amplifier"))
+
+# Intermediate Stage P
+specs.append(specItem("W2_P",
+                      description = "Transistor width",
+                      value       = w2_p,
+                      units       = "m",
+                      specType    = "Amplifier"))
+
+specs.append(specItem("L2_P",
+                      description = "Transistor length",
+                      value       = l2_p,
+                      units       = "m",
+                      specType    = "Amplifier"))
+
+specs.append(specItem("ID2_P",
+                      description = "Transistor drain current",
+                      value       = id2_p,
                       units       = "A",
                       specType    = "Amplifier"))
 
