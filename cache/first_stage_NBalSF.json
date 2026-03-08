@@ -1,0 +1,15 @@
+{
+  "meta": {
+    "design_key": "NBalSF"
+  },
+  "result": {
+    "best_cost": 3.378178710876691,
+    "stage1_flavor": "N",
+    "w_param": "W1_N",
+    "id_param": "ID1_N",
+    "wc_param": "W1C_N",
+    "W1": 1.6689155610467246e-05,
+    "ID1": 0.000379269019073225,
+    "W1C": 2.8701692478272435e-07
+  }
+}

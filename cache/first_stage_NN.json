@@ -1,0 +1,17 @@
+{
+  "meta": {
+    "design_key": "NN",
+    "project": "KiCad/Active_E_Field_Probe/stage_NN/Active_E_Field_Probe.kicad_sch",
+    "stage1_flavor": "N"
+  },
+  "result": {
+    "best_cost": 7.693951220775548,
+    "stage1_flavor": "N",
+    "w_param": "W1_N",
+    "id_param": "ID1_N",
+    "wc_param": "W1C_N",
+    "W1": 2.667923821094801e-05,
+    "ID1": 0.0007847599703514615,
+    "W1C": 1.980962417113592e-06
+  }
+}

@@ -82,7 +82,7 @@ def _worker_init(base_cir):
     _WORKER_CIR = base_cir
 
 
-def _tune_cascode(local_cir, initial_W1C_N, wc_par):
+def _tune_cascode(local_cir, initial_W1C_N, wc_par, ciss_par):
     """
     Reduce cascode width until pole constraint is met or min width is reached.
     Returns (success, final_W1C_N, pole_freq, stage_gain).
@@ -101,12 +101,12 @@ def _tune_cascode(local_cir, initial_W1C_N, wc_par):
             gds_casc = float(local_cir.getParValue("g_o_X7"))
             ro_casc = 1.0 / gds_casc if gds_casc > 0 else float('inf')
 
-            cissX4 = float(local_cir.getParValue("c_iss_X4"))
+            ciss_val = float(local_cir.getParValue(ciss_par))
         except Exception:
             W1C_N *= 0.85
             continue
 
-        iter_pole_freq = 1 / (2 * np.pi * ro_amp * gm_casc * ro_casc * cissX4)
+        iter_pole_freq = 1 / (2 * np.pi * ro_amp * gm_casc * ro_casc * ciss_val)
         iter_stage_gain = gm_amp * ro_amp * gm_casc * ro_casc
         if iter_pole_freq > target_val:
             return (True, W1C_N, iter_pole_freq, iter_stage_gain)
@@ -134,7 +134,7 @@ def _evaluate_width(task):
     """Evaluate one width with a sequential current sweep in a worker process."""
     local_cir = _WORKER_CIR
 
-    W1_val, id_sweep, denom_w, denom_id, w_par, id_par, wc_par, id_sign = task
+    W1_val, id_sweep, denom_w, denom_id, w_par, id_par, wc_par, id_sign, ciss_par = task
 
     t0 = time.perf_counter()
     local_cir.defPar(w_par, W1_val)
@@ -165,7 +165,9 @@ def _evaluate_width(task):
         except Exception:
             break
 
-        cascode_ok, found_W1C_N, found_pole_freq, found_stage_gain = _tune_cascode(local_cir, W1_val, wc_par)
+        cascode_ok, found_W1C_N, found_pole_freq, found_stage_gain = _tune_cascode(
+            local_cir, W1_val, wc_par, ciss_par
+        )
         if not cascode_ok or found_stage_gain <= 0:
             continue
 
@@ -196,13 +198,19 @@ def _evaluate_width(task):
     return (best_for_width, stats)
 
 
-def optimize_first_stage_parallel(cir, stage1_flavor=None, max_workers=None):
+def optimize_first_stage_parallel(cir, stage1_flavor=None, max_workers=None, cascode_ciss_par="c_iss_X4"):
     """Run first-stage optimization with process-based parallel width evaluation."""
     suffix = detect_stage1_flavor(cir, preferred=stage1_flavor)
     id_sign = 1.0 if suffix == "N" else -1.0
     w_par = f"W1_{suffix}"
     id_par = f"ID1_{suffix}"
     wc_par = f"W1C_{suffix}"
+    try:
+        cir.getParValue(cascode_ciss_par)
+    except Exception as exc:
+        raise RuntimeError(
+            f"Requested first-stage cascode pole capacitance parameter '{cascode_ciss_par}' not found."
+        ) from exc
 
     W_N_3rd = float(cir.getParValue("W_N"))
     W_P_3rd = float(cir.getParValue("W_P"))
@@ -223,7 +231,17 @@ def optimize_first_stage_parallel(cir, stage1_flavor=None, max_workers=None):
     print(f"Scheduled widths for {w_par} (um): " + ", ".join(f"{w*1e6:.2f}" for w in w_sweep))
 
     tasks = [
-        (float(W1_val), id_sweep, W_P_3rd + W_N_3rd, ID_N_3rd, w_par, id_par, wc_par, id_sign)
+        (
+            float(W1_val),
+            id_sweep,
+            W_P_3rd + W_N_3rd,
+            ID_N_3rd,
+            w_par,
+            id_par,
+            wc_par,
+            id_sign,
+            cascode_ciss_par,
+        )
         for W1_val in w_sweep
     ]
 

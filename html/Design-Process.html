@@ -1,0 +1,28 @@
+<a id="Design_Process"></a><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+<meta name="Language" content="English"/>
+<title>"Design Process"</title><link rel="stylesheet" href="css/slicap.css">
+<script>MathJax = {tex:{tags: 'ams', inlineMath:[['$','$'],]}, svg:{fontCache:'global'}};</script>
+<script type="text/javascript" id="MathJax-script" async  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head><body><div id="top"><h1>Design Process</h1></div>
+<h3>Amplifier Type</h3>
+<p>Current-to-voltage amplifier. To avoid non-linearity of the input ESD protection (TVS diode), a current input is required. The output quantity is voltage, as this will be read out by the spectrum analyser.</p>
+<h3>Input / Output Impedances</h3>
+<p>- As the input type is current, the input impedance must approach 0 Ohm.<br>- To minimize reflections and maximize power transfer, a 50 Ohm output impedance is required.</p>
+<p><b>Implementation:</b> The general feedback controller will satisfy this requirement if sufficient loop gain is achieved, such that the input behaves as a virtual ground. A brute-force approach is used for simplicity; the impact on noise performance must still be validated.</p>
+<h3>Feedback Structure</h3>
+<p>Passive integrating feedback structure to compensate the differentiated input signal.</p>
+<p><b>Implementation:</b> Capacitive feedback (integrator).</p>
+<h3>Controller</h3>
+<p>A two-stage controller is required to obtain sufficient loop gain. A single-stage design cannot simultaneously provide enough gain and a low output impedance of 50 Ohm. A class-AB output stage is selected to reduce power consumption.</p>
+<h3>Noise</h3>
+<p>The first stage dominates the total noise performance. Noise contributions from the second stage are divided by the gain of the first stage and are therefore less significant.</p>
+<!-- INSERT -->
+<div id="footnote">
+<p>Go to <a href="index.html">index</a></p>
+<p>SLiCAP: Symbolic Linear Circuit Analysis Program, Version 4.0.10 &copy 2009-2025 SLiCAP development team</p>
+<p>For documentation, examples, support, updates and courses please visit: <a href="https://analog-electronics.tudelft.nl">analog-electronics.tudelft.nl</a></p>
+<p>Last project update: 2026-03-07 19:49:46</p>
+</div></body></html>

@@ -2,7 +2,6 @@
 
 from SLiCAP import *
 from .specifications import specs
-import os
 from pathlib import Path
 
 ##### Path to kicad schematic
@@ -45,15 +44,6 @@ def make_project_circuit(project):
     cir_obj = makeCircuit(file_name, imgWidth=1000)
     specs2circuit(specs, cir_obj)
     return cir_obj
-
-
-##### Create default slicap circuit object (backward compatible behavior)
-_default_project = os.getenv("KICAD_PROJECT", "Active_E_Field_Probe")
-try:
-    cir = make_project_circuit(_default_project)
-except FileNotFoundError:
-    # Some execution paths only need make_project_circuit(); defer hard failure.
-    cir = None
 
 
 
