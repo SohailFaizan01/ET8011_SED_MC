@@ -1,0 +1,10 @@
+
+Note: No compatibility mode selected!
+
+
+Circuit: stage_1_2_bias
+
+Error: unknown subckt: x1 6 8 5 0 cmos18n w={w1_n} l={l1_n} id={id1_n}
+    in line no. 10 from file simFile.sp
+    Simulation interrupted due to error!
+
