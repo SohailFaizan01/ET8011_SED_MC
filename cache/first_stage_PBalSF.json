@@ -1,0 +1,15 @@
+{
+  "meta": {
+    "design_key": "PBalSF"
+  },
+  "result": {
+    "best_cost": 0.01001124881982813,
+    "stage1_flavor": "P",
+    "w_param": "W1_P",
+    "id_param": "ID1_P",
+    "wc_param": "W1C_P",
+    "W1": 3.493849244916527e-06,
+    "ID1": -1.5095202653901002e-05,
+    "W1C": 1.8743246839162503e-07
+  }
+}

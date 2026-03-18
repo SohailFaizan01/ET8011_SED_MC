@@ -8,58 +8,73 @@ from pathlib import Path
 CACHE_DIR = Path("cache")
 HTML_DIR = Path("html")
 HTML_IMG_DIR = HTML_DIR / "img"
+GENERATED_SPECS_DIR = Path("python_files") / "generated_specs"
 
 STAGE_PN = "KiCad/Active_E_Field_Probe/stage_PN/Active_E_Field_Probe.kicad_sch"
 STAGE_NP = "KiCad/Active_E_Field_Probe/stage_NP/Active_E_Field_Probe.kicad_sch"
 STAGE_NN = "KiCad/Active_E_Field_Probe/stage_NN/Active_E_Field_Probe.kicad_sch"
 STAGE_NBalSF = "KiCad/Active_E_Field_Probe/stage_N_balSF/Active_E_Field_Probe.kicad_sch"
+STAGE_PBalSF = "KiCad/Active_E_Field_Probe/stage_P_balSF/Active_E_Field_Probe.kicad_sch"
 
 STAGE_PN_PhZ = "KiCad/Active_E_Field_Probe/stage_PN_PhZ/Active_E_Field_Probe.kicad_sch"
 STAGE_NP_PhZ = "KiCad/Active_E_Field_Probe/stage_NP_PhZ/Active_E_Field_Probe.kicad_sch"
 STAGE_NN_PhZ = "KiCad/Active_E_Field_Probe/stage_NN_PhZ/Active_E_Field_Probe.kicad_sch"
 STAGE_NBalSF_PhZ = "KiCad/Active_E_Field_Probe/stage_N_balSF_PhZ/Active_E_Field_Probe.kicad_sch"
-
-# DESIGN_SPECS = [
-#     {
-#         "key": "NBalSF",
-#         "project": STAGE_NBalSF,
-#         "stage1_flavor": "N",
-#         "stage2_flavor": "PN",
-#     },
-#     {
-#         "key": "NP",
-#         "project": STAGE_NP,
-#         "stage1_flavor": "N",
-#         "stage2_flavor": "P",
-#     },
-#     {
-#         "key": "PN",
-#         "project": STAGE_PN,
-#         "stage1_flavor": "P",
-#         "stage2_flavor": "N",
-#     },
-# ]
+STAGE_PBalSF_PhZ = "KiCad/Active_E_Field_Probe/stage_P_balSF_PhZ/Active_E_Field_Probe.kicad_sch"
 
 DESIGN_SPECS = [
     {
         "key": "NBalSF",
-        "project": STAGE_NBalSF_PhZ,
+        "project": STAGE_NBalSF,
         "stage1_flavor": "N",
         "stage2_flavor": "PN",
     },
+        {
+        "key": "PBalSF",
+        "project": STAGE_PBalSF,
+        "stage1_flavor": "P",
+        "stage2_flavor": "NP",
+    },
     {
         "key": "NP",
-        "project": STAGE_NP_PhZ,
+        "project": STAGE_NP,
         "stage1_flavor": "N",
         "stage2_flavor": "P",
     },
     {
         "key": "PN",
-        "project": STAGE_PN_PhZ,
+        "project": STAGE_PN,
         "stage1_flavor": "P",
         "stage2_flavor": "N",
     },
 ]
+
+# DESIGN_SPECS = [
+#     {
+#         "key": "NBalSF",
+#         "project": STAGE_NBalSF_PhZ,
+#         "stage1_flavor": "N",
+#         "stage2_flavor": "PN",
+#     },
+#     {
+#         "key": "PBalSF",
+#         "project": STAGE_PBalSF_PhZ,
+#         "stage1_flavor": "P",
+#         "stage2_flavor": "NP",
+#     },
+#     {
+#         "key": "NP",
+#         "project": STAGE_NP_PhZ,
+#         "stage1_flavor": "N",
+#         "stage2_flavor": "P",
+#     },
+#     {
+#         "key": "PN",
+#         "project": STAGE_PN_PhZ,
+#         "stage1_flavor": "P",
+#         "stage2_flavor": "N",
+#     },
+# ]
 
 
 def _safe_name(raw_name):
@@ -114,12 +129,19 @@ def _validate_cached_result(cir_obj, cfg, cached_payload):
     return result
 
 
-def _stage1_ciss_par_for_stage2(stage2_flavor):
+def _stage1_ciss_par_for_stage2(stage2_flavor, design_key=None):
     flavor = (stage2_flavor or "").upper()
-    if flavor == "PN":
-        return "c_iss_X4"
-    if flavor == "NP":
+    key = (design_key or "").upper()
+    # Per your rule:
+    # - PN, NP, and NBalSF -> X4
+    # - PBalSF -> X6
+    if key == "PBALSF":
         return "c_iss_X6"
+    if key == "NBALSF":
+        return "c_iss_X4"
+    if flavor in ("PN", "NP"):
+        return "c_iss_X4"
+    # Default to X4 for any remaining cases.
     return "c_iss_X4"
 
 
@@ -191,10 +213,153 @@ def _dedupe_main_index_links():
     index_path.write_text(text, encoding="utf-8")
 
 
+def _write_stage_specs_module(
+    path,
+    design_key,
+    stage1_flavor,
+    stage2_flavor,
+    cir_obj,
+    base_specs,
+    first_stage_result,
+    second_stage_result,
+    third_stage_result,
+):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    init_path = path.parent / "__init__.py"
+    if not init_path.exists():
+        init_path.write_text("", encoding="utf-8")
+
+    stage1 = (stage1_flavor or "").upper()
+    stage2 = (stage2_flavor or "").upper()
+
+    stage_symbols = set()
+    all_stage_symbols = {
+        "W1_N", "L1_N", "ID1_N", "W1C_N", "L1C_N",
+        "W1_P", "L1_P", "ID1_P", "W1C_P", "L1C_P",
+        "W2_N", "L2_N", "ID2_N",
+        "W2_P", "L2_P", "ID2_P",
+        "W_N", "L_N", "ID_N",
+        "W_P", "L_P", "ID_P",
+    }
+
+    def mark(symbol):
+        stage_symbols.add(symbol)
+
+    # Stage 1
+    if stage1 == "P":
+        mark("W1_P")
+        mark("L1_P")
+        mark("ID1_P")
+        mark("W1C_P")
+        mark("L1C_P")
+    else:
+        mark("W1_N")
+        mark("L1_N")
+        mark("ID1_N")
+        mark("W1C_N")
+        mark("L1C_N")
+
+    # Stage 2
+    if stage2 in ("PN", "NP"):
+        mark("W2_N")
+        mark("L2_N")
+        mark("ID2_N")
+        mark("W2_P")
+        mark("L2_P")
+        mark("ID2_P")
+    elif stage2 == "P":
+        mark("W2_P")
+        mark("L2_P")
+        mark("ID2_P")
+    else:
+        mark("W2_N")
+        mark("L2_N")
+        mark("ID2_N")
+
+    # Stage 3 (push-pull)
+    mark("W_N")
+    mark("L_N")
+    mark("ID_N")
+    mark("W_P")
+    mark("L_P")
+    mark("ID_P")
+
+    overrides = {}
+    # Stage 1 overrides from optimization results.
+    if first_stage_result:
+        for key in ("w_param", "id_param", "wc_param"):
+            par = first_stage_result.get(key)
+            if par:
+                value_key = "W1" if key == "w_param" else "ID1" if key == "id_param" else "W1C"
+                if value_key in first_stage_result:
+                    overrides[par] = float(first_stage_result[value_key])
+
+    # Stage 2 overrides from optimization results.
+    if second_stage_result:
+        for key in ("w_param", "id_param"):
+            par = second_stage_result.get(key)
+            if par:
+                value_key = "W2" if key == "w_param" else "ID2"
+                if value_key in second_stage_result:
+                    overrides[par] = float(second_stage_result[value_key])
+        for par in ("W2_N", "W2_P", "ID2_N", "ID2_P"):
+            if par in second_stage_result:
+                overrides[par] = float(second_stage_result[par])
+
+    # Stage 3 overrides from optimization results (widths only).
+    if third_stage_result:
+        if "Wn" in third_stage_result:
+            overrides["W_N"] = float(third_stage_result["Wn"])
+        if "Wp" in third_stage_result:
+            overrides["W_P"] = float(third_stage_result["Wp"])
+
+    def _format_value(raw_value):
+        if isinstance(raw_value, str):
+            return raw_value
+        try:
+            return f"{float(raw_value):.6e}"
+        except Exception:
+            return repr(raw_value)
+
+    lines = []
+    lines.append("################################################# Specifications #################################################\n")
+    lines.append("from SLiCAP import *\n\n")
+    lines.append(f"# Auto-generated stage specs for {design_key}\n\n")
+    lines.append("specs = []\n\n")
+
+    for spec in base_specs:
+        symbol_raw = getattr(spec, "symbol", None)
+        symbol = str(symbol_raw) if symbol_raw is not None else None
+        description = getattr(spec, "description", "")
+        units = getattr(spec, "units", "")
+        spec_type = getattr(spec, "specType", "")
+        value = getattr(spec, "value", None)
+
+        if symbol in all_stage_symbols and symbol not in stage_symbols:
+            continue
+
+        if symbol in overrides:
+            value = overrides[symbol]
+        elif symbol in stage_symbols:
+            value = float(cir_obj.getParValue(symbol))
+        formatted = _format_value(value)
+
+        lines.append(
+            "specs.append(specItem("
+            f"\"{symbol}\", "
+            f"description = \"{description}\", "
+            f"value       = {formatted}, "
+            f"units       = \"{units}\", "
+            f"specType    = \"{spec_type}\"))\n\n"
+        )
+
+    path.write_text("".join(lines), encoding="utf-8")
+
+
 def run():
     _cleanup_html_outputs()
     initProject("Active_E_Field_Probe")
-    from python_files import specifications  # noqa: F401
+    from python_files import specifications
     from python_files.circuit import make_project_circuit
     from python_files.three_optimize_third_stage import optimize_third_stage
     from python_files.three_optimize_first_stage import optimize_first_stage_parallel
@@ -266,7 +431,7 @@ def run():
             first_stage_result = optimize_first_stage_parallel(
                 cir,
                 stage1_flavor=cfg["stage1_flavor"],
-                cascode_ciss_par=_stage1_ciss_par_for_stage2(cfg["stage2_flavor"]),
+                cascode_ciss_par=_stage1_ciss_par_for_stage2(cfg["stage2_flavor"], cfg["key"]),
             )
             if first_stage_result is None:
                 raise RuntimeError(
@@ -275,6 +440,20 @@ def run():
             _save_first_stage_result(cache_path, cfg, first_stage_result)
             print(f"[{cache_key}] Saved first-stage cache to '{cache_path}'.")
             print(f"[{cache_key}] Stage 1 optimization: DONE", flush=True)
+
+        specs_module_path = GENERATED_SPECS_DIR / f"specs_{cache_key}.py"
+        _write_stage_specs_module(
+            specs_module_path,
+            cache_key,
+            first_stage_result.get("stage1_flavor", cfg["stage1_flavor"]),
+            second_stage_result.get("stage2_flavor", cfg["stage2_flavor"]),
+            cir,
+            specifications.specs,
+            first_stage_result,
+            second_stage_result,
+            third_stage_result,
+        )
+        print(f"[{cache_key}] Wrote stage specs to '{specs_module_path}'.")
 
         # key is used only for cache identity and HTML naming.
         stage_tag = html_key
@@ -295,13 +474,19 @@ def run():
     for result in all_results:
         first = result["first_stage"]
         second = result["second_stage"]
+        cost_str = (
+            f"{float(first['best_cost']):.4f}"
+            if first.get("best_cost") is not None
+            else "n/a"
+        )
         print(
             f"{result['design']} ({result['stage_tag']}): "
             f"{first['w_param']}={first['W1']*1e6:.2f}um, "
             f"{first['id_param']}={first['ID1']*1e3:.3f}mA, "
             f"{first['wc_param']}={first['W1C']*1e6:.2f}um, "
             f"{second['w_param']}={second['W2']*1e6:.2f}um, "
-            f"{second['id_param']}={second['ID2']*1e3:.3f}mA"
+            f"{second['id_param']}={second['ID2']*1e3:.3f}mA, "
+            f"Cost={cost_str}"
         )
 
     for result in all_results:

@@ -2529,7 +2529,7 @@
 				)
 			)
 		)
-		(property "W" "{W1C_N}"
+		(property "W" "{W1C_P}"
 			(at 119.38 80.645 0)
 			(show_name yes)
 			(do_not_autoplace yes)
@@ -2540,7 +2540,7 @@
 				(justify left)
 			)
 		)
-		(property "L" "{L1C_N}"
+		(property "L" "{L1C_P}"
 			(at 119.38 78.105 0)
 			(show_name yes)
 			(do_not_autoplace yes)

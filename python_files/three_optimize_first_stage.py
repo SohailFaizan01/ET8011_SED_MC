@@ -24,10 +24,12 @@ import sympy as sp
 # --- Optimization Parameters ---
 f = sp.Symbol('f')
 noise_margin = 0.7
-I_budget_stage = 1e-3
-target_val = 2e9
+I_budget_stage = 0.5e-3
+target_pole_f = 3e8
 target_stage_gain = 400
-gain_cost_bias = 2
+gain_cost_bias = 1.5
+w_cost_bias = 1
+i_cost_bias = 2
 max_size_budget = 0.5
 
 # Precomputed sweep grids
@@ -108,7 +110,7 @@ def _tune_cascode(local_cir, initial_W1C_N, wc_par, ciss_par):
 
         iter_pole_freq = 1 / (2 * np.pi * ro_amp * gm_casc * ro_casc * ciss_val)
         iter_stage_gain = gm_amp * ro_amp * gm_casc * ro_casc
-        if iter_pole_freq > target_val:
+        if iter_pole_freq > target_pole_f:
             return (True, W1C_N, iter_pole_freq, iter_stage_gain)
 
         W1C_N *= 0.85
@@ -171,7 +173,7 @@ def _evaluate_width(task):
         if not cascode_ok or found_stage_gain <= 0:
             continue
 
-        cost = ((W1_val / denom_w) * (id_mag / denom_id)) / ((found_stage_gain / target_stage_gain)**gain_cost_bias)
+        cost = (((W1_val / denom_w)**w_cost_bias) * ((id_mag / denom_id)**i_cost_bias)) / ((found_stage_gain / target_stage_gain)**gain_cost_bias)
         candidate = {
             "cost": cost,
             "W1": W1_val,

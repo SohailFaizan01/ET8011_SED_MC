@@ -51,12 +51,12 @@ l1c_p      = 180e-9
 
 # __________Intermediate Stage___________
 
-# N I/P Stage
+# N SF Stage
 w2_n      = 1e-6
 l2_n      = 180e-9
 id2_n     = 1e-3
 
-# P I/P Stage
+# P SF Stage
 w2_p      = 1e-6
 l2_p      = 180e-9
 id2_p     = 1e-3
