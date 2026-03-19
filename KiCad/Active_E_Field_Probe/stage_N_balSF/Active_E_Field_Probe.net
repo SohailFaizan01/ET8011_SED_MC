@@ -1,7 +1,7 @@
 (export (version "E")
   (design
     (source "C:\\Users\\Sohai\\Desktop\\Academics\\TU_Delft\\Q4\\ET8011_SED_MC\\ET8011_SED_MC\\KiCad\\Active_E_Field_Probe\\stage_N_balSF\\Active_E_Field_Probe.kicad_sch")
-    (date "2026-03-18T18:52:56+0100")
+    (date "2026-03-19T12:49:00+0100")
     (tool "Eeschema 9.0.7")
     (sheet (number "1") (name "/") (tstamps "/")
       (title_block
@@ -37,7 +37,7 @@
       (sheetpath (names "/") (tstamps "/"))
       (tstamps "7a889041-9f66-46bc-848f-a2da107baf11"))
     (comp (ref "C2")
-      (value "{0.56*C_s}")
+      (value "{0.4*C_s}")
       (description "Capacitor")
       (fields
         (field (name "model") "C")

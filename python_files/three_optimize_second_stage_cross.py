@@ -68,7 +68,7 @@ def optimize_second_stage_cross(cir, stage2_flavor):
     Ciss3 = Ciss_X2 + Ciss_X3
     gm_target = 2*(2 * np.pi * f_local * Ciss3)
 
-    id_target_mag = 2 * (V_swing_est * gm_target) * (1 + drive_offset)
+    id_target_mag = 2* (V_swing_est * gm_target) * (1 + drive_offset)
     cir.defPar("ID2_N", id_target_mag)
     cir.defPar("ID2_P", -id_target_mag)
 

@@ -41,33 +41,33 @@ specs.append(specItem("V_in", description = "Amplifier input voltage", value    
 
 specs.append(specItem("A_cl", description = "Amplifier closed-loop gain", value       = 2.500000e+00, units       = "NA", specType    = "Amplifier"))
 
-specs.append(specItem("W_N", description = "Transistor width", value       = 2.259715e-05, units       = "m", specType    = "Amplifier"))
+specs.append(specItem("W_N", description = "Transistor width", value       = 7.500227e-05, units       = "m", specType    = "Amplifier"))
 
 specs.append(specItem("L_N", description = "Transistor length", value       = 1.800000e-07, units       = "m", specType    = "Amplifier"))
 
-specs.append(specItem("ID_N", description = "Transistor drain current", value       = 5.689378e-05, units       = "A", specType    = "Amplifier"))
+specs.append(specItem("ID_N", description = "Transistor drain current", value       = 4.332931e-05, units       = "A", specType    = "Amplifier"))
 
-specs.append(specItem("W_P", description = "Transistor width", value       = 7.061609e-05, units       = "m", specType    = "Amplifier"))
+specs.append(specItem("W_P", description = "Transistor width", value       = 2.343821e-04, units       = "m", specType    = "Amplifier"))
 
 specs.append(specItem("L_P", description = "Transistor length", value       = 1.800000e-07, units       = "m", specType    = "Amplifier"))
 
-specs.append(specItem("ID_P", description = "Transistor drain current", value       = -5.689378e-05, units       = "A", specType    = "Amplifier"))
+specs.append(specItem("ID_P", description = "Transistor drain current", value       = -4.332931e-05, units       = "A", specType    = "Amplifier"))
 
-specs.append(specItem("W1_N", description = "Transistor width", value       = 1.220698e-05, units       = "m", specType    = "Amplifier"))
+specs.append(specItem("W1_N", description = "Transistor width", value       = 2.857334e-04, units       = "m", specType    = "Amplifier"))
 
 specs.append(specItem("L1_N", description = "Transistor length", value       = 1.800000e-07, units       = "m", specType    = "Amplifier"))
 
-specs.append(specItem("ID1_N", description = "Transistor drain current", value       = 6.379333e-05, units       = "A", specType    = "Amplifier"))
+specs.append(specItem("ID1_N", description = "Transistor drain current", value       = 1.328149e-03, units       = "A", specType    = "Amplifier"))
 
-specs.append(specItem("W1C_N", description = "Transistor width", value       = 2.099334e-07, units       = "m", specType    = "Amplifier"))
+specs.append(specItem("W1C_N", description = "Transistor width", value       = 1.491546e-04, units       = "m", specType    = "Amplifier"))
 
 specs.append(specItem("L1C_N", description = "Transistor length", value       = 1.800000e-07, units       = "m", specType    = "Amplifier"))
 
-specs.append(specItem("W2_P", description = "Transistor width", value       = 5.272034e-07, units       = "m", specType    = "Amplifier"))
+specs.append(specItem("W2_P", description = "Transistor width", value       = 1.503668e-06, units       = "m", specType    = "Amplifier"))
 
 specs.append(specItem("L2_P", description = "Transistor length", value       = 1.800000e-07, units       = "m", specType    = "Amplifier"))
 
-specs.append(specItem("ID2_P", description = "Transistor drain current", value       = -4.488533e-05, units       = "A", specType    = "Amplifier"))
+specs.append(specItem("ID2_P", description = "Transistor drain current", value       = -1.269973e-04, units       = "A", specType    = "Amplifier"))
 
 specs.append(specItem("R_ph", description = "Phantom Zero Resistance", value       = 2.000000e+02, units       = "Ohm", specType    = "Amplifier"))
 

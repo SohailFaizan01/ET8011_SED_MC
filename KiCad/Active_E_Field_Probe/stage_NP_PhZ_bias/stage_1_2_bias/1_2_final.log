@@ -1,0 +1,112 @@
+LTspice 24.0.12 for Windows
+Circuit: * C:\Users\Sohai\Desktop\Academics\TU_Delft\Q4\ET8011_SED_MC\ET8011_SED_MC\KiCad\Active_E_Field_Probe\stage_NP_PhZ_bias\stage_1_2_bias\1_2_final.asc
+Start Time: Thu Mar 19 15:36:49 2026
+Ignoring BSIM parameter XL
+Ignoring BSIM parameter XW
+Ignoring BSIM parameter ACM
+Ignoring BSIM parameter LDIF
+Ignoring BSIM parameter HDIF
+Ignoring BSIM parameter CALCACM
+Ignoring BSIM parameter XL
+Ignoring BSIM parameter XW
+Ignoring BSIM parameter ACM
+Ignoring BSIM parameter LDIF
+Ignoring BSIM parameter HDIF
+Ignoring BSIM parameter TLEV
+Ignoring BSIM parameter TLEVC
+Ignoring BSIM parameter CALCACM
+Ignoring BSIM parameter SFVTFLAGl
+Ignoring BSIM parameter XL
+Ignoring BSIM parameter XW
+Ignoring BSIM parameter ACM
+Ignoring BSIM parameter LDIF
+Ignoring BSIM parameter HDIF
+Ignoring BSIM parameter CALCACM
+solver = Normal
+Maximum thread count: 24
+tnom = 27
+temp = 27
+method = modified trap
+WARNING: Node NC_02 is floating.
+WARNING: Node NC_03 is floating.
+WARNING: Node NC_04 is floating.
+WARNING: Node NC_06 is floating.
+WARNING: Node NC_07 is floating.
+WARNING: Node NC_08 is floating.
+
+WARNING: Less than two connections to node nc_01.  This node is used by mp2.
+WARNING: Less than two connections to node nc_02.  This node is used by mp2.
+WARNING: Less than two connections to node nc_03.  This node is used by mp2.
+WARNING: Less than two connections to node nc_04.  This node is used by mp2.
+WARNING: Less than two connections to node nc_05.  This node is used by mn5.
+WARNING: Less than two connections to node nc_06.  This node is used by mn5.
+WARNING: Less than two connections to node nc_07.  This node is used by mn5.
+WARNING: Less than two connections to node nc_08.  This node is used by mn5.
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+Direct Newton iteration for .op point succeeded.
+Semiconductor Device Operating Points:
+                        --- BSIM3 MOSFETS ---
+Name:        mn1         mn2         mn3         mn4         mp1
+Model:      nch.3       nch.3       nch.3       nch.3       pch.6
+Id:        2.86e-04    2.86e-04    2.86e-04    2.86e-04   -1.27e-04
+Vgs:       4.80e-01    4.80e-01    4.61e-01    4.61e-01   -1.08e+00
+Vds:       2.49e-02    2.49e-02    9.81e-01    9.80e-01   -1.38e+00
+Vbs:      -1.96e-02   -1.96e-02   -4.46e-02   -4.46e-02    0.00e+00
+Vth:       5.18e-01    5.18e-01    5.22e-01    5.22e-01   -4.97e-01
+Vdsat:     6.38e-02    6.38e-02    5.72e-02    5.72e-02   -4.16e-01
+Gm:        5.04e-03    5.04e-03    5.86e-03    5.86e-03    3.44e-04
+Gds:       8.62e-03    8.62e-03    1.14e-04    1.14e-04    1.22e-05
+Gmb        1.49e-03    1.49e-03    1.64e-03    1.64e-03    1.18e-04
+Cbd:       0.00e+00    0.00e+00    0.00e+00    0.00e+00    0.00e+00
+Cbs:       0.00e+00    0.00e+00    0.00e+00    0.00e+00    0.00e+00
+Cgsov:     1.05e-13    1.05e-13    5.46e-14    5.46e-14    6.46e-16
+Cgdov:     1.05e-13    1.05e-13    5.46e-14    5.46e-14    6.46e-16
+Cgbov:     1.27e-16    1.27e-16    1.27e-16    1.27e-16    4.83e-17
+dQgdVgb:   3.71e-13    3.71e-13    1.80e-13    1.80e-13    3.77e-15
+dQgdVdb:  -1.13e-13   -1.13e-13   -5.46e-14   -5.46e-14   -6.40e-16
+dQgdVsb:  -1.64e-13   -1.64e-13   -7.29e-14   -7.29e-14   -2.99e-15
+dQddVgb:  -1.20e-13   -1.20e-13   -5.46e-14   -5.46e-14   -6.47e-16
+dQddVdb:   1.26e-13    1.26e-13    5.46e-14    5.46e-14    6.47e-16
+dQddVsb:  -1.13e-15   -1.13e-15    1.32e-17    1.33e-17    9.20e-19
+dQbdVgb:  -9.08e-14   -9.08e-14   -5.27e-14   -5.27e-14   -5.51e-16
+dQbdVdb:  -5.63e-15   -5.64e-15    1.20e-17    1.20e-17    4.61e-19
+dQbdVsb:  -1.85e-14   -1.85e-14   -5.41e-15   -5.41e-15   -2.29e-16
+
+Name:        mp2         mn5
+Model:      pch.6       nch.6
+Id:        2.08e-26    3.46e-30
+Vgs:       7.50e-17    8.48e-19
+Vds:       4.32e-16    4.05e-18
+Vbs:       1.50e-16    1.70e-18
+Vth:      -5.02e-01    5.30e-01
+Vdsat:    -4.11e-02    4.14e-02
+Gm:        6.15e-25    0.00e+00
+Gds:       4.65e-11    2.15e-10
+Gmb        2.37e-25    0.00e+00
+Cbd:       0.00e+00    0.00e+00
+Cbs:       0.00e+00    0.00e+00
+Cgsov:     4.82e-16    5.42e-16
+Cgdov:     4.82e-16    5.42e-16
+Cgbov:     4.83e-17    3.18e-17
+dQgdVgb:   1.65e-15    1.82e-15
+dQgdVdb:  -4.82e-16   -5.42e-16
+dQgdVsb:  -4.82e-16   -5.42e-16
+dQddVgb:  -4.82e-16   -5.42e-16
+dQddVdb:   4.82e-16    5.42e-16
+dQddVsb:  -3.28e-22   -3.21e-22
+dQbdVgb:  -6.89e-16   -7.32e-16
+dQbdVdb:  -2.60e-22   -2.19e-22
+dQbdVsb:   2.14e-20    4.88e-20
+
+
+Total elapsed time: 0.058 seconds.
+

@@ -23,30 +23,30 @@ STAGE_NBalSF_PhZ = "KiCad/Active_E_Field_Probe/stage_N_balSF_PhZ/Active_E_Field_
 STAGE_PBalSF_PhZ = "KiCad/Active_E_Field_Probe/stage_P_balSF_PhZ/Active_E_Field_Probe.kicad_sch"
 
 DESIGN_SPECS = [
-    {
-        "key": "NBalSF",
-        "project": STAGE_NBalSF,
-        "stage1_flavor": "N",
-        "stage2_flavor": "PN",
-    },
-        {
-        "key": "PBalSF",
-        "project": STAGE_PBalSF,
-        "stage1_flavor": "P",
-        "stage2_flavor": "NP",
-    },
+    # {
+    #     "key": "NBalSF",
+    #     "project": STAGE_NBalSF,
+    #     "stage1_flavor": "N",
+    #     "stage2_flavor": "PN",
+    # },
+    #     {
+    #     "key": "PBalSF",
+    #     "project": STAGE_PBalSF,
+    #     "stage1_flavor": "P",
+    #     "stage2_flavor": "NP",
+    # },
     {
         "key": "NP",
         "project": STAGE_NP,
         "stage1_flavor": "N",
         "stage2_flavor": "P",
     },
-    {
-        "key": "PN",
-        "project": STAGE_PN,
-        "stage1_flavor": "P",
-        "stage2_flavor": "N",
-    },
+    # {
+    #     "key": "PN",
+    #     "project": STAGE_PN,
+    #     "stage1_flavor": "P",
+    #     "stage2_flavor": "N",
+    # },
 ]
 
 # DESIGN_SPECS = [
@@ -211,6 +211,28 @@ def _dedupe_main_index_links():
     text = text.replace(token, "")
     text = text.replace("<!-- INSERT -->", f"{token}<!-- INSERT -->", 1)
     index_path.write_text(text, encoding="utf-8")
+
+
+def _try_par(cir_obj, name):
+    try:
+        return float(cir_obj.getParValue(name))
+    except Exception:
+        return None
+
+
+def _ciss_summary(cir_obj, stage2_flavor):
+    stage2 = (stage2_flavor or "").upper()
+    # Only NP uses X6; everything else uses X4.
+    ciss_stage2 = _try_par(cir_obj, "c_iss_X6") if stage2 == "NP" else _try_par(cir_obj, "c_iss_X4")
+    ciss_stage3_n = _try_par(cir_obj, "c_iss_X3")
+    ciss_stage3_p = _try_par(cir_obj, "c_iss_X2")
+    ciss_stage3_sum = None
+    if ciss_stage3_n is not None and ciss_stage3_p is not None:
+        ciss_stage3_sum = ciss_stage3_n + ciss_stage3_p
+    return {
+        "ciss_stage2": ciss_stage2,
+        "ciss_stage3_sum": ciss_stage3_sum,
+    }
 
 
 def _write_stage_specs_module(
@@ -441,6 +463,15 @@ def run():
             print(f"[{cache_key}] Saved first-stage cache to '{cache_path}'.")
             print(f"[{cache_key}] Stage 1 optimization: DONE", flush=True)
 
+        ciss_info = _ciss_summary(cir, second_stage_result["stage2_flavor"])
+        ciss_stage2 = ciss_info["ciss_stage2"]
+        ciss_stage3_sum = ciss_info["ciss_stage3_sum"]
+        print(
+            f"[{cache_key}] Ciss Stage-2="
+            f"{ciss_stage2:.6e} F, "
+            f"Stage-3 sum={ciss_stage3_sum:.6e} F"
+        )
+
         specs_module_path = GENERATED_SPECS_DIR / f"specs_{cache_key}.py"
         _write_stage_specs_module(
             specs_module_path,
@@ -465,6 +496,8 @@ def run():
                 "third_stage": third_stage_result,
                 "first_stage": first_stage_result,
                 "second_stage": second_stage_result,
+                "ciss_stage2": ciss_stage2,
+                "ciss_stage3_sum": ciss_stage3_sum,
                 "cir": cir,
                 "circuit_image": circuit_image,
             }
@@ -486,7 +519,9 @@ def run():
             f"{first['wc_param']}={first['W1C']*1e6:.2f}um, "
             f"{second['w_param']}={second['W2']*1e6:.2f}um, "
             f"{second['id_param']}={second['ID2']*1e3:.3f}mA, "
-            f"Cost={cost_str}"
+            f"Cost={cost_str}, "
+            f"Ciss2={result['ciss_stage2']:.6e}F, "
+            f"Ciss3sum={result['ciss_stage3_sum']:.6e}F"
         )
 
     for result in all_results:

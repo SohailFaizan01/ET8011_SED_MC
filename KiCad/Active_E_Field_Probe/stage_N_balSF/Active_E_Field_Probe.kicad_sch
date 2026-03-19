@@ -2370,7 +2370,7 @@
 				)
 			)
 		)
-		(property "Value" "{0.56*C_s}"
+		(property "Value" "{0.4*C_s}"
 			(at 179.07 39.624 90)
 			(show_name yes)
 			(effects

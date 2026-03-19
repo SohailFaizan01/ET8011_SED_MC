@@ -24,18 +24,18 @@ import sympy as sp
 # --- Optimization Parameters ---
 f = sp.Symbol('f')
 noise_margin = 0.7
-I_budget_stage = 0.5e-3
-target_pole_f = 3e8
-target_stage_gain = 400
-gain_cost_bias = 1.5
+I_budget_stage = 3e-3
+target_pole_f = 5e8
+target_stage_gain = 500
+gain_cost_bias = 3
 w_cost_bias = 1
-i_cost_bias = 2
-max_size_budget = 0.5
+i_cost_bias = 1.5
+max_size_budget = 0.75
 
 # Precomputed sweep grids
 NOISE_FREQS = np.logspace(5, 7, 10)
 W_SWEEP_POINTS = 30
-ID_SWEEP_POINTS = 20
+ID_SWEEP_POINTS = 50
 
 # Process-local circuit object.
 _WORKER_CIR = None

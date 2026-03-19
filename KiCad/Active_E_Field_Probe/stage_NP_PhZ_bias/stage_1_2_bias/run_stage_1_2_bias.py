@@ -162,6 +162,12 @@ def run():
     if best_x8[2] is not None:
         print(f"X8: VGS1C_N={best_x8[0]:.6f} V, VGS1_N={best_x8[2]:.6f} V, err={best_x8[1]:.3e} A")
 
+    def _try_par(name):
+        try:
+            return float(cir.getParValue(name))
+        except Exception:
+            return None
+
     return cir
 
 

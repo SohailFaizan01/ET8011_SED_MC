@@ -76,8 +76,11 @@ def optimize_third_stage(cir):
     ############################################################################
 
     gm_quiescent_target = 1e-3
-    gm_peak_target = 10e-3
-    drive_capability = 4.5e-3
+    gm_peak_target = 25e-3
+    Po_1dB_Comppr = 1e-3 # 1 mW
+    R_o = 50 # 50 Ohm
+    Vo_p = (2*Po_1dB_Comppr*R_o)**0.5
+    drive_capability = (2*Vo_p)/100 # peak drive for v_peak. Vp2p = 2x Vop = 1.26
 
     max_iter_outer = 20
     max_iter_inner = 15
